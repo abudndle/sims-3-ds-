@@ -108,6 +108,55 @@ ARM7_FILTER = {
 }
 
 
+ARM7_ADAPTATION = {
+    0x0238d92c: 0xe59f61f4, 0x0238db28: 0x0380b784, 0x0238d9cc: 0xe5961024,
+    0x0238d9d0: 0xe28d2004, 0x0238d9dc: 0xe1dd10b4, 0x0238dea8: 0xe1c860b0,
+    0x0238e018: 0xe1dd00b0, 0x0238e01c: 0xe1dd10b2, 0x0238e020: 0xe1510000,
+    0x0238e024: 0x31a01000, 0x0238e028: 0xe1c810b0, 0x0238d860: 0xe5900000,
+    0x0238d864: 0xe59f30ac, 0x0238d868: 0xe1a02380, 0x0238d86c: 0xe3a0e000,
+    0x0238d870: 0xe1b02fa2, 0x0238d874: 0x05c3e001, 0x0238d878: 0x05c3e000,
+    0x0238d87c: 0x0a000023, 0x0238d880: 0xe1a00280, 0x0238d884: 0xe1b00f20,
+    0x0238d888: 0x0a00000d, 0x0238d88c: 0xe5c3e000, 0x0238d890: 0xe5d30001,
+    0x0238d894: 0xe2800001, 0x0238d898: 0xe20010ff, 0x0238d89c: 0xe5c30001,
+    0x0238d8a0: 0xe3510004, 0x0238d8a4: 0x3a000019, 0x0238d8a8: 0xe59f006c,
+    0x0238d8ac: 0xe5c3e001, 0x0238d8b0: 0xe5901024, 0x0238d8b4: 0xe3510023,
+    0x0238d8b8: 0xb2811001, 0x0238d8bc: 0xb5801024, 0x0238d8c0: 0xea000012,
+    0x0238d8c4: 0xe59f2050, 0x0238d8c8: 0xe5c3e001, 0x0238d8cc: 0xe592c024,
+    0x0238d8d0: 0xe15100cc, 0x0238d8d4: 0xa5c3e000, 0x0238d8d8: 0xaa00000c,
+    0x0238d8dc: 0xe5d30000, 0x0238d8e0: 0xe2800001, 0x0238d8e4: 0xe20010ff,
+    0x0238d8e8: 0xe5c30000, 0x0238d8ec: 0xe3510004, 0x0238d8f0: 0x3a000006,
+    0x0238d8f4: 0xe5c3e000, 0x0238d8f8: 0xe5920028, 0x0238d8fc: 0xe15c0000,
+    0x0238d900: 0xc24c0001, 0x0238d904: 0xc5820024, 0x0238d908: 0xc3a00003,
+    0x0238d90c: 0xc5c30001, 0x0238d918: 0x0380b780, 0x0238d91c: 0x0380b784,
+}
+
+
+def adapt_tolerance(packed, spread, tolerance, minimum, stable_count, fallback_count):
+    """Return (tolerance, stable_count, fallback_count) after one ARM7 update."""
+    if not 0 <= packed <= 0xffffffff or not 0 <= spread <= 0xffff:
+        raise ValueError("packed sample or spread out of range")
+    if not 0 <= minimum <= tolerance <= 35:
+        raise ValueError("expected 0 <= minimum <= tolerance <= 35")
+    if not (0 <= stable_count <= 3 and 0 <= fallback_count <= 3):
+        raise ValueError("counter out of range")
+
+    if not packed & (1 << 24):
+        return tolerance, 0, 0
+
+    if packed & (3 << 25):
+        if fallback_count == 3:
+            return min(35, tolerance + 1), 0, 0
+        return tolerance, 0, fallback_count + 1
+
+    if spread >= tolerance >> 1:
+        return tolerance, 0, 0
+    if stable_count < 3:
+        return tolerance, stable_count + 1, 0
+    if tolerance > minimum:
+        return tolerance - 1, 0, 3
+    return tolerance, 0, 0
+
+
 def filter_axis(samples, tolerance):
     """Model the ARM7 filter for five unsigned 12-bit samples in acquisition order."""
     if len(samples) != 5 or any(not isinstance(value, int) or not 0 <= value <= 4095
@@ -137,6 +186,7 @@ def inspect_arm7(reader):
     verify_sites(reader, ARM7_PRODUCER, "ARM7")
     verify_sites(reader, ARM7_STATUS, "ARM7")
     verify_sites(reader, ARM7_FILTER, "ARM7")
+    verify_sites(reader, ARM7_ADAPTATION, "ARM7")
     return {
         "producer": "0x0238de90",
         "sampler": "0x0238dcac",
@@ -176,8 +226,18 @@ def inspect_arm7(reader):
             "fallback_rule": "Mean of first and fifth samples",
             "spread_rule": "Maximum absolute pairwise difference",
         },
+        "adaptation": {
+            "routine": "0x0238d85c",
+            "call": "0x0238d9e4",
+            "spread": "Larger of the X and Y spreads on normal contact",
+            "tolerance_ceiling": 35,
+            "tolerance_floor": "Configuration word at 0x0380b7ac",
+            "consecutive_updates": 4,
+            "stable_condition": "Status zero and spread below half the current tolerance",
+            "after_decrease": "Fallback counter set to 3",
+        },
         "scope": "Filtered ADC samples on the sampling path",
-        "verified_sites": len(ARM7) + len(ARM7_PRODUCER) + len(ARM7_STATUS) + len(ARM7_FILTER),
+        "verified_sites": len(ARM7) + len(ARM7_PRODUCER) + len(ARM7_STATUS) + len(ARM7_FILTER) + len(ARM7_ADAPTATION),
     }
 
 def fields(value):
@@ -209,7 +269,7 @@ def inspect(rom,strict=True):
  "arm9_readers":["0x020d7418","0x020d74ec"],"verified_sites":len(ARM9)+producer["verified_sites"],
  "arm7_producer":producer,
  "result":"ARM7 packs filtered touchscreen X/Y ADC samples for ARM9.",
- "unknown":["Runtime touchscreen X/Y correlation and origin of preserved bits 27â€“31","Runtime call path",
+ "unknown":["Runtime touchscreen X/Y correlation and origin of preserved bits 27Ã¢â‚¬â€œ31","Runtime call path",
             "Screen coordinate calibration","ARM9 gameplay UI dispatcher"]}
 if __name__=="__main__":
  p=argparse.ArgumentParser();p.add_argument("rom",type=Path)

@@ -13,7 +13,7 @@ class PureTests(unittest.TestCase):
   with self.assertRaises(ValueError):analyze.literal_target(0,0)
 class ProducerTests(unittest.TestCase):
  def setUp(self):
-  self.words = {**analyze.ARM7, **analyze.ARM7_PRODUCER, **analyze.ARM7_STATUS, **analyze.ARM7_FILTER}
+  self.words = {**analyze.ARM7, **analyze.ARM7_PRODUCER, **analyze.ARM7_STATUS, **analyze.ARM7_FILTER, **analyze.ARM7_ADAPTATION}
 
  def test_axes_follow_spi_commands_and_packing(self):
   axes = analyze.inspect_arm7(self.words.__getitem__)["axes"]
@@ -29,6 +29,8 @@ class ProducerTests(unittest.TestCase):
 
  def test_changed_provenance_is_rejected(self):
   changes = {
+   0x0238D8B4: 0xE3510022,  # Lower the tolerance ceiling
+   0x0238D908: 0xC3A00000,  # Drop the fallback counter preload
    0x0238DE14: 0xD0810002,  # Lose the first sample's double weight
    0x0238DE58: 0xE59D100C,  # Use sample four for fallback
    0x0238DC0C: 0xE3100080,  # Test the wrong EXTKEYIN bit
@@ -65,13 +67,37 @@ class FilterTests(unittest.TestCase):
     with self.assertRaises(ValueError):
      analyze.filter_axis(samples, tolerance)
 
+class AdaptationTests(unittest.TestCase):
+ def test_pen_up_clears_both_counters(self):
+  self.assertEqual(analyze.adapt_tolerance(3 << 25, 0, 12, 8, 2, 3), (12, 0, 0))
+
+ def test_four_status_updates_raise_tolerance_up_to_ceiling(self):
+  for tolerance, expected in [(12, 13), (35, 35)]:
+   with self.subTest(tolerance=tolerance):
+    state = (tolerance, 0, 0)
+    for count in range(1, 4):
+     state = analyze.adapt_tolerance(3 << 24, 0, state[0], 8, *state[1:])
+     self.assertEqual(state, (tolerance, 0, count))
+    self.assertEqual(analyze.adapt_tolerance(3 << 24, 0, state[0], 8, *state[1:]),
+                     (expected, 0, 0))
+
+ def test_decrease_preloads_counter_for_next_fallback(self):
+  state = analyze.adapt_tolerance(1 << 24, 5, 12, 8, 3, 0)
+  self.assertEqual(state, (11, 0, 3))
+  self.assertEqual(analyze.adapt_tolerance(3 << 24, 0, state[0], 8, *state[1:]),
+                   (12, 0, 0))
+
+ def test_spread_boundary_and_tolerance_floor(self):
+  self.assertEqual(analyze.adapt_tolerance(1 << 24, 6, 13, 8, 3, 0), (13, 0, 0))
+  self.assertEqual(analyze.adapt_tolerance(1 << 24, 3, 8, 8, 3, 0), (8, 0, 0))
+
 class ROMTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   path=os.getenv("SIMS3_DS_ROM")
   if not path:raise unittest.SkipTest("Provide original ROM via SIMS3_DS_ROM")
   cls.rom=Path(path).read_bytes()
- def test_original(self):self.assertEqual(analyze.inspect(self.rom)["verified_sites"],len(analyze.ARM9)+len(analyze.ARM7)+len(analyze.ARM7_PRODUCER)+len(analyze.ARM7_STATUS)+len(analyze.ARM7_FILTER))
+ def test_original(self):self.assertEqual(analyze.inspect(self.rom)["verified_sites"],len(analyze.ARM9)+len(analyze.ARM7)+len(analyze.ARM7_PRODUCER)+len(analyze.ARM7_STATUS)+len(analyze.ARM7_FILTER)+len(analyze.ARM7_ADAPTATION))
  def test_wrong_hash(self):
   with self.assertRaisesRegex(ValueError,"SHA-256"):analyze.inspect(self.rom[:-1])
  def changed(self,header,address):
