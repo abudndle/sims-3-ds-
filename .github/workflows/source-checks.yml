@@ -1,18 +1,41 @@
-name: Source checks
+name: Sims 3 DS research validation
 on:
   push:
-    branches: [main]
+    branches: [main, dev, 'feature/**', 'milestone/**']
   pull_request:
+    branches: [main, dev]
   workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: research-validation-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  python-checks:
+  independent-source:
+    name: Verify source without game ROMs
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Syntax check
-        run: python -m compileall -q tools
-      - name: Public tests (ROM-dependent tests skip)
-        run: python -m unittest discover -s tools/arm7_handler_memory -p 'test_*.py' -v
+      - name: Ensure no original game dumps are committed to public Git
+        shell: bash
+        run: |
+          python3 scripts/validate_public_repository.py
+      - name: Validate Python syntax for checked-in tooling
+        shell: bash
+        run: |
+          python3 -m compileall -q tools research
+      - name: Run independent unit tests (ROM-dependent tests skip)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm7_handler_memory -p 'test_*.py' -v
+      - name: Explain current ROM-build status
+        shell: bash
+        run: |
+          echo 'Research validation only: no ROM build system or gameplay hook has been verified.'
+          echo 'Original game ROMs and assets are deliberately unavailable to this public runner.'
