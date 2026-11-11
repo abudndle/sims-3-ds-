@@ -50,6 +50,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm7_adc_candidates -p 'test_*.py' -v
+      - name: Test ARM7 SPI firmware versus touchscreen bus classification
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm7_spi_device_classification -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
