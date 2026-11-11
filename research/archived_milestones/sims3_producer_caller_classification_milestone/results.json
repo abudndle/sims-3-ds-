@@ -1,0 +1,120 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "total_call_sites": 13,
+  "record_type_counts": {
+    "0": 4,
+    "2": 4,
+    "3": 5
+  },
+  "sites": [
+    {
+      "call_address": "0x0238C784",
+      "type_setup_address": "0x0238C778",
+      "record_type": 3,
+      "setup_opcode": "0xE3A00003",
+      "branch_opcode": "0xEBFFFF4D",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238C7AC",
+      "type_setup_address": "0x0238C7A0",
+      "record_type": 3,
+      "setup_opcode": "0xE3A00003",
+      "branch_opcode": "0xEBFFFF43",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238D400",
+      "type_setup_address": "0x0238D3F8",
+      "record_type": 3,
+      "setup_opcode": "0xE3A00003",
+      "branch_opcode": "0xEBFFFC2E",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238D43C",
+      "type_setup_address": "0x0238D430",
+      "record_type": 3,
+      "setup_opcode": "0xE3A00003",
+      "branch_opcode": "0xEBFFFC1F",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238D4E4",
+      "type_setup_address": "0x0238D4D8",
+      "record_type": 3,
+      "setup_opcode": "0xE3A00003",
+      "branch_opcode": "0xEBFFFBF5",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238D768",
+      "type_setup_address": "0x0238D75C",
+      "record_type": 0,
+      "setup_opcode": "0xE3A00000",
+      "branch_opcode": "0xEBFFFB54",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238D7D8",
+      "type_setup_address": "0x0238D7CC",
+      "record_type": 0,
+      "setup_opcode": "0xE3A00000",
+      "branch_opcode": "0xEBFFFB38",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238D820",
+      "type_setup_address": "0x0238D814",
+      "record_type": 0,
+      "setup_opcode": "0xE3A00000",
+      "branch_opcode": "0xEBFFFB26",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238DB5C",
+      "type_setup_address": "0x0238DB54",
+      "record_type": 0,
+      "setup_opcode": "0xE3A00000",
+      "branch_opcode": "0xEBFFFA57",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238E158",
+      "type_setup_address": "0x0238E150",
+      "record_type": 2,
+      "setup_opcode": "0xE3A00002",
+      "branch_opcode": "0xEBFFF8D8",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238E214",
+      "type_setup_address": "0x0238E20C",
+      "record_type": 2,
+      "setup_opcode": "0xE3A00002",
+      "branch_opcode": "0xEBFFF8A9",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238E25C",
+      "type_setup_address": "0x0238E254",
+      "record_type": 2,
+      "setup_opcode": "0xE3A00002",
+      "branch_opcode": "0xEBFFF897",
+      "producer": "0x0238C4C0"
+    },
+    {
+      "call_address": "0x0238E724",
+      "type_setup_address": "0x0238E718",
+      "record_type": 2,
+      "setup_opcode": "0xE3A00002",
+      "branch_opcode": "0xEBFFF765",
+      "producer": "0x0238C4C0"
+    }
+  ],
+  "limitations": [
+    "Record type is an immediate r0 argument at these call sites; downstream semantics require independent verification.",
+    "Record types do not establish touchscreen sampling or ARM9 UI events.",
+    "Static analysis only; ROM not patched or emulator-tested."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_base": "0x2380000",
+  "arm7_end": "0x23a909c",
+  "touch_device_configurations": [
+    {
+      "spi_base_load": "0x0238C9DC",
+      "spi_value_load": "0x0238C9F0",
+      "spi_write": "0x0238C9F8",
+      "control_value": "0x8202",
+      "device": 2,
+      "enabled": true
+    },
+    {
+      "spi_base_load": "0x0238CA58",
+      "spi_value_load": "0x0238CA68",
+      "spi_write": "0x0238CA70",
+      "control_value": "0x8202",
+      "device": 2,
+      "enabled": true
+    }
+  ],
+  "limitations": [
+    "SPI touchscreen device selection is identified; X and Y samples are not decoded.",
+    "The nearby SPI transfer command is supplied in a register; no touch coordinate dataflow is proven.",
+    "The game's ARM9 touchscreen event dispatcher is still unknown.",
+    "No game ROM modification is made."
+  ]
+}

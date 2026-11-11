@@ -1,0 +1,294 @@
+{
+  "sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_base": "0x02004800",
+  "arm9_rom_offset": "0x4000",
+  "arm9_size": 33570816,
+  "references": [
+    {
+      "register": "IPCFIFOCNT",
+      "mmio": "0x04000184",
+      "instruction": "0x020D5EC8",
+      "opcode": "0xE59F709C",
+      "literal": "0x020D5F6C",
+      "destination": "r7",
+      "condition": "E",
+      "rom_offset": "0xD56C8",
+      "context": [
+        "0x020D5EB8:0xE3510020",
+        "0x020D5EBC:0xBAFFFFFB",
+        "0x020D5EC0:0xE3A06701",
+        "0x020D5EC4:0xE59F109C",
+        "0x020D5EC8:0xE59F709C",
+        "0x020D5ECC:0xE1A00006",
+        "0x020D5ED0:0xE1C710B0",
+        "0x020D5ED4:0xEBFFF2E9",
+        "0x020D5ED8:0xE59F1090"
+      ]
+    },
+    {
+      "register": "IPCFIFOCNT",
+      "mmio": "0x04000184",
+      "instruction": "0x020D5FEC",
+      "opcode": "0xE59F5064",
+      "literal": "0x020D6058",
+      "destination": "r5",
+      "condition": "E",
+      "rom_offset": "0xD57EC",
+      "context": [
+        "0x020D5FDC:0xE12FFF1E",
+        "0x020D5FE0:0x02FFFC00",
+        "0x020D5FE4:0xE92D4038",
+        "0x020D5FE8:0xE59D3000",
+        "0x020D5FEC:0xE59F5064",
+        "0x020D5FF0:0xE3C3301F",
+        "0x020D5FF4:0xE200001F",
+        "0x020D5FF8:0xE1833000",
+        "0x020D5FFC:0xE1D500B0"
+      ]
+    },
+    {
+      "register": "IPCFIFOCNT",
+      "mmio": "0x04000184",
+      "instruction": "0x020D606C",
+      "opcode": "0xE59F80E0",
+      "literal": "0x020D6154",
+      "destination": "r8",
+      "condition": "E",
+      "rom_offset": "0xD586C",
+      "context": [
+        "0x020D605C:0xE92D47F8",
+        "0x020D6060:0xE24DD004",
+        "0x020D6064:0xE3E07003",
+        "0x020D6068:0xE59D9000",
+        "0x020D606C:0xE59F80E0",
+        "0x020D6070:0xE59F40E0",
+        "0x020D6074:0xE287A001",
+        "0x020D6078:0xE3A06641",
+        "0x020D607C:0xE3A05000"
+      ]
+    },
+    {
+      "register": "IPCSYNC",
+      "mmio": "0x04000180",
+      "instruction": "0x02180A28",
+      "opcode": "0xE59F1090",
+      "literal": "0x02180AC0",
+      "destination": "r1",
+      "condition": "E",
+      "rom_offset": "0x180228",
+      "context": [
+        "0x02180A18:0xE2811DFF",
+        "0x02180A1C:0xE281103C",
+        "0x02180A20:0xE3A00000",
+        "0x02180A24:0xE5810000",
+        "0x02180A28:0xE59F1090",
+        "0x02180A2C:0xE1D100B0",
+        "0x02180A30:0xE200000F",
+        "0x02180A34:0xE3500001",
+        "0x02180A38:0x1AFFFFFB"
+      ]
+    },
+    {
+      "register": "IPCSYNC",
+      "mmio": "0x04000180",
+      "instruction": "0x02180A84",
+      "opcode": "0xE59F1034",
+      "literal": "0x02180AC0",
+      "destination": "r1",
+      "condition": "E",
+      "rom_offset": "0x180284",
+      "context": [
+        "0x02180A74:0xE1C100B0",
+        "0x02180A78:0xE59F1044",
+        "0x02180A7C:0xE3A02064",
+        "0x02180A80:0xEB000015",
+        "0x02180A84:0xE59F1034",
+        "0x02180A88:0xE1D100B0",
+        "0x02180A8C:0xE200000F",
+        "0x02180A90:0xE3500001",
+        "0x02180A94:0x0AFFFFFB"
+      ]
+    },
+    {
+      "register": "KEYINPUT",
+      "mmio": "0x04000130",
+      "instruction": "0x021BE9D8",
+      "opcode": "0xE59F2050",
+      "literal": "0x021BEA30",
+      "destination": "r2",
+      "condition": "E",
+      "rom_offset": "0x1BE1D8",
+      "context": [
+        "0x021BE9C8:0xE59411E8",
+        "0x021BE9CC:0xE2840C03",
+        "0x021BE9D0:0xE585100C",
+        "0x021BE9D4:0xE59411EC",
+        "0x021BE9D8:0xE59F2050",
+        "0x021BE9DC:0xE5851010",
+        "0x021BE9E0:0xE1D0C9B4",
+        "0x021BE9E4:0xE5943390",
+        "0x021BE9E8:0xE2841FEA"
+      ]
+    },
+    {
+      "register": "EXTKEYIN",
+      "mmio": "0x04000136",
+      "instruction": "0x021BF220",
+      "opcode": "0xE59F0020",
+      "literal": "0x021BF248",
+      "destination": "r0",
+      "condition": "E",
+      "rom_offset": "0x1BEA20",
+      "context": [
+        "0x021BF210:0xE3A04902",
+        "0x021BF214:0xE1A00004",
+        "0x021BF218:0xE3A05000",
+        "0x021BF21C:0xEB0000C1",
+        "0x021BF220:0xE59F0020",
+        "0x021BF224:0xE1D010B0",
+        "0x021BF228:0xE59F001C",
+        "0x021BF22C:0xE3110080",
+        "0x021BF230:0x11A05004"
+      ]
+    },
+    {
+      "register": "IPCFIFOCNT",
+      "mmio": "0x04000184",
+      "instruction": "0x021BF2A8",
+      "opcode": "0xE59F6080",
+      "literal": "0x021BF330",
+      "destination": "r6",
+      "condition": "E",
+      "rom_offset": "0x1BEAA8",
+      "context": [
+        "0x021BF298:0xE2822001",
+        "0x021BF29C:0xE3520020",
+        "0x021BF2A0:0xBAFFFFFB",
+        "0x021BF2A4:0xE59F1080",
+        "0x021BF2A8:0xE59F6080",
+        "0x021BF2AC:0xE3A05701",
+        "0x021BF2B0:0xE1A00005",
+        "0x021BF2B4:0xE1C610B0",
+        "0x021BF2B8:0xEBFFF23B"
+      ]
+    },
+    {
+      "register": "IPCFIFOCNT",
+      "mmio": "0x04000184",
+      "instruction": "0x021BF3E0",
+      "opcode": "0xE59F404C",
+      "literal": "0x021BF434",
+      "destination": "r4",
+      "condition": "E",
+      "rom_offset": "0x1BEBE0",
+      "context": [
+        "0x021BF3D0:0xEB000001",
+        "0x021BF3D4:0xE8BD4008",
+        "0x021BF3D8:0xE12FFF1E",
+        "0x021BF3DC:0xE92D4038",
+        "0x021BF3E0:0xE59F404C",
+        "0x021BF3E4:0xE1A05000",
+        "0x021BF3E8:0xE1D400B0",
+        "0x021BF3EC:0xE3100901",
+        "0x021BF3F0:0x11D410B0"
+      ]
+    },
+    {
+      "register": "IPCFIFOCNT",
+      "mmio": "0x04000184",
+      "instruction": "0x021BF448",
+      "opcode": "0xE59F90B4",
+      "literal": "0x021BF504",
+      "destination": "r9",
+      "condition": "E",
+      "rom_offset": "0x1BEC48",
+      "context": [
+        "0x021BF438:0xE92D47FC",
+        "0x021BF43C:0xE59D6000",
+        "0x021BF440:0xE3E08003",
+        "0x021BF444:0xE59F40B4",
+        "0x021BF448:0xE59F90B4",
+        "0x021BF44C:0xE288A001",
+        "0x021BF450:0xE3A07641",
+        "0x021BF454:0xE3A05000",
+        "0x021BF458:0xE1D900B0"
+      ]
+    },
+    {
+      "register": "EXTKEYIN",
+      "mmio": "0x04000136",
+      "instruction": "0x021C4DA8",
+      "opcode": "0xE59F40C0",
+      "literal": "0x021C4E70",
+      "destination": "r4",
+      "condition": "E",
+      "rom_offset": "0x1C45A8",
+      "context": [
+        "0x021C4D98:0xE8BD4038",
+        "0x021C4D9C:0xE12FFF1E",
+        "0x021C4DA0:0x02FFFFAA",
+        "0x021C4DA4:0xE92D4070",
+        "0x021C4DA8:0xE59F40C0",
+        "0x021C4DAC:0xE3A00902",
+        "0x021C4DB0:0xEBFFE9DC",
+        "0x021C4DB4:0xE59F20B8",
+        "0x021C4DB8:0xE1D200B0"
+      ]
+    },
+    {
+      "register": "IPCSYNC",
+      "mmio": "0x04000180",
+      "instruction": "0x021C89EC",
+      "opcode": "0xE59F1050",
+      "literal": "0x021C8A44",
+      "destination": "r1",
+      "condition": "E",
+      "rom_offset": "0x1C81EC",
+      "context": [
+        "0x021C89DC:0xE58CC208",
+        "0x021C89E0:0xE59F1058",
+        "0x021C89E4:0xE3A00000",
+        "0x021C89E8:0xE5810000",
+        "0x021C89EC:0xE59F1050",
+        "0x021C89F0:0xE3A00C01",
+        "0x021C89F4:0xE1C100B0",
+        "0x021C89F8:0xE1D100B0",
+        "0x021C89FC:0xE200000F"
+      ]
+    },
+    {
+      "register": "IPCSYNC",
+      "mmio": "0x04000180",
+      "instruction": "0x021C8A08",
+      "opcode": "0xE59F1034",
+      "literal": "0x021C8A44",
+      "destination": "r1",
+      "condition": "E",
+      "rom_offset": "0x1C8208",
+      "context": [
+        "0x021C89F8:0xE1D100B0",
+        "0x021C89FC:0xE200000F",
+        "0x021C8A00:0xE3500001",
+        "0x021C8A04:0x1AFFFFFB",
+        "0x021C8A08:0xE59F1034",
+        "0x021C8A0C:0xE3A00000",
+        "0x021C8A10:0xE1C100B0",
+        "0x021C8A14:0xE1D100B0",
+        "0x021C8A18:0xE3500001"
+      ]
+    }
+  ],
+  "literal_counts": {
+    "KEYINPUT": 3,
+    "EXTKEYIN": 2,
+    "IPCSYNC": 2,
+    "IPCFIFOCNT": 7,
+    "IPCFIFOSEND": 0,
+    "IPCFIFORECV": 30
+  },
+  "caveats": [
+    "Static ARM opcode pattern only; literal references are not proven executed code",
+    "Does not decode ARM7, Thumb or instructions accessing indirect touch state",
+    "No function boundaries or safe code-injection hook established"
+  ]
+}

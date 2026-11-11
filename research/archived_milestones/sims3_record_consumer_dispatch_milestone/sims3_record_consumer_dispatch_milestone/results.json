@@ -1,0 +1,36 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "consumer": "0x0238C5B0",
+  "record_type_jump_table": {
+    "0": "0x0238C5F4",
+    "1": "0x0238C60C",
+    "2": "0x0238C5FC",
+    "3": "0x0238C604"
+  },
+  "confirmed_consumer_handlers": {
+    "0": "0x0238D920",
+    "2": "0x0238E3B8",
+    "3": "0x0238C7F0"
+  },
+  "type_0_secondary_selectors": [
+    0,
+    1,
+    2,
+    16
+  ],
+  "type_2_secondary_selectors": [
+    64,
+    65,
+    66
+  ],
+  "type_1_branch_target_as_encoded": "0x01B69CC0",
+  "type_1_branch_within_arm7": false,
+  "verified_opcode_anchors": 19,
+  "verified_branch_targets": 3,
+  "notes": [
+    "Type 1 points to an out-of-ARM7-image BL target as statically encoded; runtime interpretation is unresolved.",
+    "Type 1 exists in consumer switch although the previously scanned 13 direct producer calls only created record types 0,2,3.",
+    "Record type and selector values are not equivalent to touchscreen coordinate samples.",
+    "Static ROM inspection only; no modified game or in-emulator test."
+  ]
+}

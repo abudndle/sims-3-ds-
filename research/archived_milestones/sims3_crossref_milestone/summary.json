@@ -1,0 +1,17 @@
+{
+  "validated_packages": 26,
+  "dsm1_packages": 6,
+  "unique_reference_names": 575,
+  "total_reference_occurrences": 4318,
+  "names_in_multiple_dsm1_packages": 11,
+  "names_literal_in_other_packages": 2,
+  "names_literal_in_arm_code": 28,
+  "names_with_standalone_nitrofs_basename": 30,
+  "confirmed_cut_content": 0,
+  "limitations": [
+    "DSM1 header values are observations, not proven semantics.",
+    "Textual references do not establish game runtime usage or unused status.",
+    "Literal scans cannot detect hashed/compressed/indirect references.",
+    "No copyrighted game asset data exported."
+  ]
+}

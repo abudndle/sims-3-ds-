@@ -1,0 +1,14 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "rom_size": 134217728,
+  "screenshots": {
+    "title": "0bcb91b9f52db5d4319e9b6d507c7408ee5ae9ee4f66cf60d209dffa7cb1399e",
+    "profile": "578d072dcb03ed04a7fda474af4c6f7eae71f83e07cd2a76997a8fd9a47db5e4",
+    "after_confirm": "cb2f890622723551094683655e353155a25fd1a21603a1b3c6a088738540542c",
+    "tutorial": "24b0e9060c469d9138c4dc3b1195607f2ada5e84288ab8aabd032617e86b4e4d",
+    "controls_x_prompt": "7dc2092218dde3c297ffbfd1caa845dd34f07002d99b78d82ed5a50aca0fc5a9",
+    "after_x": "3a2a74c10645b7b63c83abc4d54e9f8bcad49700ac36b341ad204dc7802b76a8",
+    "advance_2": "22c0abe39676de76bc86bd9cb4cefda74930d1afdcc2d5ede66a6430db438e7a"
+  },
+  "status": "Reached Create-a-Sim via title and profile selection; gameplay camera input not verified; original ROM unchanged."
+}

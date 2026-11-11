@@ -1,0 +1,386 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_offset": "0x4000",
+  "arm9_load": "0x2004000",
+  "arm9_entry": "0x2004800",
+  "arm9_size": 1558208,
+  "registers": [
+    {
+      "name": "POWCNT1 LCD/2D-engine routing",
+      "address": "0x04000304",
+      "aligned_literal_count": 7,
+      "aligned_literal_addresses": [
+        "0x020968A8",
+        "0x02098C9C",
+        "0x02098CB8",
+        "0x020A2A6C",
+        "0x020CDBA8",
+        "0x020D8B70",
+        "0x020D8BCC"
+      ],
+      "matching_arm_ldr_count": 4
+    },
+    {
+      "name": "DISPCNT main engine",
+      "address": "0x04000000",
+      "aligned_literal_count": 1,
+      "aligned_literal_addresses": [
+        "0x0211DED0"
+      ],
+      "matching_arm_ldr_count": 0
+    },
+    {
+      "name": "DISPCNT sub engine",
+      "address": "0x04001000",
+      "aligned_literal_count": 22,
+      "aligned_literal_addresses": [
+        "0x0208F590",
+        "0x0208F6E8",
+        "0x02090128",
+        "0x02090538",
+        "0x02090558",
+        "0x020905C4",
+        "0x0209463C",
+        "0x02094EF8",
+        "0x020950E4",
+        "0x020968C0",
+        "0x020A17F4",
+        "0x020A19A8",
+        "0x020A1C74",
+        "0x020A25F8",
+        "0x020CDD38",
+        "0x020CEC10",
+        "0x020CED08",
+        "0x020D0120",
+        "0x020D01A0",
+        "0x020D02D0",
+        "0x020D02F8",
+        "0x020D0490"
+      ],
+      "matching_arm_ldr_count": 10
+    },
+    {
+      "name": "DISPCAPCNT display capture",
+      "address": "0x04000064",
+      "aligned_literal_count": 4,
+      "aligned_literal_addresses": [
+        "0x0200C574",
+        "0x02090534",
+        "0x020905D0",
+        "0x020907B4"
+      ],
+      "matching_arm_ldr_count": 0
+    },
+    {
+      "name": "VRAMCNT_A",
+      "address": "0x04000240",
+      "aligned_literal_count": 7,
+      "aligned_literal_addresses": [
+        "0x020CF738",
+        "0x020CF954",
+        "0x020CFA84",
+        "0x020CFD98",
+        "0x020CFF60",
+        "0x020D039C",
+        "0x020D06C8"
+      ],
+      "matching_arm_ldr_count": 11
+    },
+    {
+      "name": "BG0CNT main",
+      "address": "0x04000008",
+      "aligned_literal_count": 3,
+      "aligned_literal_addresses": [
+        "0x0208FEE0",
+        "0x020906FC",
+        "0x02090E8C"
+      ],
+      "matching_arm_ldr_count": 0
+    },
+    {
+      "name": "BG0CNT sub",
+      "address": "0x04001008",
+      "aligned_literal_count": 2,
+      "aligned_literal_addresses": [
+        "0x0208FE90",
+        "0x02090D38"
+      ],
+      "matching_arm_ldr_count": 0
+    },
+    {
+      "name": "DISP3DCNT 3D display control",
+      "address": "0x0400006C",
+      "aligned_literal_count": 10,
+      "aligned_literal_addresses": [
+        "0x020849F4",
+        "0x02091320",
+        "0x02096358",
+        "0x02098AD4",
+        "0x020A1C58",
+        "0x020A20DC",
+        "0x020A2198",
+        "0x020A2778",
+        "0x020A2898",
+        "0x020A2A64"
+      ],
+      "matching_arm_ldr_count": 0
+    }
+  ],
+  "candidate_arm_instructions": [
+    {
+      "register": "POWCNT1 LCD/2D-engine routing",
+      "register_address": "0x04000304",
+      "arm9_instruction": "0x020CDA48",
+      "rom_instruction": "0x000CDA48",
+      "instruction_word": "0xE59F1158",
+      "literal_address": "0x020CDBA8",
+      "destination_register": "r1",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020CDD20",
+      "rom_instruction": "0x000CDD20",
+      "instruction_word": "0xE59F2010",
+      "literal_address": "0x020CDD38",
+      "destination_register": "r2",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020CEBA0",
+      "rom_instruction": "0x000CEBA0",
+      "instruction_word": "0xE59F1068",
+      "literal_address": "0x020CEC10",
+      "destination_register": "r1",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020CEC98",
+      "rom_instruction": "0x000CEC98",
+      "instruction_word": "0xE59F1068",
+      "literal_address": "0x020CED08",
+      "destination_register": "r1",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CF6C8",
+      "rom_instruction": "0x000CF6C8",
+      "instruction_word": "0x159F1068",
+      "literal_address": "0x020CF738",
+      "destination_register": "r1",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CF8B0",
+      "rom_instruction": "0x000CF8B0",
+      "instruction_word": "0xE59F009C",
+      "literal_address": "0x020CF954",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CF8B8",
+      "rom_instruction": "0x000CF8B8",
+      "instruction_word": "0xE59F0094",
+      "literal_address": "0x020CF954",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CF8D0",
+      "rom_instruction": "0x000CF8D0",
+      "instruction_word": "0xE59F007C",
+      "literal_address": "0x020CF954",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CF8E0",
+      "rom_instruction": "0x000CF8E0",
+      "instruction_word": "0xE59F006C",
+      "literal_address": "0x020CF954",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CFA10",
+      "rom_instruction": "0x000CFA10",
+      "instruction_word": "0xE59F006C",
+      "literal_address": "0x020CFA84",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CFD6C",
+      "rom_instruction": "0x000CFD6C",
+      "instruction_word": "0xE59F0024",
+      "literal_address": "0x020CFD98",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CFEDC",
+      "rom_instruction": "0x000CFEDC",
+      "instruction_word": "0xE59F007C",
+      "literal_address": "0x020CFF60",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020CFF1C",
+      "rom_instruction": "0x000CFF1C",
+      "instruction_word": "0xE59F003C",
+      "literal_address": "0x020CFF60",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020D00DC",
+      "rom_instruction": "0x000D00DC",
+      "instruction_word": "0xE59F303C",
+      "literal_address": "0x020D0120",
+      "destination_register": "r3",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020D00FC",
+      "rom_instruction": "0x000D00FC",
+      "instruction_word": "0xE59F101C",
+      "literal_address": "0x020D0120",
+      "destination_register": "r1",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020D015C",
+      "rom_instruction": "0x000D015C",
+      "instruction_word": "0xE59F303C",
+      "literal_address": "0x020D01A0",
+      "destination_register": "r3",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020D017C",
+      "rom_instruction": "0x000D017C",
+      "instruction_word": "0xE59F101C",
+      "literal_address": "0x020D01A0",
+      "destination_register": "r1",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020D02B4",
+      "rom_instruction": "0x000D02B4",
+      "instruction_word": "0xE59F2014",
+      "literal_address": "0x020D02D0",
+      "destination_register": "r2",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020D02DC",
+      "rom_instruction": "0x000D02DC",
+      "instruction_word": "0xE59F2014",
+      "literal_address": "0x020D02F8",
+      "destination_register": "r2",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020D0318",
+      "rom_instruction": "0x000D0318",
+      "instruction_word": "0x159F007C",
+      "literal_address": "0x020D039C",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "DISPCNT sub engine",
+      "register_address": "0x04001000",
+      "arm9_instruction": "0x020D0474",
+      "rom_instruction": "0x000D0474",
+      "instruction_word": "0xE59F2014",
+      "literal_address": "0x020D0490",
+      "destination_register": "r2",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "VRAMCNT_A",
+      "register_address": "0x04000240",
+      "arm9_instruction": "0x020D06A4",
+      "rom_instruction": "0x000D06A4",
+      "instruction_word": "0xE59F101C",
+      "literal_address": "0x020D06C8",
+      "destination_register": "r1",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "POWCNT1 LCD/2D-engine routing",
+      "register_address": "0x04000304",
+      "arm9_instruction": "0x020D8A38",
+      "rom_instruction": "0x000D8A38",
+      "instruction_word": "0xE59F1130",
+      "literal_address": "0x020D8B70",
+      "destination_register": "r1",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "POWCNT1 LCD/2D-engine routing",
+      "register_address": "0x04000304",
+      "arm9_instruction": "0x020D8AC4",
+      "rom_instruction": "0x000D8AC4",
+      "instruction_word": "0xE59FC0A4",
+      "literal_address": "0x020D8B70",
+      "destination_register": "r12",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    },
+    {
+      "register": "POWCNT1 LCD/2D-engine routing",
+      "register_address": "0x04000304",
+      "arm9_instruction": "0x020D8BB4",
+      "rom_instruction": "0x000D8BB4",
+      "instruction_word": "0xE59F0010",
+      "literal_address": "0x020D8BCC",
+      "destination_register": "r0",
+      "confidence": "ARM-state LDR-literal pattern; control flow unverified"
+    }
+  ],
+  "limitations": [
+    "The scan handles ARM-state LDR PC-relative literal patterns only, not Thumb, computed register addresses, or control-flow reachability.",
+    "These results locate references to display hardware, NOT confirmed routines that move the UI.",
+    "Do not change a register literal without understanding all call sites and engine state."
+  ]
+}

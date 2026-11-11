@@ -1,0 +1,4 @@
+path,size,rom_offset_hex
+/DATA/Fonts.arc,48829,0xbd6c600
+/DATA/QuickDat.arc,319089,0xd4f0410
+/DATA/Textures.arc,32434891,0x1622c990

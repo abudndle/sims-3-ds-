@@ -1,0 +1,70 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_base": "0x02004000",
+  "arm9_end_exclusive": "0x021806C0",
+  "groups": [
+    {
+      "name": "button_snapshot_a",
+      "candidate_range": [
+        "0x02095C0C",
+        "0x02095C4C"
+      ],
+      "literals": [
+        {
+          "instruction": "0x02095C1A",
+          "opcode": "0x480C",
+          "register": "r0",
+          "pool_address": "0x02095C4C",
+          "value": "0x04000130"
+        },
+        {
+          "instruction": "0x02095C1C",
+          "opcode": "0x490C",
+          "register": "r1",
+          "pool_address": "0x02095C50",
+          "value": "0x02FFFFA8"
+        }
+      ],
+      "has_keyinput": true,
+      "has_shared_button_state": true
+    },
+    {
+      "name": "button_snapshot_b",
+      "candidate_range": [
+        "0x020A14E4",
+        "0x020A1540"
+      ],
+      "literals": [
+        {
+          "instruction": "0x020A150E",
+          "opcode": "0x481D",
+          "register": "r0",
+          "pool_address": "0x020A1584",
+          "value": "0x04000130"
+        },
+        {
+          "instruction": "0x020A1510",
+          "opcode": "0x4A1D",
+          "register": "r2",
+          "pool_address": "0x020A1588",
+          "value": "0x02FFFFA8"
+        },
+        {
+          "instruction": "0x020A1536",
+          "opcode": "0x4A15",
+          "register": "r2",
+          "pool_address": "0x020A158C",
+          "value": "0x0224A9E4"
+        }
+      ],
+      "has_keyinput": true,
+      "has_shared_button_state": true
+    }
+  ],
+  "limitations": [
+    "Static literals do not show that routines run during gameplay.",
+    "0x02FFFFA8 is an input-related shared-memory lead; its exact bit semantics are not established here.",
+    "Neither input routine is proven to be the touchscreen-coordinate dispatcher.",
+    "No ROM patch, display rerouting, or modified-ROM boot test was performed."
+  ]
+}

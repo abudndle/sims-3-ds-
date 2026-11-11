@@ -1,0 +1,13 @@
+callsite,callee,r0_confidence,r0_provenance,r1_confidence,r1_provenance
+0x0238CAD8,spi_read,immediate-predecessor,"{""kind"": ""register"", ""source"": ""r4""}",unknown,null
+0x0238CAE4,spi_send,immediate-predecessor,"{""kind"": ""register"", ""source"": ""r4""}",unverified-backward-lead,"{""provenance"": {""kind"": ""other-write"", ""word"": ""0xE1801005""}, ""address"": ""0x0238CADC""}"
+0x0238CB00,spi_read,immediate-predecessor,"{""kind"": ""register"", ""source"": ""r4""}",unknown,null
+0x0238CB14,spi_send,immediate-predecessor,"{""kind"": ""register"", ""source"": ""r4""}",unverified-backward-lead,"{""provenance"": {""kind"": ""other-write"", ""word"": ""0xE0001001""}, ""address"": ""0x0238CB0C""}"
+0x0238CCF0,spi_read,immediate-predecessor,"{""kind"": ""constant"", ""value"": 0}",unknown,null
+0x0238CD34,spi_read,immediate-predecessor,"{""kind"": ""register"", ""source"": ""r5""}",unknown,null
+0x0238CD9C,spi_read,immediate-predecessor,"{""kind"": ""register"", ""source"": ""r6""}",unknown,null
+0x0238CE00,spi_read,immediate-predecessor,"{""kind"": ""register"", ""source"": ""r6""}",unknown,null
+0x0238CEFC,spi_read,immediate-predecessor,"{""kind"": ""register"", ""source"": ""r8""}",unknown,null
+0x0238CF10,spi_send,unverified-backward-lead,"{""provenance"": {""kind"": ""masked-register"", ""source"": ""r0"", ""mask"": 255}, ""address"": ""0x0238CF08""}",immediate-predecessor,"{""kind"": ""masked-register"", ""source"": ""r8"", ""mask"": 255}"
+0x0238D224,spi_read,immediate-predecessor,"{""kind"": ""constant"", ""value"": 0}",unknown,null
+0x0238D31C,spi_send,immediate-predecessor,"{""kind"": ""constant"", ""value"": 0}",unverified-backward-lead,"{""provenance"": {""kind"": ""other-write"", ""word"": ""0xE59D1000""}, ""address"": ""0x0238D314""}"

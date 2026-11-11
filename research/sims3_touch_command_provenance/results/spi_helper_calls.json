@@ -1,0 +1,143 @@
+{
+  "sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_base": "0x2380000",
+  "arm7_size": 168092,
+  "calls": [
+    {
+      "callsite": "0x0238CAD8",
+      "helper": "spi_read",
+      "target": "0x0238CA54",
+      "nearby_mov_r0": null,
+      "nearby_candidates": [],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CAE4",
+      "helper": "spi_send",
+      "target": "0x0238C9D8",
+      "nearby_mov_r0": null,
+      "nearby_candidates": [],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CB00",
+      "helper": "spi_read",
+      "target": "0x0238CA54",
+      "nearby_mov_r0": null,
+      "nearby_candidates": [],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CB14",
+      "helper": "spi_send",
+      "target": "0x0238C9D8",
+      "nearby_mov_r0": null,
+      "nearby_candidates": [],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CCF0",
+      "helper": "spi_read",
+      "target": "0x0238CA54",
+      "nearby_mov_r0": {
+        "address": "0x0238CCEC",
+        "value": "0x0"
+      },
+      "nearby_candidates": [
+        {
+          "address": "0x0238CCEC",
+          "value": "0x0"
+        }
+      ],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CD34",
+      "helper": "spi_read",
+      "target": "0x0238CA54",
+      "nearby_mov_r0": null,
+      "nearby_candidates": [],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CD9C",
+      "helper": "spi_read",
+      "target": "0x0238CA54",
+      "nearby_mov_r0": {
+        "address": "0x0238CD90",
+        "value": "0x3"
+      },
+      "nearby_candidates": [
+        {
+          "address": "0x0238CD90",
+          "value": "0x3"
+        }
+      ],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CE00",
+      "helper": "spi_read",
+      "target": "0x0238CA54",
+      "nearby_mov_r0": null,
+      "nearby_candidates": [],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CEFC",
+      "helper": "spi_read",
+      "target": "0x0238CA54",
+      "nearby_mov_r0": {
+        "address": "0x0238CEE8",
+        "value": "0x3"
+      },
+      "nearby_candidates": [
+        {
+          "address": "0x0238CEE8",
+          "value": "0x3"
+        }
+      ],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238CF10",
+      "helper": "spi_send",
+      "target": "0x0238C9D8",
+      "nearby_mov_r0": null,
+      "nearby_candidates": [],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238D224",
+      "helper": "spi_read",
+      "target": "0x0238CA54",
+      "nearby_mov_r0": {
+        "address": "0x0238D220",
+        "value": "0x0"
+      },
+      "nearby_candidates": [
+        {
+          "address": "0x0238D220",
+          "value": "0x0"
+        }
+      ],
+      "confidence": "static-call-only"
+    },
+    {
+      "callsite": "0x0238D31C",
+      "helper": "spi_send",
+      "target": "0x0238C9D8",
+      "nearby_mov_r0": {
+        "address": "0x0238D318",
+        "value": "0x0"
+      },
+      "nearby_candidates": [
+        {
+          "address": "0x0238D318",
+          "value": "0x0"
+        }
+      ],
+      "confidence": "static-call-only"
+    }
+  ]
+}

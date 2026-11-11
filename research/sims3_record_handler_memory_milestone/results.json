@@ -1,0 +1,62 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "paths": [
+    {
+      "path": "type0_shared_low",
+      "load_instruction": "0x0238d9ec",
+      "literal_entry": "0x0238db2c",
+      "base_address": "0x02ffffaa",
+      "store_instruction": "0x0238d9f0",
+      "effective_address": "0x02ffffaa",
+      "width_bits": 16
+    },
+    {
+      "path": "type0_shared_high",
+      "load_instruction": "0x0238d9ec",
+      "literal_entry": "0x0238db2c",
+      "base_address": "0x02ffffaa",
+      "store_instruction": "0x0238d9f8",
+      "effective_address": "0x02ffffac",
+      "width_bits": 16
+    },
+    {
+      "path": "type2_shared_flag",
+      "load_instruction": "0x0238e474",
+      "literal_entry": "0x0238e5b4",
+      "base_address": "0x02ffff94",
+      "store_instruction": "0x0238e478",
+      "effective_address": "0x02ffff94",
+      "width_bits": 16
+    },
+    {
+      "path": "type2_timer3_counter",
+      "load_instruction": "0x0238e4dc",
+      "literal_entry": "0x0238e5bc",
+      "base_address": "0x0400010c",
+      "store_instruction": "0x0238e4e4",
+      "effective_address": "0x0400010c",
+      "width_bits": 16
+    },
+    {
+      "path": "type2_timer3_control",
+      "load_instruction": "0x0238e4dc",
+      "literal_entry": "0x0238e5bc",
+      "base_address": "0x0400010c",
+      "store_instruction": "0x0238e4f0",
+      "effective_address": "0x0400010e",
+      "width_bits": 16
+    }
+  ],
+  "verified_write_paths": 5,
+  "verified_other_opcodes": 8,
+  "interpretation": {
+    "type0": "Two halfword stores to adjacent shared-memory locations 0x02FFFFAA/AC; value source stack offsets +8/+10.",
+    "type2": "One shared-memory halfword at 0x02FFFF94 and two Timer 3 MMIO halfword stores to 0x0400010C/0x0400010E."
+  },
+  "limitations": [
+    "Static path and address provenance only; branching and runtime execution are unconfirmed.",
+    "Shared-memory writes do not prove touchscreen coordinates.",
+    "Timer 3 writes are peripheral timer control, not touchscreen ADC reads.",
+    "No original ROM modifications or emulator tests."
+  ]
+}

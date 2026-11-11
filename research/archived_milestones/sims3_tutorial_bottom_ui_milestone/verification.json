@@ -1,0 +1,11 @@
+{
+  "source_md5": "7cdf32d02eeeff592a0a4ab6bec7b5c1",
+  "source_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "target_sha256": "94f681d4af007d32961ceb4542d345565d7cb2a61552090fb4425017ee05bbb1",
+  "patch_size": 540,
+  "changes": 3,
+  "file": "DATA/LOCALIZATION/text_db_dynamic.arc",
+  "rom_length_preserved": true,
+  "original_not_modified": true,
+  "patch_roundtrip_passed": true
+}

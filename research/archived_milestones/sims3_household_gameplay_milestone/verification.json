@@ -1,0 +1,21 @@
+{
+  "rom_md5": "7cdf32d02eeeff592a0a4ab6bec7b5c1",
+  "rom_size": 134217728,
+  "stages": [
+    "Game mode selection",
+    "Household map",
+    "Octavia Muse household selection",
+    "Household saving screen",
+    "Live 3D household with Sim info and Needs UI"
+  ],
+  "evidence": [
+    "phase_2.png",
+    "phase_3.png",
+    "phase_5.png",
+    "phase_6.png",
+    "phase_8.png"
+  ],
+  "mod_rom_created": false,
+  "original_rom_changed": false,
+  "original_ds_3d_scene_on_bottom_screen": true
+}

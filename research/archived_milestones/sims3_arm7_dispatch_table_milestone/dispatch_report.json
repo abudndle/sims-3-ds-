@@ -1,0 +1,274 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_base": "0x02380000",
+  "dispatcher": "0x0238CB20",
+  "case_count": 26,
+  "cases": [
+    {
+      "case": 0,
+      "table_address": "0x0238CB4C",
+      "relative_offset": 964,
+      "target": "0x0238CF14",
+      "first_arm_instruction": "0xE3A00000",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": 0,
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 1,
+      "table_address": "0x0238CB4E",
+      "relative_offset": 48,
+      "target": "0x0238CB80",
+      "first_arm_instruction": "0xE1A00007",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 2,
+      "table_address": "0x0238CB50",
+      "relative_offset": 68,
+      "target": "0x0238CB94",
+      "first_arm_instruction": "0xE1A00006",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 3,
+      "table_address": "0x0238CB52",
+      "relative_offset": 84,
+      "target": "0x0238CBA4",
+      "first_arm_instruction": "0xE1A00005",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 4,
+      "table_address": "0x0238CB54",
+      "relative_offset": 100,
+      "target": "0x0238CBB4",
+      "first_arm_instruction": "0xE3A00004",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": 4,
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 5,
+      "table_address": "0x0238CB56",
+      "relative_offset": 112,
+      "target": "0x0238CBC0",
+      "first_arm_instruction": "0xE3A00004",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": 4,
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 6,
+      "table_address": "0x0238CB58",
+      "relative_offset": 124,
+      "target": "0x0238CBCC",
+      "first_arm_instruction": "0xE3A00008",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": 8,
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 7,
+      "table_address": "0x0238CB5A",
+      "relative_offset": 132,
+      "target": "0x0238CBD4",
+      "first_arm_instruction": "0xE3A00008",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": 8,
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 8,
+      "table_address": "0x0238CB5C",
+      "relative_offset": 140,
+      "target": "0x0238CBDC",
+      "first_arm_instruction": "0xE3A0000C",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": 12,
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 9,
+      "table_address": "0x0238CB5E",
+      "relative_offset": 148,
+      "target": "0x0238CBE4",
+      "first_arm_instruction": "0xE3A0000C",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": 12,
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 10,
+      "table_address": "0x0238CB60",
+      "relative_offset": 156,
+      "target": "0x0238CBEC",
+      "first_arm_instruction": "0xE1A00007",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 11,
+      "table_address": "0x0238CB62",
+      "relative_offset": 168,
+      "target": "0x0238CBF8",
+      "first_arm_instruction": "0xE3A00000",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": 0,
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 12,
+      "table_address": "0x0238CB64",
+      "relative_offset": 176,
+      "target": "0x0238CC00",
+      "first_arm_instruction": "0xEBFFEAA2",
+      "first_instruction_BL_target": "0x02387690",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 13,
+      "table_address": "0x0238CB66",
+      "relative_offset": 184,
+      "target": "0x0238CC08",
+      "first_arm_instruction": "0xEAFFFFFC",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 14,
+      "table_address": "0x0238CB68",
+      "relative_offset": 312,
+      "target": "0x0238CC88",
+      "first_arm_instruction": "0xEAFFFFE4",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 15,
+      "table_address": "0x0238CB6A",
+      "relative_offset": 316,
+      "target": "0x0238CC8C",
+      "first_arm_instruction": "0xE3580009",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 16,
+      "table_address": "0x0238CB6C",
+      "relative_offset": 716,
+      "target": "0x0238CE1C",
+      "first_arm_instruction": "0xEBFFEA1B",
+      "first_instruction_BL_target": "0x02387690",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 17,
+      "table_address": "0x0238CB6E",
+      "relative_offset": 788,
+      "target": "0x0238CE64",
+      "first_arm_instruction": "0xEBFFEA09",
+      "first_instruction_BL_target": "0x02387690",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 18,
+      "table_address": "0x0238CB70",
+      "relative_offset": 832,
+      "target": "0x0238CE90",
+      "first_arm_instruction": "0xE1A00008",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 19,
+      "table_address": "0x0238CB72",
+      "relative_offset": 216,
+      "target": "0x0238CC28",
+      "first_arm_instruction": "0xEBFFE3B7",
+      "first_instruction_BL_target": "0x02385B0C",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 20,
+      "table_address": "0x0238CB74",
+      "relative_offset": 188,
+      "target": "0x0238CC0C",
+      "first_arm_instruction": "0xEBFFE3BE",
+      "first_instruction_BL_target": "0x02385B0C",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 21,
+      "table_address": "0x0238CB76",
+      "relative_offset": 240,
+      "target": "0x0238CC40",
+      "first_arm_instruction": "0xEBFFE3B1",
+      "first_instruction_BL_target": "0x02385B0C",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 22,
+      "table_address": "0x0238CB78",
+      "relative_offset": 844,
+      "target": "0x0238CE9C",
+      "first_arm_instruction": "0xEBFFE9FB",
+      "first_instruction_BL_target": "0x02387690",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 23,
+      "table_address": "0x0238CB7A",
+      "relative_offset": 928,
+      "target": "0x0238CEF0",
+      "first_arm_instruction": "0xE1A00005",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 24,
+      "table_address": "0x0238CB7C",
+      "relative_offset": 936,
+      "target": "0x0238CEF8",
+      "first_arm_instruction": "0xE1A00008",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    },
+    {
+      "case": 25,
+      "table_address": "0x0238CB7E",
+      "relative_offset": 948,
+      "target": "0x0238CF04",
+      "first_arm_instruction": "0xE1A00448",
+      "first_instruction_BL_target": "",
+      "first_instruction_mov_r0_imm": "",
+      "first_instruction_target_description": ""
+    }
+  ],
+  "limitations": [
+    "Static ARM7 jump-table decoding only; not proof the dispatcher is a touchscreen XY decoder.",
+    "The table includes non-touch peripheral commands.",
+    "Only the first instruction of each case is annotated.",
+    "No modified ROM, runtime hook, or emulator-tested gameplay UI is produced."
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_rom_offset": "0x4000",
+  "arm9_load": "0x2004000",
+  "arm9_entry": "0x2004800",
+  "arm9_size": 1558208,
+  "matching_strings": [
+    {
+      "string": "sidebar_buttons3",
+      "arm9_offset": "0x167C42",
+      "cpu_address": "0x0216BC42",
+      "rom_offset": "0x0016BC42",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x00B2D0",
+          "cpu_address": "0x0200F2D0",
+          "rom_offset": "0x0000F2D0"
+        }
+      ]
+    },
+    {
+      "string": "gender_buttons",
+      "arm9_offset": "0x167C53",
+      "cpu_address": "0x0216BC53",
+      "rom_offset": "0x0016BC53",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x00B2D8",
+          "cpu_address": "0x0200F2D8",
+          "rom_offset": "0x0000F2D8"
+        }
+      ]
+    },
+    {
+      "string": "/Data/CAS/GUI/ColourPickerButtons.bmp",
+      "arm9_offset": "0x167DAF",
+      "cpu_address": "0x0216BDAF",
+      "rom_offset": "0x0016BDAF",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x00CA68",
+          "cpu_address": "0x02010A68",
+          "rom_offset": "0x00010A68"
+        }
+      ]
+    },
+    {
+      "string": "*Camera",
+      "arm9_offset": "0x16F1A6",
+      "cpu_address": "0x021731A6",
+      "rom_offset": "0x001731A6",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x03E16C",
+          "cpu_address": "0x0204216C",
+          "rom_offset": "0x0004216C"
+        }
+      ]
+    },
+    {
+      "string": "Glamour Camera Menu",
+      "arm9_offset": "0x16F694",
+      "cpu_address": "0x02173694",
+      "rom_offset": "0x00173694",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x16F778",
+          "cpu_address": "0x02173778",
+          "rom_offset": "0x00173778"
+        }
+      ]
+    },
+    {
+      "string": "Map View Camera Menu",
+      "arm9_offset": "0x16F6A8",
+      "cpu_address": "0x021736A8",
+      "rom_offset": "0x001736A8",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x16F764",
+          "cpu_address": "0x02173764",
+          "rom_offset": "0x00173764"
+        }
+      ]
+    },
+    {
+      "string": "Map View Camera Menu",
+      "arm9_offset": "0x16F6BD",
+      "cpu_address": "0x021736BD",
+      "rom_offset": "0x001736BD",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x03EFF4",
+          "cpu_address": "0x02042FF4",
+          "rom_offset": "0x00042FF4"
+        }
+      ]
+    },
+    {
+      "string": "Glamour Camera Menu",
+      "arm9_offset": "0x16F6D2",
+      "cpu_address": "0x021736D2",
+      "rom_offset": "0x001736D2",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x03F00C",
+          "cpu_address": "0x0204300C",
+          "rom_offset": "0x0004300C"
+        }
+      ]
+    },
+    {
+      "string": "Hide Input Plane",
+      "arm9_offset": "0x16F734",
+      "cpu_address": "0x02173734",
+      "rom_offset": "0x00173734",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x03F0CC",
+          "cpu_address": "0x020430CC",
+          "rom_offset": "0x000430CC"
+        }
+      ]
+    },
+    {
+      "string": "Show Input Plane",
+      "arm9_offset": "0x16F745",
+      "cpu_address": "0x02173745",
+      "rom_offset": "0x00173745",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x03F0D0",
+          "cpu_address": "0x020430D0",
+          "rom_offset": "0x000430D0"
+        }
+      ]
+    },
+    {
+      "string": "Set Current Camera Position as End",
+      "arm9_offset": "0x16F9D8",
+      "cpu_address": "0x021739D8",
+      "rom_offset": "0x001739D8",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x16FB4C",
+          "cpu_address": "0x02173B4C",
+          "rom_offset": "0x00173B4C"
+        }
+      ]
+    },
+    {
+      "string": "Set Current Camera Position as Start",
+      "arm9_offset": "0x16F9FB",
+      "cpu_address": "0x021739FB",
+      "rom_offset": "0x001739FB",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x16FB38",
+          "cpu_address": "0x02173B38",
+          "rom_offset": "0x00173B38"
+        }
+      ]
+    },
+    {
+      "string": "Glamour Camera Editor",
+      "arm9_offset": "0x1702AB",
+      "cpu_address": "0x021742AB",
+      "rom_offset": "0x001742AB",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x170414",
+          "cpu_address": "0x02174414",
+          "rom_offset": "0x00174414"
+        }
+      ]
+    },
+    {
+      "string": "Glamour Camera Editor Menu",
+      "arm9_offset": "0x17032F",
+      "cpu_address": "0x0217432F",
+      "rom_offset": "0x0017432F",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x040358",
+          "cpu_address": "0x02044358",
+          "rom_offset": "0x00044358"
+        }
+      ]
+    },
+    {
+      "string": "Debug Camera",
+      "arm9_offset": "0x17034A",
+      "cpu_address": "0x0217434A",
+      "rom_offset": "0x0017434A",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x040390",
+          "cpu_address": "0x02044390",
+          "rom_offset": "0x00044390"
+        }
+      ]
+    },
+    {
+      "string": "Restore Camera",
+      "arm9_offset": "0x170357",
+      "cpu_address": "0x02174357",
+      "rom_offset": "0x00174357",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x040394",
+          "cpu_address": "0x02044394",
+          "rom_offset": "0x00044394"
+        }
+      ]
+    },
+    {
+      "string": "Reset Zoom",
+      "arm9_offset": "0x1704E0",
+      "cpu_address": "0x021744E0",
+      "rom_offset": "0x001744E0",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x17057C",
+          "cpu_address": "0x0217457C",
+          "rom_offset": "0x0017457C"
+        }
+      ]
+    },
+    {
+      "string": "Zoom %d",
+      "arm9_offset": "0x1704EB",
+      "cpu_address": "0x021744EB",
+      "rom_offset": "0x001744EB",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x04041C",
+          "cpu_address": "0x0204441C",
+          "rom_offset": "0x0004441C"
+        }
+      ]
+    },
+    {
+      "string": "Disable Player Zoom",
+      "arm9_offset": "0x1704F3",
+      "cpu_address": "0x021744F3",
+      "rom_offset": "0x001744F3",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x0404AC",
+          "cpu_address": "0x020444AC",
+          "rom_offset": "0x000444AC"
+        }
+      ]
+    },
+    {
+      "string": "Enable Player Zoom",
+      "arm9_offset": "0x170507",
+      "cpu_address": "0x02174507",
+      "rom_offset": "0x00174507",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x0404B0",
+          "cpu_address": "0x020444B0",
+          "rom_offset": "0x000444B0"
+        }
+      ]
+    },
+    {
+      "string": "Camera Menu",
+      "arm9_offset": "0x171382",
+      "cpu_address": "0x02175382",
+      "rom_offset": "0x00175382",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x171418",
+          "cpu_address": "0x02175418",
+          "rom_offset": "0x00175418"
+        }
+      ]
+    },
+    {
+      "string": "Camera Menu",
+      "arm9_offset": "0x1713D5",
+      "cpu_address": "0x021753D5",
+      "rom_offset": "0x001753D5",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x041A88",
+          "cpu_address": "0x02045A88",
+          "rom_offset": "0x00045A88"
+        }
+      ]
+    },
+    {
+      "string": "CallButton",
+      "arm9_offset": "0x1735E8",
+      "cpu_address": "0x021775E8",
+      "rom_offset": "0x001775E8",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x07A224",
+          "cpu_address": "0x0207E224",
+          "rom_offset": "0x0007E224"
+        }
+      ]
+    },
+    {
+      "string": "Shared Big Button Tile",
+      "arm9_offset": "0x173834",
+      "cpu_address": "0x02177834",
+      "rom_offset": "0x00177834",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x07B9D0",
+          "cpu_address": "0x0207F9D0",
+          "rom_offset": "0x0007F9D0"
+        }
+      ]
+    },
+    {
+      "string": "Button_%s",
+      "arm9_offset": "0x17385C",
+      "cpu_address": "0x0217785C",
+      "rom_offset": "0x0017785C",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x07C32C",
+          "cpu_address": "0x0208032C",
+          "rom_offset": "0x0008032C"
+        }
+      ]
+    },
+    {
+      "string": "Press any button for description",
+      "arm9_offset": "0x17651D",
+      "cpu_address": "0x0217A51D",
+      "rom_offset": "0x0017A51D",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x093008",
+          "cpu_address": "0x02097008",
+          "rom_offset": "0x00097008"
+        }
+      ]
+    },
+    {
+      "string": "<TOUCH>",
+      "arm9_offset": "0x176ED8",
+      "cpu_address": "0x0217AED8",
+      "rom_offset": "0x0017AED8",
+      "literal_pointer_count": 1,
+      "literal_pointers": [
+        {
+          "arm9_offset": "0x09B8F8",
+          "cpu_address": "0x0209F8F8",
+          "rom_offset": "0x0009F8F8"
+        }
+      ]
+    }
+  ]
+}

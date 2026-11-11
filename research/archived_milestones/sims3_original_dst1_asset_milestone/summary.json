@@ -1,0 +1,33 @@
+{
+  "decoded": 15,
+  "unsupported": [
+    {
+      "asset": "button_building.dst",
+      "reason": "invalid dimensions/palette"
+    }
+  ],
+  "preview_size": [
+    256,
+    192
+  ],
+  "sprite_mapping": {
+    "button_left.dst": [
+      6,
+      143,
+      40,
+      183
+    ],
+    "button_right.dst": [
+      51,
+      143,
+      85,
+      183
+    ],
+    "button_tutorial.dst": [
+      205,
+      90,
+      245,
+      130
+    ]
+  }
+}

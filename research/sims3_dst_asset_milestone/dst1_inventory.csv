@@ -1,0 +1,17 @@
+asset,status,width,height,palette_entries,data_offset,bytes,sha256,reason
+button_left.dst,decoded,64,64,6,30,2078,359d2e3ec4ddfd67aead157698edcf054134067d46759ed8bf46d6a25773583b,
+button_right.dst,decoded,64,64,6,30,2078,44c108245acf01242e3e0865433b994a0c404e777c7b410048374edf7e626ef6,
+button_tutorial.dst,decoded,64,64,6,30,2078,f7bf875aee749a070ab337625b6d48e3158e14d9150cf86de350800fb72a876b,
+button_house.dst,decoded,64,64,6,30,2078,8c2aaa0abd4849cef4ebe5124dd3f4ad0c3179d67ef1fa410d43b2c9b9eb0a1a,
+button_people.dst,decoded,64,64,6,30,2078,4fb21f0a05e314bc7b42006e5b7a1ab72a1f001653033ab0d5ec52ca3165e1f9,
+button_career.dst,decoded,64,64,16,50,2098,fc7c5c905180db0c5e37bf434cb6083a5e5cd67a8b9bf5b2dc9be578ae6f659e,
+button_opportunity.dst,decoded,64,64,16,50,2098,a65f7e15dc40d36a8686b3826ca78b4b4f745801eecbb02bfbed424047eed54f,
+button_relationship.dst,decoded,64,64,16,50,2098,3af8044727594568cb5a4329c352888378e77d7637f8278ff67da57ffb79ea28,
+button_skills.dst,decoded,64,64,16,50,2098,7bfb835e3cf2643ff216e8db2989f51285c0c128f8756f6c868e00c8fb6a75a3,
+button_building.dst,unsupported,,,,,,,invalid dimensions/palette
+button_lifetimehappiness.dst,decoded,64,64,16,50,2098,6db68d938b655380ac46840f6e5933bea4367e992a68c7f9d796be45809b9b3b,
+COMPOSITES/Tutorial.dst,decoded,64,64,16,50,2098,a76c8048ed48eb80d90e528d97f120ca317d2395a414310f81a5de6f14dcf8c4,
+COMPOSITES/TimeControl.dst,decoded,32,32,16,50,562,5d9c5671a4e0e1370f465b37ac9660110f64387893cae476bee6bbe0cb1e4957,
+COMPOSITES/PieMenu.dst,decoded,16,16,16,50,178,c5c6101b53ff4aa80dcd506611810114d888caa4dc5d1ff087188fde85ca00c9,
+COMPOSITES/MenuBlue.dst,decoded,64,32,16,50,1074,8287a7a270ac1ce95a33c02b4cf681bcd851479011317cd79b420c9a0c38a6ec,
+COMPOSITES/InfoIcons.dst,decoded,64,32,16,50,1074,cc81ef0c709fb6e07a9e2639008ab034a9f195b27b48ff6f8c07424704651c59,

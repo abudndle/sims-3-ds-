@@ -1,0 +1,63 @@
+{
+  "input_filename": "000400000005A300 The Sims 3 - Pets (CTR-P-AS4E) (v0.0.0) (W).standard-decrypted.cci",
+  "input_size_bytes": 407015424,
+  "product_code": "CTR-P-AS4E",
+  "ncch_partition_offset_hex": "0x4000",
+  "exe_fs": [
+    {
+      "name": ".code",
+      "offset_hex": "0x4e00",
+      "size": 2154468
+    },
+    {
+      "name": "banner",
+      "offset_hex": "0x212e00",
+      "size": 276936
+    },
+    {
+      "name": "icon",
+      "offset_hex": "0x256800",
+      "size": 14016
+    },
+    {
+      "name": "logo",
+      "offset_hex": "0x25a000",
+      "size": 8192
+    }
+  ],
+  "romfs_offset_hex": "0x25c000",
+  "romfs_level3_offset_hex": "0x25d000",
+  "romfs_file_count": 40,
+  "romfs_directory_count": 4,
+  "focused_filename_matches": 3,
+  "top_extensions": [
+    [
+      ".arc",
+      23
+    ],
+    [
+      ".bin",
+      8
+    ],
+    [
+      ".ngh",
+      2
+    ],
+    [
+      ".ind",
+      2
+    ],
+    [
+      ".html",
+      2
+    ],
+    [
+      ".ini",
+      2
+    ],
+    [
+      ".js",
+      1
+    ]
+  ]
+}

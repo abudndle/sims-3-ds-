@@ -1,0 +1,13 @@
+callsite,helper,argument_instruction,r0_origin,r0_value,transmitted_command,confidence
+0x0238CAD8,read,0x0238CAD4,r4,,,dynamic-or-unresolved
+0x0238CAE4,send,0x0238CAE0,r4,,,dynamic-or-unresolved
+0x0238CB00,read,0x0238CAFC,r4,,,dynamic-or-unresolved
+0x0238CB14,send,0x0238CB10,r4,,,dynamic-or-unresolved
+0x0238CCF0,read,0x0238CCEC,immediate,0,128,fixed
+0x0238CD34,read,0x0238CD30,r5,2,130,inferred-from-dispatcher-constant
+0x0238CD9C,read,0x0238CD98,r6,3,131,inferred-from-dispatcher-constant
+0x0238CE00,read,0x0238CDFC,r6,3,131,inferred-from-dispatcher-constant
+0x0238CEFC,read,0x0238CEF8,r8,,,dynamic-or-unresolved
+0x0238CF10,send,0x0238CF08,masked-r0,,,dynamic-or-unresolved
+0x0238D224,read,0x0238D220,immediate,0,128,fixed
+0x0238D31C,send,0x0238D318,immediate,0,0,fixed

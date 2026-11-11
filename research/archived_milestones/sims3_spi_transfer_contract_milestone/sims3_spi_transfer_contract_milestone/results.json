@@ -1,0 +1,31 @@
+{
+  "validated_opcode_and_literal_sites": 35,
+  "validated_helper_calls": 2,
+  "spi_control_word": "0x8202",
+  "spi_registers": {
+    "control": "0x040001C0",
+    "data": "0x040001C2"
+  },
+  "send_helper": {
+    "entry": "0x0238C9D8",
+    "argument_command_register": "r0",
+    "argument_payload_register": "r1",
+    "payload_width_bits": 8
+  },
+  "read_helper": {
+    "entry": "0x0238CA54",
+    "argument_command_register": "r0",
+    "command_high_bit_forced": true,
+    "dummy_transfer_byte": 0,
+    "returned_width_bits": 8
+  },
+  "limitations": [
+    "No proof of a 12-bit touchscreen ADC coordinate decoder",
+    "No runtime proof of touch input usage",
+    "No ARM9 UI dispatcher traced"
+  ],
+  "rom_modified": false,
+  "source_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_load": "0x2380000",
+  "arm7_size": 168092
+}

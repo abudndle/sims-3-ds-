@@ -1,0 +1,12 @@
+{
+  "rom_sha256": "b39ba54eb61f0bc05094a362e297f963bf5a08fc05c4cd0f3dbc8dfe45abd6de",
+  "terrain_scene_count": 35,
+  "terrain_reference_slots": 62,
+  "terrain_count_byte_matches": 35,
+  "terrain_64_byte_stride_matches": 35,
+  "development_testbed_files": 5,
+  "development_testbed_scene_files": 4,
+  "development_testbed_resource_files": 1,
+  "confirmed_restored_features": 0,
+  "interpretation": "The LODTESTBED directory is a concrete development/test-named resource group; unused-at-runtime status is unproven. Terrain slot and count layout is observed, not a complete parser."
+}

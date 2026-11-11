@@ -1,0 +1,15 @@
+{
+  "packages_checked": 26,
+  "format_groups": {
+    "DSM1": 6,
+    "unknown": 3,
+    "DST1": 7,
+    "BM*": 6,
+    "BML-08": 1,
+    "NPCS": 1,
+    "CAS-0100FF00": 2
+  },
+  "issues": [],
+  "interpretation": "Signature groups are not full decoders; header integers are raw observations, not interpreted counts.",
+  "cut_content_confirmed": 0
+}

@@ -1,0 +1,272 @@
+{
+  "sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "images": {
+    "ARM9": {
+      "base": "0x02004000",
+      "end_exclusive": "0x021806C0"
+    },
+    "ARM7": {
+      "base": "0x02380000",
+      "end_exclusive": "0x023A909C"
+    }
+  },
+  "results": [
+    {
+      "cpu": "ARM9",
+      "mode": "thumb_ldr_literal",
+      "instruction_address": "0x02095C1C",
+      "opcode": "0x490C",
+      "pool_address": "0x02095C50",
+      "literal_value": "0x02FFFFA8",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "thumb_ldr_literal",
+      "instruction_address": "0x02098B42",
+      "opcode": "0x480A",
+      "pool_address": "0x02098B6C",
+      "literal_value": "0x02FFFFA8",
+      "register": "r0"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "thumb_ldr_literal",
+      "instruction_address": "0x020A1510",
+      "opcode": "0x4A1D",
+      "pool_address": "0x020A1588",
+      "literal_value": "0x02FFFFA8",
+      "register": "r2"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020C9578",
+      "opcode": "0xE59F0048",
+      "pool_address": "0x020C95C8",
+      "literal_value": "0x02FFFFA8",
+      "register": "r0"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020D2460",
+      "opcode": "0xE59F4064",
+      "pool_address": "0x020D24CC",
+      "literal_value": "0x02FFFFB0",
+      "register": "r4"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020D26EC",
+      "opcode": "0xE59F3048",
+      "pool_address": "0x020D273C",
+      "literal_value": "0x02FFFFB0",
+      "register": "r3"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020D2744",
+      "opcode": "0xE59F3024",
+      "pool_address": "0x020D2770",
+      "literal_value": "0x02FFFFB0",
+      "register": "r3"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020D2AE8",
+      "opcode": "0xE59F1070",
+      "pool_address": "0x020D2B60",
+      "literal_value": "0x02FFFFA0",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020D7418",
+      "opcode": "0xE59F11DC",
+      "pool_address": "0x020D75FC",
+      "literal_value": "0x02FFFFAA",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020D74EC",
+      "opcode": "0xE59F1108",
+      "pool_address": "0x020D75FC",
+      "literal_value": "0x02FFFFAA",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020D7CB8",
+      "opcode": "0xE59F2018",
+      "pool_address": "0x020D7CD8",
+      "literal_value": "0x02FFFF90",
+      "register": "r2"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x020D7DAC",
+      "opcode": "0x159F1030",
+      "pool_address": "0x020D7DE4",
+      "literal_value": "0x02FFFF94",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02180248",
+      "opcode": "0xE59F3074",
+      "pool_address": "0x021802C4",
+      "literal_value": "0x02FFFF9C",
+      "register": "r3"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02180270",
+      "opcode": "0xE59F105C",
+      "pool_address": "0x021802D4",
+      "literal_value": "0x02FFFF98",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM9",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02180278",
+      "opcode": "0xE59F1044",
+      "pool_address": "0x021802C4",
+      "literal_value": "0x02FFFF9C",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02384BB8",
+      "opcode": "0xE59F4038",
+      "pool_address": "0x02384BF8",
+      "literal_value": "0x02FFFFB8",
+      "register": "r4"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02384E40",
+      "opcode": "0xE59F3088",
+      "pool_address": "0x02384ED0",
+      "literal_value": "0x02FFFFB8",
+      "register": "r3"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02384ED8",
+      "opcode": "0xE59F3024",
+      "pool_address": "0x02384F04",
+      "literal_value": "0x02FFFFB8",
+      "register": "r3"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02385280",
+      "opcode": "0xE59F1070",
+      "pool_address": "0x023852F8",
+      "literal_value": "0x02FFFFA4",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02388028",
+      "opcode": "0xE59F001C",
+      "pool_address": "0x0238804C",
+      "literal_value": "0x02FFFFA8",
+      "register": "r0"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x0238D9EC",
+      "opcode": "0xE59F1138",
+      "pool_address": "0x0238DB2C",
+      "literal_value": "0x02FFFFAA",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x0238DB6C",
+      "opcode": "0xE59F302C",
+      "pool_address": "0x0238DBA0",
+      "literal_value": "0x02FFFFAA",
+      "register": "r3"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x0238E170",
+      "opcode": "0xE59F01AC",
+      "pool_address": "0x0238E324",
+      "literal_value": "0x02FFFF94",
+      "register": "r0"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x0238E21C",
+      "opcode": "0x159F0100",
+      "pool_address": "0x0238E324",
+      "literal_value": "0x02FFFF94",
+      "register": "r0"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x0238E474",
+      "opcode": "0xE59F1138",
+      "pool_address": "0x0238E5B4",
+      "literal_value": "0x02FFFF94",
+      "register": "r1"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x023943B4",
+      "opcode": "0xE59F202C",
+      "pool_address": "0x023943E8",
+      "literal_value": "0x02FFFF98",
+      "register": "r2"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x02394C9C",
+      "opcode": "0xE59F2A28",
+      "pool_address": "0x023956CC",
+      "literal_value": "0x02FFFF98",
+      "register": "r2"
+    },
+    {
+      "cpu": "ARM7",
+      "mode": "arm_ldr_literal",
+      "instruction_address": "0x023974A4",
+      "opcode": "0xE59F2010",
+      "pool_address": "0x023974BC",
+      "literal_value": "0x02FFFF98",
+      "register": "r2"
+    }
+  ],
+  "limitations": [
+    "PC-relative literal loads are candidates, not proven runtime touch data paths.",
+    "The ARM instruction scan cannot resolve indirection via register arithmetic or overlays.",
+    "No ROM changes or gameplay hook demonstrated."
+  ]
+}

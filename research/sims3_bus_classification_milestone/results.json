@@ -1,0 +1,23 @@
+{
+  "source_md5": "7cdf32d02eeeff592a0a4ab6bec7b5c1",
+  "source_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_load": "0x2380000",
+  "arm7_size": "0x2909c",
+  "candidate_command_addr": "0x0238FA5C",
+  "candidate_command": "0x90 (conditional); 0xB8 (default)",
+  "transfer_call": "0x0238FA6C",
+  "transfer_target": "0x0238F978",
+  "control_literal_instruction": "0x0238F97C",
+  "control_literal_slot": "0x238f9f4",
+  "control_bus_register": "0x40001a4",
+  "data_literal_instruction": "0x0238F998",
+  "data_literal_slot": "0x238f9f8",
+  "data_bus_register": "0x40001a0",
+  "classification": "game-card bus, NOT touchscreen SPI",
+  "touch_spi_registers": [
+    "0x040001C0",
+    "0x040001C2"
+  ],
+  "confirmed_touch_x_y": "no",
+  "rom_modified": false
+}

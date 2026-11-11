@@ -1,0 +1,100 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_rom_offset": "0x4000",
+  "arm9_entry": "0x02004800",
+  "arm9_load": "0x02004000",
+  "arm9_end_exclusive": "0x021806C0",
+  "previous_routine_address": "0x021BE974",
+  "previous_routine_claim_valid": false,
+  "explanation": "Earlier analyzer treated ARM9 entry as load address and RAM load address as binary size, scanning outside ARM9; previous function claim withdrawn.",
+  "register_literals": [
+    {
+      "register": "KEYINPUT",
+      "value": "0x04000130",
+      "literal_address": "0x02095C4C",
+      "rom_offset": "0x95C4C",
+      "literal_loads": [
+        {
+          "address": "0x02095C1A",
+          "instruction": "0x480C",
+          "mode": "Thumb LDR literal"
+        }
+      ]
+    },
+    {
+      "register": "KEYINPUT",
+      "value": "0x04000130",
+      "literal_address": "0x020A1584",
+      "rom_offset": "0xA1584",
+      "literal_loads": [
+        {
+          "address": "0x020A150E",
+          "instruction": "0x481D",
+          "mode": "Thumb LDR literal"
+        }
+      ]
+    },
+    {
+      "register": "IPCSYNC",
+      "value": "0x04000180",
+      "literal_address": "0x021802C0",
+      "rom_offset": "0x1802C0",
+      "literal_loads": [
+        {
+          "address": "0x02180228",
+          "instruction": "0xE59F1090",
+          "mode": "ARM LDR literal"
+        },
+        {
+          "address": "0x02180284",
+          "instruction": "0xE59F1034",
+          "mode": "ARM LDR literal"
+        }
+      ]
+    },
+    {
+      "register": "IPCFIFOCNT",
+      "value": "0x04000184",
+      "literal_address": "0x020D576C",
+      "rom_offset": "0xD576C",
+      "literal_loads": [
+        {
+          "address": "0x020D56C8",
+          "instruction": "0xE59F709C",
+          "mode": "ARM LDR literal"
+        }
+      ]
+    },
+    {
+      "register": "IPCFIFOCNT",
+      "value": "0x04000184",
+      "literal_address": "0x020D5858",
+      "rom_offset": "0xD5858",
+      "literal_loads": [
+        {
+          "address": "0x020D57EC",
+          "instruction": "0xE59F5064",
+          "mode": "ARM LDR literal"
+        }
+      ]
+    },
+    {
+      "register": "IPCFIFOCNT",
+      "value": "0x04000184",
+      "literal_address": "0x020D5954",
+      "rom_offset": "0xD5954",
+      "literal_loads": [
+        {
+          "address": "0x020D586C",
+          "instruction": "0xE59F80E0",
+          "mode": "ARM LDR literal"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Static PC-relative instruction matches, not verified runtime execution.",
+    "Cannot identify UI touchscreen event dispatcher from these references alone.",
+    "No in-game patch or control implementation performed."
+  ]
+}

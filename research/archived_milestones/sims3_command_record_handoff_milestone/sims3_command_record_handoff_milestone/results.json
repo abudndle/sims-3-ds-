@@ -1,0 +1,37 @@
+{
+  "sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "verified_opcodes": 21,
+  "verified_calls": 3,
+  "producer": {
+    "entry": "0x0238C5B0",
+    "context_literal": "0x0380B548",
+    "read_call": "0x0238C5CC",
+    "read_target": "0x02385C68",
+    "out_pointer": "sp",
+    "returned_record_load": "0x0238C5D0",
+    "record_type_load": "0x0238C5D4",
+    "record_type_bound": "3",
+    "dispatch": "4-way PC-relative halfword branch table",
+    "table_offsets": [
+      4,
+      28,
+      12,
+      20
+    ],
+    "record_type_3_handler": "0x0238C604 (branch-table base 0x0238C5F0 + 0x14)"
+  },
+  "selected_case": {
+    "call": "0x0238C604",
+    "destination": "0x0238C7F0",
+    "record_pointer_passed": "r0",
+    "record_pointer_preserved": "r4 at 0x0238C7F4",
+    "selector": "[r4+8] at 0x0238C8BC",
+    "parameter": "[r4+12] at 0x0238C8C0",
+    "downstream_call": "0x0238C904 to 0x0238CB20"
+  },
+  "limitations": [
+    "Static ARM-state instruction analysis only",
+    "Producer is a record dequeue/receive-like helper; IPC or hardware source not established",
+    "No touch X/Y decoder, ARM9 event bridge, runtime execution, or mod ROM demonstrated"
+  ]
+}

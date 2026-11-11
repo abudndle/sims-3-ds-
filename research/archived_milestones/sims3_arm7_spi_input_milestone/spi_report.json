@@ -1,0 +1,502 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_base": "0x02380000",
+  "arm7_end": "0x023A909C",
+  "literal_loads": [
+    {
+      "instruction": "0x0238C9DC",
+      "literal": "0x0238CA24",
+      "register": "r5",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238CA0C",
+      "literal": "0x0238CA2C",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238CA30",
+      "literal": "0x0238CA50",
+      "register": "r1",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238CA58",
+      "literal": "0x0238CABC",
+      "register": "r5",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238CA88",
+      "literal": "0x0238CAC4",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238CAA8",
+      "literal": "0x0238CAC4",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238D630",
+      "literal": "0x0238D688",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238D644",
+      "literal": "0x0238D690",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238D698",
+      "literal": "0x0238D6B8",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238DBB4",
+      "literal": "0x0238DC74",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238DBC8",
+      "literal": "0x0238DC7C",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238DC88",
+      "literal": "0x0238DCA8",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238DCB8",
+      "literal": "0x0238DE7C",
+      "register": "r3",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238DCF0",
+      "literal": "0x0238DE84",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238DD10",
+      "literal": "0x0238DE7C",
+      "register": "r1",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238DF8C",
+      "literal": "0x0238E058",
+      "register": "r0",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238DFAC",
+      "literal": "0x0238E058",
+      "register": "r0",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238E778",
+      "literal": "0x0238E86C",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238E78C",
+      "literal": "0x0238E874",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238E880",
+      "literal": "0x0238E8AC",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238E89C",
+      "literal": "0x0238E8AC",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x0238E8B8",
+      "literal": "0x0238E9BC",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0238E8CC",
+      "literal": "0x0238E9C4",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x023934BC",
+      "literal": "0x023934F4",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x023934CC",
+      "literal": "0x023934F8",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x023934FC",
+      "literal": "0x0239351C",
+      "register": "r1",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393520",
+      "literal": "0x02393558",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393530",
+      "literal": "0x0239355C",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393560",
+      "literal": "0x023935C0",
+      "register": "r3",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393564",
+      "literal": "0x023935C4",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x023935CC",
+      "literal": "0x023936AC",
+      "register": "r4",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0239360C",
+      "literal": "0x023936B0",
+      "register": "r12",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x023936B4",
+      "literal": "0x023936D4",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x023936DC",
+      "literal": "0x023937D4",
+      "register": "r4",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x0239371C",
+      "literal": "0x023937D8",
+      "register": "r12",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393770",
+      "literal": "0x023937D8",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x023937E0",
+      "literal": "0x023938D0",
+      "register": "r3",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393838",
+      "literal": "0x023938D4",
+      "register": "r4",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x023938DC",
+      "literal": "0x023939CC",
+      "register": "r3",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393934",
+      "literal": "0x023939D0",
+      "register": "r4",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x023939E8",
+      "literal": "0x02393A50",
+      "register": "r3",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393A08",
+      "literal": "0x02393A54",
+      "register": "r1",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393A6C",
+      "literal": "0x02393AD4",
+      "register": "r3",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393A8C",
+      "literal": "0x02393AD8",
+      "register": "r1",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393ADC",
+      "literal": "0x02393B14",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393AEC",
+      "literal": "0x02393B18",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393B1C",
+      "literal": "0x02393B54",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393B2C",
+      "literal": "0x02393B58",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393B5C",
+      "literal": "0x02393B94",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393B6C",
+      "literal": "0x02393B98",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393B9C",
+      "literal": "0x02393C1C",
+      "register": "r12",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    },
+    {
+      "instruction": "0x02393BA0",
+      "literal": "0x02393C20",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393C24",
+      "literal": "0x02393C5C",
+      "register": "r2",
+      "hardware": "SPICNT",
+      "hardware_address": "0x040001C0"
+    },
+    {
+      "instruction": "0x02393C34",
+      "literal": "0x02393C60",
+      "register": "r0",
+      "hardware": "SPIDATA",
+      "hardware_address": "0x040001C2"
+    }
+  ],
+  "groups": [
+    {
+      "start": "0x0238C9DC",
+      "end": "0x0238CAA8",
+      "count": 6,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x0238D630",
+      "end": "0x0238D698",
+      "count": 3,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x0238DBB4",
+      "end": "0x0238DBC8",
+      "count": 2,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x0238DC88",
+      "end": "0x0238DD10",
+      "count": 4,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x0238DF8C",
+      "end": "0x0238DFAC",
+      "count": 2,
+      "registers": [
+        "SPICNT"
+      ],
+      "both_spi_registers": false
+    },
+    {
+      "start": "0x0238E778",
+      "end": "0x0238E78C",
+      "count": 2,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x0238E880",
+      "end": "0x0238E8CC",
+      "count": 4,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x023934BC",
+      "end": "0x0239360C",
+      "count": 9,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x023936B4",
+      "end": "0x02393838",
+      "count": 6,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x023938DC",
+      "end": "0x02393934",
+      "count": 2,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    },
+    {
+      "start": "0x023939E8",
+      "end": "0x02393C34",
+      "count": 14,
+      "registers": [
+        "SPICNT",
+        "SPIDATA"
+      ],
+      "both_spi_registers": true
+    }
+  ],
+  "limitations": [
+    "SPICNT/SPIDATA are shared by touchscreen, firmware flash, and other peripherals; a reference does not prove touchscreen sampling.",
+    "Literal reference groups are not function boundaries.",
+    "No run-time ARM7/ARM9 communication or x/y coordinate fields are established.",
+    "Original ROM unchanged; no in-game patch."
+  ]
+}

@@ -1,0 +1,3 @@
+spi_base_load,spi_value_load,spi_write,control_value,device,enabled
+0x0238C9DC,0x0238C9F0,0x0238C9F8,0x8202,2,True
+0x0238CA58,0x0238CA68,0x0238CA70,0x8202,2,True

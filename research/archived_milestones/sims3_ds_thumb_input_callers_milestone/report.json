@@ -1,0 +1,32 @@
+{
+  "sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_start": "0x02004000",
+  "arm9_end": "0x021806C0",
+  "candidate_functions": {
+    "0x02095C0C": {
+      "purpose": "Reads KEYINPUT after calling a helper; observed Thumb push/pop, register reads and bit masking",
+      "callsites": [
+        {
+          "callsite": "0x02095CEA",
+          "mode": "BL",
+          "bytes": "fff78fff"
+        }
+      ]
+    },
+    "0x020A14E4": {
+      "purpose": "Reads KEYINPUT and another input register; state update nearby",
+      "callsites": [
+        {
+          "callsite": "0x020A2712",
+          "mode": "BL",
+          "bytes": "fef7e7fe"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Static BL/BLX matches may be data; callers need control-flow confirmation",
+    "No touchscreen UI dispatcher identified",
+    "No ROM modified"
+  ]
+}

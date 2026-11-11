@@ -1,0 +1,131 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_base": "0x02380000",
+  "read_helper": "0x0238CA54",
+  "read_helper_sets_bit7_at": "0x0238CA6C",
+  "dispatcher_preserved_constants": {
+    "r5": {
+      "value": 2,
+      "address": "0x0238CB30"
+    },
+    "r6": {
+      "value": 3,
+      "address": "0x0238CB34"
+    },
+    "r8": {
+      "source": "entry r1",
+      "address": "0x0238CB28"
+    }
+  },
+  "count": 12,
+  "calls": [
+    {
+      "callsite": "0x0238CAD8",
+      "helper": "read",
+      "argument_instruction": "0x0238CAD4",
+      "r0_origin": "r4",
+      "r0_value": null,
+      "transmitted_command": null,
+      "confidence": "dynamic-or-unresolved"
+    },
+    {
+      "callsite": "0x0238CAE4",
+      "helper": "send",
+      "argument_instruction": "0x0238CAE0",
+      "r0_origin": "r4",
+      "r0_value": null,
+      "transmitted_command": null,
+      "confidence": "dynamic-or-unresolved"
+    },
+    {
+      "callsite": "0x0238CB00",
+      "helper": "read",
+      "argument_instruction": "0x0238CAFC",
+      "r0_origin": "r4",
+      "r0_value": null,
+      "transmitted_command": null,
+      "confidence": "dynamic-or-unresolved"
+    },
+    {
+      "callsite": "0x0238CB14",
+      "helper": "send",
+      "argument_instruction": "0x0238CB10",
+      "r0_origin": "r4",
+      "r0_value": null,
+      "transmitted_command": null,
+      "confidence": "dynamic-or-unresolved"
+    },
+    {
+      "callsite": "0x0238CCF0",
+      "helper": "read",
+      "argument_instruction": "0x0238CCEC",
+      "r0_origin": "immediate",
+      "r0_value": 0,
+      "transmitted_command": 128,
+      "confidence": "fixed"
+    },
+    {
+      "callsite": "0x0238CD34",
+      "helper": "read",
+      "argument_instruction": "0x0238CD30",
+      "r0_origin": "r5",
+      "r0_value": 2,
+      "transmitted_command": 130,
+      "confidence": "inferred-from-dispatcher-constant"
+    },
+    {
+      "callsite": "0x0238CD9C",
+      "helper": "read",
+      "argument_instruction": "0x0238CD98",
+      "r0_origin": "r6",
+      "r0_value": 3,
+      "transmitted_command": 131,
+      "confidence": "inferred-from-dispatcher-constant"
+    },
+    {
+      "callsite": "0x0238CE00",
+      "helper": "read",
+      "argument_instruction": "0x0238CDFC",
+      "r0_origin": "r6",
+      "r0_value": 3,
+      "transmitted_command": 131,
+      "confidence": "inferred-from-dispatcher-constant"
+    },
+    {
+      "callsite": "0x0238CEFC",
+      "helper": "read",
+      "argument_instruction": "0x0238CEF8",
+      "r0_origin": "r8",
+      "r0_value": null,
+      "transmitted_command": null,
+      "confidence": "dynamic-or-unresolved"
+    },
+    {
+      "callsite": "0x0238CF10",
+      "helper": "send",
+      "argument_instruction": "0x0238CF08",
+      "r0_origin": "masked-r0",
+      "r0_value": null,
+      "transmitted_command": null,
+      "confidence": "dynamic-or-unresolved"
+    },
+    {
+      "callsite": "0x0238D224",
+      "helper": "read",
+      "argument_instruction": "0x0238D220",
+      "r0_origin": "immediate",
+      "r0_value": 0,
+      "transmitted_command": 128,
+      "confidence": "fixed"
+    },
+    {
+      "callsite": "0x0238D31C",
+      "helper": "send",
+      "argument_instruction": "0x0238D318",
+      "r0_origin": "immediate",
+      "r0_value": 0,
+      "transmitted_command": 0,
+      "confidence": "fixed"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_range": [
+    "0x02004000",
+    "0x021806C0"
+  ],
+  "entries": [
+    {
+      "name": "read_buttons_1",
+      "address": "0x02095C0C",
+      "entry_opcode": "0xB508",
+      "direct_static_calls": [
+        {
+          "at": "0x02095CEA",
+          "opcode": "fff78fff",
+          "mode": "BL"
+        }
+      ]
+    },
+    {
+      "name": "consumer_1",
+      "address": "0x02095CBC",
+      "entry_opcode": "0xB518",
+      "direct_static_calls": [
+        {
+          "at": "0x02095D94",
+          "opcode": "fff792ff",
+          "mode": "BL"
+        }
+      ]
+    },
+    {
+      "name": "read_buttons_2",
+      "address": "0x020A14E4",
+      "entry_opcode": "0xB510",
+      "direct_static_calls": [
+        {
+          "at": "0x020A2712",
+          "opcode": "fef7e7fe",
+          "mode": "BL"
+        }
+      ]
+    },
+    {
+      "name": "consumer_2",
+      "address": "0x020A2690",
+      "entry_opcode": "0xB570",
+      "direct_static_calls": [
+        {
+          "at": "0x020847C8",
+          "opcode": "1df062ff",
+          "mode": "BL"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "A matching Thumb halfword sequence is not proof of an executed code path: some may be embedded data.",
+    "PUSH instructions are candidate entries, not full recovered function boundaries.",
+    "Touch coordinate dispatch and UI event mapping remain unconfirmed.",
+    "No ROM writes or game behavior changes were performed."
+  ]
+}

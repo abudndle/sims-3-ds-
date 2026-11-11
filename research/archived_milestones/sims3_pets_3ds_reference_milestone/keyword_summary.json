@@ -1,0 +1,71 @@
+{
+  "romfs_archives_scanned_under_55mb": 38,
+  "romfs_keyword_hits_saved": 10634,
+  "code_keyword_hits": 117,
+  "top_sources": [
+    [
+      "/DATA/Binaries.arc",
+      10560
+    ],
+    [
+      "/DATA/Datasets.arc",
+      8309
+    ],
+    [
+      "/DATA/EdithTre.arc",
+      2004
+    ],
+    [
+      "/DATA/Flashes.arc",
+      1776
+    ],
+    [
+      "/DATA/Textures.arc",
+      1238
+    ],
+    [
+      "/DATA/Emitters.arc",
+      1211
+    ],
+    [
+      "/DATA/Shaders.arc",
+      1200
+    ],
+    [
+      "/DATA/Animatio.arc",
+      272
+    ],
+    [
+      "/DATA/Models.arc",
+      217
+    ],
+    [
+      "/DATA/SoundEve.arc",
+      152
+    ],
+    [
+      "/log/baseframe_template.html",
+      105
+    ],
+    [
+      "/DATA/Characte.arc",
+      78
+    ],
+    [
+      "/DATA/Levels.arc",
+      56
+    ],
+    [
+      "/DATA/AmbientS.arc",
+      32
+    ],
+    [
+      "/log/infoframe_template.html",
+      22
+    ],
+    [
+      "/DATA/QuickDat.arc",
+      15
+    ]
+  ]
+}

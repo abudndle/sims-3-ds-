@@ -1,0 +1,26 @@
+[
+  {
+    "archive_offset": 364839,
+    "rom_offset": 123280167,
+    "original": "Welcome to The Sims 3 Tutorial! Here you will learn the basic gameplay of The Sims 3. When you are ready to proceed touch the Tutorial icon in the right hand corner.",
+    "replacement": "3D stays on the top screen with only the blue/green cursor. Read the tutorial and touch Continue on the bottom screen. All game UI also belongs on the bottom.",
+    "original_bytes": 165,
+    "replacement_bytes": 158
+  },
+  {
+    "archive_offset": 363338,
+    "rom_offset": 123278666,
+    "original": "Touch where in the world you would like to move your Sim with the stylus. Depending on what you touch, there might be multiple options that appear - select the one you wish your Sim to perform.",
+    "replacement": "Move the blue cursor with the D-Pad. Usable targets turn green. Press A and choose actions on the bottom screen. B cancels. The top screen shows only 3D.",
+    "original_bytes": 193,
+    "replacement_bytes": 153
+  },
+  {
+    "archive_offset": 213391,
+    "rom_offset": 123128719,
+    "original": "Summary pages on the top screen contain critical information about your Sim and his life.  The L Button and R Button cycle through them. ",
+    "replacement": "Tutorial and Sim details go below. Touch arrows to switch pages. The top screen only shows 3D and cursor.",
+    "original_bytes": 137,
+    "replacement_bytes": 105
+  }
+]

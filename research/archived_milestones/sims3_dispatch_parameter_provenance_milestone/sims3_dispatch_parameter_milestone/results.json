@@ -1,0 +1,50 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "anchor_count": 22,
+  "branch_count": 5,
+  "proven_chains": [
+    {
+      "call": "0x0238C904",
+      "destination": "0x0238CB20",
+      "selector_r0": "word at [r4+8] from 0x0238C8BC, stored in r7",
+      "parameter_r1": "low 16 bits of word at [r4+12] from 0x0238C8C0, via shifts at 0x0238C8F8/0x0238C900",
+      "scope": "this call path only"
+    },
+    {
+      "call": "0x0238D33C",
+      "destination": "0x0238CB20",
+      "selector_r0": "6 if r8 bit 6 set, else 7",
+      "parameter_r1": "zero"
+    },
+    {
+      "call": "0x0238D348",
+      "destination": "0x0238CB20",
+      "selector_r0": "4 if original r8 bit 7 set, else 5",
+      "parameter_r1": "zero"
+    }
+  ],
+  "dispatcher": {
+    "entry": "0x0238CB20",
+    "parameter_saved_to_r8": "0x0238CB28",
+    "max_selector": 25,
+    "read_case_24": {
+      "argument": "r8",
+      "load": "0x0238CEF8",
+      "call": "0x0238CEFC",
+      "helper": "0x0238CA54",
+      "conclusion": "command value supplied by dispatcher caller; unknown for all contexts"
+    },
+    "send_case_25": {
+      "command": "(r8 >> 8) & 0xFF",
+      "payload": "r8 & 0xFF",
+      "instructions": [
+        "0x0238CF04",
+        "0x0238CF08",
+        "0x0238CF0C"
+      ],
+      "call": "0x0238CF10",
+      "helper": "0x0238C9D8"
+    }
+  },
+  "interpretation": "Command-structure and bit-control dispatch are confirmed. Touch X/Y decoder and runtime SPI device are not confirmed."
+}

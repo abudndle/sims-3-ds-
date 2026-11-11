@@ -1,0 +1,26 @@
+register,register_address,arm9_instruction,rom_instruction,instruction_word,literal_address,destination_register,confidence
+POWCNT1 LCD/2D-engine routing,0x04000304,0x020CDA48,0x000CDA48,0xE59F1158,0x020CDBA8,r1,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020CDD20,0x000CDD20,0xE59F2010,0x020CDD38,r2,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020CEBA0,0x000CEBA0,0xE59F1068,0x020CEC10,r1,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020CEC98,0x000CEC98,0xE59F1068,0x020CED08,r1,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CF6C8,0x000CF6C8,0x159F1068,0x020CF738,r1,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CF8B0,0x000CF8B0,0xE59F009C,0x020CF954,r0,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CF8B8,0x000CF8B8,0xE59F0094,0x020CF954,r0,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CF8D0,0x000CF8D0,0xE59F007C,0x020CF954,r0,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CF8E0,0x000CF8E0,0xE59F006C,0x020CF954,r0,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CFA10,0x000CFA10,0xE59F006C,0x020CFA84,r0,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CFD6C,0x000CFD6C,0xE59F0024,0x020CFD98,r0,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CFEDC,0x000CFEDC,0xE59F007C,0x020CFF60,r0,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020CFF1C,0x000CFF1C,0xE59F003C,0x020CFF60,r0,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020D00DC,0x000D00DC,0xE59F303C,0x020D0120,r3,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020D00FC,0x000D00FC,0xE59F101C,0x020D0120,r1,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020D015C,0x000D015C,0xE59F303C,0x020D01A0,r3,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020D017C,0x000D017C,0xE59F101C,0x020D01A0,r1,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020D02B4,0x000D02B4,0xE59F2014,0x020D02D0,r2,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020D02DC,0x000D02DC,0xE59F2014,0x020D02F8,r2,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020D0318,0x000D0318,0x159F007C,0x020D039C,r0,ARM-state LDR-literal pattern; control flow unverified
+DISPCNT sub engine,0x04001000,0x020D0474,0x000D0474,0xE59F2014,0x020D0490,r2,ARM-state LDR-literal pattern; control flow unverified
+VRAMCNT_A,0x04000240,0x020D06A4,0x000D06A4,0xE59F101C,0x020D06C8,r1,ARM-state LDR-literal pattern; control flow unverified
+POWCNT1 LCD/2D-engine routing,0x04000304,0x020D8A38,0x000D8A38,0xE59F1130,0x020D8B70,r1,ARM-state LDR-literal pattern; control flow unverified
+POWCNT1 LCD/2D-engine routing,0x04000304,0x020D8AC4,0x000D8AC4,0xE59FC0A4,0x020D8B70,r12,ARM-state LDR-literal pattern; control flow unverified
+POWCNT1 LCD/2D-engine routing,0x04000304,0x020D8BB4,0x000D8BB4,0xE59F0010,0x020D8BCC,r0,ARM-state LDR-literal pattern; control flow unverified

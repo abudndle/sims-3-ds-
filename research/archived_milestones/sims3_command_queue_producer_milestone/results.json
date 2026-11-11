@@ -1,0 +1,43 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_base": "0x2380000",
+  "arm7_rom_offset": "0x1b6a00",
+  "checked_instruction_anchors": 29,
+  "checked_queue_edges": 3,
+  "producer": "0x238c4c0",
+  "producer_callers": [
+    "0x238c784",
+    "0x238c7ac",
+    "0x238d400",
+    "0x238d43c",
+    "0x238d4e4",
+    "0x238d768",
+    "0x238d7d8",
+    "0x238d820",
+    "0x238db5c",
+    "0x238e158",
+    "0x238e214",
+    "0x238e25c",
+    "0x238e724"
+  ],
+  "queue": {
+    "entry": "0x02385BDC",
+    "consumer": "0x02385C68",
+    "producer_enqueue_call": "0x0238C570",
+    "consumer_dequeue_call": "0x0238C5CC",
+    "pointer_queue_context_literal": "0x0380B548",
+    "consumer_context_literal": "0x0380B548",
+    "ring_index_mask": "0xF",
+    "ring_capacity_slots": 16,
+    "record_words_max": 4,
+    "record_parameter_count": "halfword at entry stack+24, <=4",
+    "record_copy_instruction": "0x0238C53C",
+    "producer_count_increment": "0x02385C48",
+    "consumer_pointer_load": "0x02385CC0"
+  },
+  "limitations": [
+    "Static structural inference; runtime execution unverified",
+    "Shared record type versus hardware touchscreen cannot be inferred from this path",
+    "ARM9 handoff and X/Y coordinate decoder not found"
+  ]
+}

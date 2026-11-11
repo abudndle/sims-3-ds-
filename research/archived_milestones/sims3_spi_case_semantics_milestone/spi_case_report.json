@@ -1,0 +1,61 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_load": "0x02380000",
+  "dispatch": "0x0238CB20",
+  "decoded_cases": [
+    {
+      "case": 4,
+      "operation": "set bits (OR)",
+      "mask": "0x04",
+      "entry": "0x0238CBB4",
+      "wrapper": "0x0238CAC8",
+      "call_path": "0x0238CBB4 -> 0x0238CBB8 -> 0x0238CAC8"
+    },
+    {
+      "case": 5,
+      "operation": "clear bits (AND NOT)",
+      "mask": "0x04",
+      "entry": "0x0238CBC0",
+      "wrapper": "0x0238CAF0",
+      "call_path": "0x0238CBC0 -> 0x0238CBC4 -> 0x0238CAF0"
+    },
+    {
+      "case": 6,
+      "operation": "set bits (OR)",
+      "mask": "0x08",
+      "entry": "0x0238CBCC",
+      "wrapper": "0x0238CAC8",
+      "call_path": "0x0238CBCC -> 0x0238CBD0 -> 0x0238CBB8 -> 0x0238CAC8"
+    },
+    {
+      "case": 7,
+      "operation": "clear bits (AND NOT)",
+      "mask": "0x08",
+      "entry": "0x0238CBD4",
+      "wrapper": "0x0238CAF0",
+      "call_path": "0x0238CBD4 -> 0x0238CBD8 -> 0x0238CBC4 -> 0x0238CAF0"
+    },
+    {
+      "case": 8,
+      "operation": "set bits (OR)",
+      "mask": "0x0C",
+      "entry": "0x0238CBDC",
+      "wrapper": "0x0238CAC8",
+      "call_path": "0x0238CBDC -> 0x0238CBE0 -> 0x0238CBB8 -> 0x0238CAC8"
+    },
+    {
+      "case": 9,
+      "operation": "clear bits (AND NOT)",
+      "mask": "0x0C",
+      "entry": "0x0238CBE4",
+      "wrapper": "0x0238CAF0",
+      "call_path": "0x0238CBE4 -> 0x0238CBE8 -> 0x0238CBC4 -> 0x0238CAF0"
+    }
+  ],
+  "notes": [
+    "Cases 4-9 read a peripheral byte and set/clear bit masks via SPI wrappers.",
+    "The wrappers call SPI transfer helpers; no X/Y ADC conversion was demonstrated.",
+    "The SPI helpers configure multiple control values; device selection and command semantics require further validation.",
+    "No ARM9 UI dispatcher or modified ROM is identified or produced."
+  ]
+}

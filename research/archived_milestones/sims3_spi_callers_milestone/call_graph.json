@@ -1,0 +1,151 @@
+{
+  "sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_start": "0x02380000",
+  "arm7_end": "0x023A909C",
+  "functions": [
+    {
+      "address": "0x0238C9D8",
+      "direct_arm_bl_callers": 4
+    },
+    {
+      "address": "0x0238CA54",
+      "direct_arm_bl_callers": 8
+    },
+    {
+      "address": "0x0238CAC8",
+      "direct_arm_bl_callers": 4
+    },
+    {
+      "address": "0x0238CAF0",
+      "direct_arm_bl_callers": 4
+    },
+    {
+      "address": "0x0238CB20",
+      "direct_arm_bl_callers": 3
+    }
+  ],
+  "edges": [
+    {
+      "caller": "0x0238CAE4",
+      "callee": "0x0238C9D8",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CB14",
+      "callee": "0x0238C9D8",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CF10",
+      "callee": "0x0238C9D8",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238D31C",
+      "callee": "0x0238C9D8",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CAD8",
+      "callee": "0x0238CA54",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CB00",
+      "callee": "0x0238CA54",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CCF0",
+      "callee": "0x0238CA54",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CD34",
+      "callee": "0x0238CA54",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CD9C",
+      "callee": "0x0238CA54",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CE00",
+      "callee": "0x0238CA54",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CEFC",
+      "callee": "0x0238CA54",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238D224",
+      "callee": "0x0238CA54",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CBB8",
+      "callee": "0x0238CAC8",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CFF8",
+      "callee": "0x0238CAC8",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238D04C",
+      "callee": "0x0238CAC8",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238D0B0",
+      "callee": "0x0238CAC8",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CBC4",
+      "callee": "0x0238CAF0",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238CFEC",
+      "callee": "0x0238CAF0",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238D004",
+      "callee": "0x0238CAF0",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238D06C",
+      "callee": "0x0238CAF0",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238C904",
+      "callee": "0x0238CB20",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238D33C",
+      "callee": "0x0238CB20",
+      "kind": "ARM BL immediate"
+    },
+    {
+      "caller": "0x0238D348",
+      "callee": "0x0238CB20",
+      "kind": "ARM BL immediate"
+    }
+  ],
+  "total_edges": 23,
+  "limitations": [
+    "Only direct ARM-state BL calls to five selected addresses are enumerated. Thumb/BLX/indirect calls may be missed.",
+    "SPI helper calls do not by themselves identify X and Y coordinate handling.",
+    "Dispatch function 0x0238CB20 processes more than touchscreen operations.",
+    "No ROM changes or gameplay-control integration are performed."
+  ]
+}

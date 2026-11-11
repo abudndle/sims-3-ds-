@@ -1,0 +1,225 @@
+{
+  "sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm7_load": "0x02380000",
+  "arm7_size": 168092,
+  "calls": [
+    {
+      "callsite": "0x0238CAD8",
+      "callee": "spi_read",
+      "r0": {
+        "provenance": {
+          "kind": "register",
+          "source": "r4"
+        },
+        "address": "0x0238CAD4",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": null,
+        "confidence": "unknown"
+      }
+    },
+    {
+      "callsite": "0x0238CAE4",
+      "callee": "spi_send",
+      "r0": {
+        "provenance": {
+          "kind": "register",
+          "source": "r4"
+        },
+        "address": "0x0238CAE0",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": {
+          "provenance": {
+            "kind": "other-write",
+            "word": "0xE1801005"
+          },
+          "address": "0x0238CADC"
+        },
+        "confidence": "unverified-backward-lead"
+      }
+    },
+    {
+      "callsite": "0x0238CB00",
+      "callee": "spi_read",
+      "r0": {
+        "provenance": {
+          "kind": "register",
+          "source": "r4"
+        },
+        "address": "0x0238CAFC",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": null,
+        "confidence": "unknown"
+      }
+    },
+    {
+      "callsite": "0x0238CB14",
+      "callee": "spi_send",
+      "r0": {
+        "provenance": {
+          "kind": "register",
+          "source": "r4"
+        },
+        "address": "0x0238CB10",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": {
+          "provenance": {
+            "kind": "other-write",
+            "word": "0xE0001001"
+          },
+          "address": "0x0238CB0C"
+        },
+        "confidence": "unverified-backward-lead"
+      }
+    },
+    {
+      "callsite": "0x0238CCF0",
+      "callee": "spi_read",
+      "r0": {
+        "provenance": {
+          "kind": "constant",
+          "value": 0
+        },
+        "address": "0x0238CCEC",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": null,
+        "confidence": "unknown"
+      }
+    },
+    {
+      "callsite": "0x0238CD34",
+      "callee": "spi_read",
+      "r0": {
+        "provenance": {
+          "kind": "register",
+          "source": "r5"
+        },
+        "address": "0x0238CD30",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": null,
+        "confidence": "unknown"
+      }
+    },
+    {
+      "callsite": "0x0238CD9C",
+      "callee": "spi_read",
+      "r0": {
+        "provenance": {
+          "kind": "register",
+          "source": "r6"
+        },
+        "address": "0x0238CD98",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": null,
+        "confidence": "unknown"
+      }
+    },
+    {
+      "callsite": "0x0238CE00",
+      "callee": "spi_read",
+      "r0": {
+        "provenance": {
+          "kind": "register",
+          "source": "r6"
+        },
+        "address": "0x0238CDFC",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": null,
+        "confidence": "unknown"
+      }
+    },
+    {
+      "callsite": "0x0238CEFC",
+      "callee": "spi_read",
+      "r0": {
+        "provenance": {
+          "kind": "register",
+          "source": "r8"
+        },
+        "address": "0x0238CEF8",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": null,
+        "confidence": "unknown"
+      }
+    },
+    {
+      "callsite": "0x0238CF10",
+      "callee": "spi_send",
+      "r0": {
+        "provenance": {
+          "provenance": {
+            "kind": "masked-register",
+            "source": "r0",
+            "mask": 255
+          },
+          "address": "0x0238CF08"
+        },
+        "confidence": "unverified-backward-lead"
+      },
+      "r1": {
+        "provenance": {
+          "kind": "masked-register",
+          "source": "r8",
+          "mask": 255
+        },
+        "address": "0x0238CF0C",
+        "confidence": "immediate-predecessor"
+      }
+    },
+    {
+      "callsite": "0x0238D224",
+      "callee": "spi_read",
+      "r0": {
+        "provenance": {
+          "kind": "constant",
+          "value": 0
+        },
+        "address": "0x0238D220",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": null,
+        "confidence": "unknown"
+      }
+    },
+    {
+      "callsite": "0x0238D31C",
+      "callee": "spi_send",
+      "r0": {
+        "provenance": {
+          "kind": "constant",
+          "value": 0
+        },
+        "address": "0x0238D318",
+        "confidence": "immediate-predecessor"
+      },
+      "r1": {
+        "provenance": {
+          "provenance": {
+            "kind": "other-write",
+            "word": "0xE59D1000"
+          },
+          "address": "0x0238D314"
+        },
+        "confidence": "unverified-backward-lead"
+      }
+    }
+  ]
+}

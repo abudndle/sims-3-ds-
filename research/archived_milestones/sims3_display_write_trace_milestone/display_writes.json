@@ -1,0 +1,653 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_load": "0x02004000",
+  "arm9_rom_offset": "0x4000",
+  "results": [
+    {
+      "register": "POWCNT1",
+      "mmio": "0x04000304",
+      "literal_load": "0x020CDA48",
+      "literal_opcode": "0xE59F1158",
+      "base_register": "r1",
+      "accesses": [
+        {
+          "instruction": "0x020CDA50",
+          "opcode": "0xE1D100B0",
+          "operation": "read",
+          "width": "halfword",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CDA58",
+          "opcode": "0xE1C100B0",
+          "operation": "write",
+          "width": "halfword",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CDA5C",
+          "opcode": "0xE1D100B0",
+          "operation": "read",
+          "width": "halfword",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CDA6C",
+          "opcode": "0xE1C100B0",
+          "operation": "write",
+          "width": "halfword",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CDA70",
+          "opcode": "0xE1D100B0",
+          "operation": "read",
+          "width": "halfword",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CDA78",
+          "opcode": "0xE1C100B0",
+          "operation": "write",
+          "width": "halfword",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020CDD20",
+      "literal_opcode": "0xE59F2010",
+      "base_register": "r2",
+      "accesses": [
+        {
+          "instruction": "0x020CDD24",
+          "opcode": "0xE5921000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CDD30",
+          "opcode": "0xE5820000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020CEBA0",
+      "literal_opcode": "0xE59F1068",
+      "base_register": "r1",
+      "accesses": [
+        {
+          "instruction": "0x020CEBA4",
+          "opcode": "0xE5910000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CEBA8",
+          "opcode": "0xE1D110BC",
+          "operation": "read",
+          "width": "halfword",
+          "offset": 12
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020CEC98",
+      "literal_opcode": "0xE59F1068",
+      "base_register": "r1",
+      "accesses": [
+        {
+          "instruction": "0x020CEC9C",
+          "opcode": "0xE5910000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CECA0",
+          "opcode": "0xE1D110BE",
+          "operation": "read",
+          "width": "halfword",
+          "offset": 14
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020CF6C8",
+      "literal_opcode": "0x159F1068",
+      "base_register": "r1",
+      "accesses": [
+        {
+          "instruction": "0x020CF6D0",
+          "opcode": "0x15C12000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF6DC",
+          "opcode": "0x15C12000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF6E8",
+          "opcode": "0x15C12000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF6F4",
+          "opcode": "0x15C12000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF700",
+          "opcode": "0x15C12000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF70C",
+          "opcode": "0x15C12000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF718",
+          "opcode": "0x15C12000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF724",
+          "opcode": "0x15C12000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020CF8B8",
+      "literal_opcode": "0xE59F0094",
+      "base_register": "r0",
+      "accesses": [
+        {
+          "instruction": "0x020CF8BC",
+          "opcode": "0xE5C02000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF8C0",
+          "opcode": "0xE5C01001",
+          "operation": "write",
+          "width": "word",
+          "offset": 1
+        },
+        {
+          "instruction": "0x020CF8C4",
+          "opcode": "0xE5C03003",
+          "operation": "write",
+          "width": "word",
+          "offset": 3
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020CF8D0",
+      "literal_opcode": "0xE59F007C",
+      "base_register": "r0",
+      "accesses": [
+        {
+          "instruction": "0x020CF8D4",
+          "opcode": "0xE5C02000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF8D8",
+          "opcode": "0xE5C01002",
+          "operation": "write",
+          "width": "word",
+          "offset": 2
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020CF8E0",
+      "literal_opcode": "0xE59F006C",
+      "base_register": "r0",
+      "accesses": [
+        {
+          "instruction": "0x020CF8E4",
+          "opcode": "0xE5C02000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020CF8E8",
+          "opcode": "0xE5C01003",
+          "operation": "write",
+          "width": "word",
+          "offset": 3
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020CFD6C",
+      "literal_opcode": "0xE59F0024",
+      "base_register": "r0",
+      "accesses": [
+        {
+          "instruction": "0x020CFD70",
+          "opcode": "0xE5C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020CFEDC",
+      "literal_opcode": "0xE59F007C",
+      "base_register": "r0",
+      "accesses": [
+        {
+          "instruction": "0x020CFEE4",
+          "opcode": "0xE5C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020CFF1C",
+      "literal_opcode": "0xE59F003C",
+      "base_register": "r0",
+      "accesses": [
+        {
+          "instruction": "0x020CFF24",
+          "opcode": "0xE5C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020D00DC",
+      "literal_opcode": "0xE59F303C",
+      "base_register": "r3",
+      "accesses": [
+        {
+          "instruction": "0x020D00E4",
+          "opcode": "0xE5932000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D00F0",
+          "opcode": "0xE5832000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020D00FC",
+      "literal_opcode": "0xE59F101C",
+      "base_register": "r1",
+      "accesses": [
+        {
+          "instruction": "0x020D0100",
+          "opcode": "0xE5910000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0108",
+          "opcode": "0xE5810000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020D015C",
+      "literal_opcode": "0xE59F303C",
+      "base_register": "r3",
+      "accesses": [
+        {
+          "instruction": "0x020D0164",
+          "opcode": "0xE5932000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0170",
+          "opcode": "0xE5832000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020D017C",
+      "literal_opcode": "0xE59F101C",
+      "base_register": "r1",
+      "accesses": [
+        {
+          "instruction": "0x020D0180",
+          "opcode": "0xE5910000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0188",
+          "opcode": "0xE5810000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020D02B4",
+      "literal_opcode": "0xE59F2014",
+      "base_register": "r2",
+      "accesses": [
+        {
+          "instruction": "0x020D02BC",
+          "opcode": "0xE5921000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D02C8",
+          "opcode": "0xE5821000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020D02DC",
+      "literal_opcode": "0xE59F2014",
+      "base_register": "r2",
+      "accesses": [
+        {
+          "instruction": "0x020D02E4",
+          "opcode": "0xE5921000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D02F0",
+          "opcode": "0xE5821000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020D0318",
+      "literal_opcode": "0x159F007C",
+      "base_register": "r0",
+      "accesses": [
+        {
+          "instruction": "0x020D031C",
+          "opcode": "0x15C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0328",
+          "opcode": "0x15C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0334",
+          "opcode": "0x15C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0340",
+          "opcode": "0x15C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D034C",
+          "opcode": "0x15C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0358",
+          "opcode": "0x15C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0364",
+          "opcode": "0x15C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0370",
+          "opcode": "0x15C01000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "DISPCNT_SUB",
+      "mmio": "0x04001000",
+      "literal_load": "0x020D0474",
+      "literal_opcode": "0xE59F2014",
+      "base_register": "r2",
+      "accesses": [
+        {
+          "instruction": "0x020D047C",
+          "opcode": "0xE5921000",
+          "operation": "read",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D0488",
+          "opcode": "0xE5821000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "VRAMCNT_A",
+      "mmio": "0x04000240",
+      "literal_load": "0x020D06A4",
+      "literal_opcode": "0xE59F101C",
+      "base_register": "r1",
+      "accesses": [
+        {
+          "instruction": "0x020D06AC",
+          "opcode": "0xE5812000",
+          "operation": "write",
+          "width": "word",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D06B0",
+          "opcode": "0xE5C12004",
+          "operation": "write",
+          "width": "word",
+          "offset": 4
+        },
+        {
+          "instruction": "0x020D06B4",
+          "opcode": "0xE5C12005",
+          "operation": "write",
+          "width": "word",
+          "offset": 5
+        },
+        {
+          "instruction": "0x020D06B8",
+          "opcode": "0xE5C12006",
+          "operation": "write",
+          "width": "word",
+          "offset": 6
+        },
+        {
+          "instruction": "0x020D06BC",
+          "opcode": "0xE1C120B8",
+          "operation": "write",
+          "width": "halfword",
+          "offset": 8
+        }
+      ]
+    },
+    {
+      "register": "POWCNT1",
+      "mmio": "0x04000304",
+      "literal_load": "0x020D8A38",
+      "literal_opcode": "0xE59F1130",
+      "base_register": "r1",
+      "accesses": [
+        {
+          "instruction": "0x020D8A40",
+          "opcode": "0xE1D100B0",
+          "operation": "read",
+          "width": "halfword",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D8A48",
+          "opcode": "0xE1C100B0",
+          "operation": "write",
+          "width": "halfword",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "POWCNT1",
+      "mmio": "0x04000304",
+      "literal_load": "0x020D8AC4",
+      "literal_opcode": "0xE59FC0A4",
+      "base_register": "r12",
+      "accesses": [
+        {
+          "instruction": "0x020D8ACC",
+          "opcode": "0xE1DC30B0",
+          "operation": "read",
+          "width": "halfword",
+          "offset": 0
+        },
+        {
+          "instruction": "0x020D8ADC",
+          "opcode": "0xE1CC00B0",
+          "operation": "write",
+          "width": "halfword",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "register": "POWCNT1",
+      "mmio": "0x04000304",
+      "literal_load": "0x020D8BB4",
+      "literal_opcode": "0xE59F0010",
+      "base_register": "r0",
+      "accesses": [
+        {
+          "instruction": "0x020D8BB8",
+          "opcode": "0xE1D000B0",
+          "operation": "read",
+          "width": "halfword",
+          "offset": 0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Static ARM-state pattern match only; conditional execution and function reachability not proven",
+    "Accesses with register offset, Thumb instructions, and cross-function flows excluded",
+    "No ROM modifications made"
+  ]
+}

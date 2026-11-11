@@ -1,0 +1,41 @@
+{
+  "validated_dsm1_packages": 6,
+  "package_summaries": [
+    {
+      "package": "DATA/BACKEND/Accessories.package",
+      "unique_dst_references": 107,
+      "total_dst_references": 515
+    },
+    {
+      "package": "DATA/BACKEND/Furniture.package",
+      "unique_dst_references": 398,
+      "total_dst_references": 1960
+    },
+    {
+      "package": "DATA/BACKEND/InstanceModels.package",
+      "unique_dst_references": 16,
+      "total_dst_references": 85
+    },
+    {
+      "package": "DATA/BACKEND/Lots.package",
+      "unique_dst_references": 26,
+      "total_dst_references": 173
+    },
+    {
+      "package": "DATA/BACKEND/Terrain.package",
+      "unique_dst_references": 26,
+      "total_dst_references": 1525
+    },
+    {
+      "package": "DATA/BACKEND/Vehicles.package",
+      "unique_dst_references": 13,
+      "total_dst_references": 60
+    }
+  ],
+  "package_name_pairs": 586,
+  "unique_dst_names_across_packages": 575,
+  "total_textual_reference_occurrences": 4318,
+  "references_with_standalone_file": 31,
+  "cut_content_confirmed": 0,
+  "caveat": "Strings referencing .dst resources are not evidence of cut content. Some references may point to packed internal resources rather than standalone NitroFS files; offsets are package-relative."
+}

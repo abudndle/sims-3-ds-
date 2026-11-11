@@ -1,0 +1,13 @@
+callsite,helper,target,nearby_mov_r0,confidence
+0x0238CAD8,spi_read,0x0238CA54,,static-call-only
+0x0238CAE4,spi_send,0x0238C9D8,,static-call-only
+0x0238CB00,spi_read,0x0238CA54,,static-call-only
+0x0238CB14,spi_send,0x0238C9D8,,static-call-only
+0x0238CCF0,spi_read,0x0238CA54,0x0,static-call-only
+0x0238CD34,spi_read,0x0238CA54,,static-call-only
+0x0238CD9C,spi_read,0x0238CA54,0x3,static-call-only
+0x0238CE00,spi_read,0x0238CA54,,static-call-only
+0x0238CEFC,spi_read,0x0238CA54,0x3,static-call-only
+0x0238CF10,spi_send,0x0238C9D8,,static-call-only
+0x0238D224,spi_read,0x0238CA54,0x0,static-call-only
+0x0238D31C,spi_send,0x0238C9D8,0x0,static-call-only

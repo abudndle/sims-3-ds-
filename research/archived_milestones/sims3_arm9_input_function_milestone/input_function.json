@@ -1,0 +1,248 @@
+{
+  "rom_sha256": "d42e03e66bc2cf447b74038ed0c766573cd70db23eeba69ec22c3df29a93ec8a",
+  "arm9_rom_offset": "0x4000",
+  "arm9_load_address": "0x02004800",
+  "function_start": "0x021BE974",
+  "function_end_exclusive": "0x021BEA24",
+  "function_bytes": 176,
+  "keyinput_literal_load": "0x021BE9D8",
+  "keyinput_literal": "0x021BEA30",
+  "keyinput_halfword_read": "0x021BEA04",
+  "verified": {
+    "routine_push": true,
+    "pc_relative_keyinput_literal": true,
+    "keyinput_literal_value": true,
+    "actual_keyinput_halfword_read": true,
+    "routine_pop": true,
+    "routine_return": true
+  },
+  "direct_arm_bl_calls": [],
+  "instructions": [
+    {
+      "address": "0x021BE974",
+      "opcode": "0xE92D4070",
+      "rom_offset": "0x1BE174"
+    },
+    {
+      "address": "0x021BE978",
+      "opcode": "0xE59F10A4",
+      "rom_offset": "0x1BE178"
+    },
+    {
+      "address": "0x021BE97C",
+      "opcode": "0xE1A05000",
+      "rom_offset": "0x1BE17C"
+    },
+    {
+      "address": "0x021BE980",
+      "opcode": "0xE1D160B0",
+      "rom_offset": "0x1BE180"
+    },
+    {
+      "address": "0x021BE984",
+      "opcode": "0xE59F409C",
+      "rom_offset": "0x1BE184"
+    },
+    {
+      "address": "0x021BE988",
+      "opcode": "0xEBFFFD1C",
+      "rom_offset": "0x1BE188",
+      "branch_target": "0x021BDE00"
+    },
+    {
+      "address": "0x021BE98C",
+      "opcode": "0xE1800806",
+      "rom_offset": "0x1BE18C"
+    },
+    {
+      "address": "0x021BE990",
+      "opcode": "0xE5850000",
+      "rom_offset": "0x1BE190"
+    },
+    {
+      "address": "0x021BE994",
+      "opcode": "0xE59F0090",
+      "rom_offset": "0x1BE194"
+    },
+    {
+      "address": "0x021BE998",
+      "opcode": "0xE1D43FB8",
+      "rom_offset": "0x1BE198"
+    },
+    {
+      "address": "0x021BE99C",
+      "opcode": "0xE5902000",
+      "rom_offset": "0x1BE19C"
+    },
+    {
+      "address": "0x021BE9A0",
+      "opcode": "0xE5901004",
+      "rom_offset": "0x1BE1A0"
+    },
+    {
+      "address": "0x021BE9A4",
+      "opcode": "0xE0221803",
+      "rom_offset": "0x1BE1A4"
+    },
+    {
+      "address": "0x021BE9A8",
+      "opcode": "0xE5851004",
+      "rom_offset": "0x1BE1A8"
+    },
+    {
+      "address": "0x021BE9AC",
+      "opcode": "0xE5901000",
+      "rom_offset": "0x1BE1AC"
+    },
+    {
+      "address": "0x021BE9B0",
+      "opcode": "0xE5901004",
+      "rom_offset": "0x1BE1B0"
+    },
+    {
+      "address": "0x021BE9B4",
+      "opcode": "0xE59400F4",
+      "rom_offset": "0x1BE1B4"
+    },
+    {
+      "address": "0x021BE9B8",
+      "opcode": "0xE594203C",
+      "rom_offset": "0x1BE1B8"
+    },
+    {
+      "address": "0x021BE9BC",
+      "opcode": "0xE0210000",
+      "rom_offset": "0x1BE1BC"
+    },
+    {
+      "address": "0x021BE9C0",
+      "opcode": "0xE0220000",
+      "rom_offset": "0x1BE1C0"
+    },
+    {
+      "address": "0x021BE9C4",
+      "opcode": "0xE5850008",
+      "rom_offset": "0x1BE1C4"
+    },
+    {
+      "address": "0x021BE9C8",
+      "opcode": "0xE59411E8",
+      "rom_offset": "0x1BE1C8"
+    },
+    {
+      "address": "0x021BE9CC",
+      "opcode": "0xE2840C03",
+      "rom_offset": "0x1BE1CC"
+    },
+    {
+      "address": "0x021BE9D0",
+      "opcode": "0xE585100C",
+      "rom_offset": "0x1BE1D0"
+    },
+    {
+      "address": "0x021BE9D4",
+      "opcode": "0xE59411EC",
+      "rom_offset": "0x1BE1D4"
+    },
+    {
+      "address": "0x021BE9D8",
+      "opcode": "0xE59F2050",
+      "rom_offset": "0x1BE1D8"
+    },
+    {
+      "address": "0x021BE9DC",
+      "opcode": "0xE5851010",
+      "rom_offset": "0x1BE1DC"
+    },
+    {
+      "address": "0x021BE9E0",
+      "opcode": "0xE1D0C9B4",
+      "rom_offset": "0x1BE1E0"
+    },
+    {
+      "address": "0x021BE9E4",
+      "opcode": "0xE5943390",
+      "rom_offset": "0x1BE1E4"
+    },
+    {
+      "address": "0x021BE9E8",
+      "opcode": "0xE2841FEA",
+      "rom_offset": "0x1BE1E8"
+    },
+    {
+      "address": "0x021BE9EC",
+      "opcode": "0xE023380C",
+      "rom_offset": "0x1BE1EC"
+    },
+    {
+      "address": "0x021BE9F0",
+      "opcode": "0xE5853014",
+      "rom_offset": "0x1BE1F0"
+    },
+    {
+      "address": "0x021BE9F4",
+      "opcode": "0xE1D04ABA",
+      "rom_offset": "0x1BE1F4"
+    },
+    {
+      "address": "0x021BE9F8",
+      "opcode": "0xE1D03ABC",
+      "rom_offset": "0x1BE1F8"
+    },
+    {
+      "address": "0x021BE9FC",
+      "opcode": "0xE1833804",
+      "rom_offset": "0x1BE1FC"
+    },
+    {
+      "address": "0x021BEA00",
+      "opcode": "0xE5853018",
+      "rom_offset": "0x1BE200"
+    },
+    {
+      "address": "0x021BEA04",
+      "opcode": "0xE1D220B0",
+      "rom_offset": "0x1BE204"
+    },
+    {
+      "address": "0x021BEA08",
+      "opcode": "0xE1D110B0",
+      "rom_offset": "0x1BE208"
+    },
+    {
+      "address": "0x021BEA0C",
+      "opcode": "0xE1D039B8",
+      "rom_offset": "0x1BE20C"
+    },
+    {
+      "address": "0x021BEA10",
+      "opcode": "0xE1820001",
+      "rom_offset": "0x1BE210"
+    },
+    {
+      "address": "0x021BEA14",
+      "opcode": "0xE1800803",
+      "rom_offset": "0x1BE214"
+    },
+    {
+      "address": "0x021BEA18",
+      "opcode": "0xE585001C",
+      "rom_offset": "0x1BE218"
+    },
+    {
+      "address": "0x021BEA1C",
+      "opcode": "0xE8BD4070",
+      "rom_offset": "0x1BE21C"
+    },
+    {
+      "address": "0x021BEA20",
+      "opcode": "0xE12FFF1E",
+      "rom_offset": "0x1BE220"
+    }
+  ],
+  "limitations": [
+    "No direct ARM BL to entry found in static main ARM9 image; may be reached indirectly or from overlays",
+    "Instruction identity confirms hardware button sampling, not an actual gameplay touchscreen-dispatch hook",
+    "No ROM modifications performed; runtime use not yet verified"
+  ]
+}

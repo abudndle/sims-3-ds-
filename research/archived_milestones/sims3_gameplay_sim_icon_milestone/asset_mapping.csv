@@ -1,0 +1,5 @@
+purpose,original_dst_path,binding_status
+Sim icon candidate,DATA/BACKEND/HUD/button_people.dst,visual candidate only; not confirmed original Sims navigation icon
+Arrow left,DATA/BACKEND/HUD/button_left.dst,decoded
+Arrow right,DATA/BACKEND/HUD/button_right.dst,decoded
+Career icon,DATA/BACKEND/HUD/button_career.dst,decoded
