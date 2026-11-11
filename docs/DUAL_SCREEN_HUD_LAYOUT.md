@@ -1,52 +1,38 @@
-# Sims 3 DS — final dual-screen HUD layout specification
+# Sims 3 DS — dual-screen HUD layout (current requirement)
 
-Status: **approved design requirement; not yet integrated into a playable ROM**.
+**Status:** design requirement only; the modified playable ROM is not yet complete.
 
-## Top screen — gameplay view
-- Retain the game's original live 3D scene as the top-screen gameplay view.
-- Remove the original informational HUD overlays from the top screen and move their functions to pages on the bottom screen. Do **not** remove Sims, furniture, world rendering, animations or interactions from the 3D scene.
-- Do not place the bottom-screen controls HUD over the top-screen scene.
+## Screen arrangement
 
-## Bottom screen — touch-accessible HUD carousel
-- **Page 0 (default):** the game's **original bottom-screen HUD associated with the 3D gameplay view**, preserving its existing graphics, buttons and functionality. It remains displayed on the bottom touchscreen, not on the top screen.
-- **Pages 1 onward:** the game's **original top-screen Sim-information HUD panels** (Sim overview/info, needs/mood, wishes, inventory, relationships, skills, career/job, phone and any other panels as established by original-game asset/behavior audit). Relocate each original information panel to bottom-screen display. Preserve its own contents, graphical style, states and interactions; do not replace it with a generic reimagined HUD.
-- Show **left and right page arrows on every bottom-screen page**, including page 0. These navigate among available HUD pages. Page 0 is first when gameplay starts or the HUD is reset. Navigation wraps from the last page to page 0 and backwards from page 0 to the last page.
-- Make page arrows the primary HUD navigation; do not require button shortcuts. Keep original HUD touch targets functional. Layout/placement must prevent arrow targets from blocking important existing controls.
-- Page switching changes only the bottom-screen HUD; the top-screen 3D scene continues rendering without disruption, camera reset or world reload.
-- Opening an in-game subpanel returns to the same page unless the original workflow requires navigation. Gameplay transitions can explicitly reset page selection to page 0.
-- The order and number of information pages must be confirmed from original game UI assets/screens. The navigation code accepts an ordered list rather than assuming every listed category is a separate actual panel.
+**Top screen:** display the original live 3D world. Keep the actual game rendering, Sims, objects, animations and world interactions. Do not place HUD panels, notifications or newly invented overlays on the top screen.
 
-## Bottom-screen notifications — persistent overlay on the active page
-- Job opportunities, skill gains/level-ups, career updates, and all original gameplay notifications appear in a **layer on top of the currently selected bottom-screen HUD page** (including Page 0 and every Sim-information page). Notifications are **not a separate HUD page**.
-- The notification remains visible **until the player explicitly clears, acknowledges, or resolves it**. Do not automatically dismiss it after a timeout merely because its original presentation was temporary.
-- Navigating with the left/right HUD arrows changes the page **beneath** the overlay; the notification persists above the newly selected page until cleared. Do not reset the underlying page when a notification arrives or is dismissed.
-- Maintain a FIFO queue so multiple notifications do not replace or lose one another; clearing the currently displayed notification reveals the next one.
-- Preserve original message text, icons, actions and audio where feasible after original-game audit. Reserve reachable navigation and dismissal touch regions; ensure important HUD controls can still be accessed or are restored after dismissal.
-- Keep the top-screen 3D view unobstructed by all notification messages.
+**Bottom touchscreen:** display the original game's HUD with all its original artwork, sizes, positions, touch controls, behaviors and information. Nothing is redesigned, scaled, or repositioned merely because it is accessed by page navigation.
 
-## Revisitable job opportunities — always on gameplay HUD Page 0
-- Job opportunity notifications initially display **as an overlay on Page 0**, over the original 3D gameplay-control HUD on the bottom touchscreen. The top screen remains an unobstructed 3D world.
-- After a player clears or temporarily closes the job opportunity overlay, they can **reopen its original details from Page 0** until the offer's in-game expiration. This is a Page 0 notification/action, **not a dedicated HUD carousel page**.
-- Page navigation never deletes an available job offer. The original Page 0 HUD remains beneath the opportunity overlay, and existing information pages still start at Page 1.
-- When the game's actual expiration time is reached, the offer becomes unavailable to reopen and cannot be accepted. **Do not invent a timer**: use the original game's expiration state or time value; expiration behavior must be verified in the ROM.
-- Regular skill gains, career updates and other notifications continue as persistent overlays on their active bottom-screen HUD page until cleared, without becoming new pages.
-- The exact Page 0 reopen control, job-offer graphics and interactions require original-game asset and runtime verification before in-ROM integration.
+- **Page 0 (default):** the same original bottom-screen HUD in exactly the position it occupied alongside the 3D gameplay.
+- **Pages 1 onward:** the original HUD/information panels formerly displayed on the top screen, shown on the bottom touchscreen one at a time. Preserve their original assets, layout, content and functions.
+- **Navigation:** left/right touchscreen arrows switch among the existing HUD screens, returning to Page 0 when navigating around the ends. These are the only new navigation affordances. Keep them out of the existing HUD touch targets. Do not move or reset the 3D world while changing pages.
+- **Page count/order:** derive from original game screens; do not invent separate pages for features that were not originally standalone screens.
 
-## Implementation sequencing
-1. Inventory exact original top/bottom HUD screen assets and functions and verify target positions.
-2. Implement page selection and arrow touch regions independent of proprietary assets; add unit tests.
-3. Integrate preserved original bottom HUD on Page 0, original top information HUD pages from Page 1 onward, and a persistent notifications overlay above the active bottom-screen page.
-4. Keep 3D scene top-screen-only and remove top informational overlays.
-5. Validate every page's controls, switching during active gameplay, and save continuity in melonDS. Produce real captures from a modified ROM, not concept art.
+## Notifications: same original bottom-screen presentation
 
-## Acceptance checks
-- A fresh gameplay session shows original 3D gameplay on top and the former bottom 3D-control HUD as page 0 **on bottom**.
-- Both navigation arrows are visible and work by touch on all pages.
-- Every original top-screen Sim-information HUD is reachable on the bottom touchscreen in its original style and retains full behavior.
-- Switching pages never moves or interrupts the 3D scene on top.
-- No Sim information is permanently lost in the conversion.
-- Job opportunities initially overlay **Page 0**, the original gameplay HUD. Cleared job offers can be reopened from Page 0 until the original in-game expiry; no extra carousel page is created.
-- Other gameplay notifications overlay the selected bottom HUD until cleared. Navigation does not remove their overlays.
-- Test on both DS and DSi emulation; keep proprietary ROM/artwork in the private/local workspace.
+- Display original game notifications **on the bottom screen exactly as the game normally does**, using their original UI, placement, timing, controls and behavior.
+- **Do not build a new notification overlay or persistent-popup layer**, and do not put notifications over the top-screen 3D scene.
+- Do not force original transient notifications to stay until a new dismissal action; do not invent a FIFO replacement, dedicated notification page, or new popup placement.
+- Job opportunities likewise use the original game's notification details and expiry/revisit behavior only if that behavior can be verified. Do not invent a new page, reopen control or expiration timer.
 
-This specification supersedes earlier proposals to replace original HUDs wholesale or show permanent information overlays on the top screen.
+## Original assets and scope
+
+Use the original authorized game assets in the private/local workspace; never put copyrighted ROMs, extracted proprietary art or unlicensed game data in the public repository or CI artifacts. Preserve the in-game visual appearance rather than drawing a new HUD.
+
+Existing source-only modules under `tools/hud_notifications`, `tools/hud_overlay_controller`, `tools/hud_job_offers`, and `tools/hud_game_session` were developed under an earlier **persistent-overlay proposal**. **That proposal is superseded.** Those modules and any old passing tests do **not** establish correct notification behavior and **must not be integrated into the ROM as an invented overlay**. Audit original notification behavior before deciding whether any logic from them is reusable.
+
+## Acceptance criteria
+
+1. Real gameplay shows the original 3D world on the top screen without any HUD panels or notifications there.
+2. The original bottom HUD appears on Page 0 at the same positions, scale and functionality as in the game.
+3. All original top HUD panels can be reached on the bottom touchscreen using left/right arrows, while preserving their appearance and functionality.
+4. Navigation only changes the active HUD screen, without interrupting the top-screen world.
+5. All notifications appear and behave in their **original bottom-screen locations**, without an added overlay system.
+6. Verify all active touch targets, notifications, gameplay transitions, save behavior and DS/DSi compatibility in a patched ROM running in melonDS.
+
+No source-only layout/state model is evidence that the full ROM conversion works. Keep the executable integration milestone open until emulator verification succeeds.
