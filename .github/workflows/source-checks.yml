@@ -86,6 +86,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_callback_paths -p 'test_*.py' -v
+      - name: Verify ARM9 touchscreen calibration boundary
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_touch_calibration -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
