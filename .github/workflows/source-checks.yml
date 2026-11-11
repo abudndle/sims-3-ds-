@@ -98,6 +98,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/hud_notifications -p 'test_*.py' -v
+      - name: Test HUD page and notification overlay integration
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/hud_overlay_controller -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
