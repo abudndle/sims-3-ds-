@@ -24,6 +24,14 @@ Status: **approved design requirement; not yet integrated into a playable ROM**.
 - Preserve original message text, icons, actions and audio where feasible after original-game audit. Reserve reachable navigation and dismissal touch regions; ensure important HUD controls can still be accessed or are restored after dismissal.
 - Keep the top-screen 3D view unobstructed by all notification messages.
 
+## Revisitable job opportunities — always on gameplay HUD Page 0
+- Job opportunity notifications initially display **as an overlay on Page 0**, over the original 3D gameplay-control HUD on the bottom touchscreen. The top screen remains an unobstructed 3D world.
+- After a player clears or temporarily closes the job opportunity overlay, they can **reopen its original details from Page 0** until the offer's in-game expiration. This is a Page 0 notification/action, **not a dedicated HUD carousel page**.
+- Page navigation never deletes an available job offer. The original Page 0 HUD remains beneath the opportunity overlay, and existing information pages still start at Page 1.
+- When the game's actual expiration time is reached, the offer becomes unavailable to reopen and cannot be accepted. **Do not invent a timer**: use the original game's expiration state or time value; expiration behavior must be verified in the ROM.
+- Regular skill gains, career updates and other notifications continue as persistent overlays on their active bottom-screen HUD page until cleared, without becoming new pages.
+- The exact Page 0 reopen control, job-offer graphics and interactions require original-game asset and runtime verification before in-ROM integration.
+
 ## Implementation sequencing
 1. Inventory exact original top/bottom HUD screen assets and functions and verify target positions.
 2. Implement page selection and arrow touch regions independent of proprietary assets; add unit tests.
@@ -37,7 +45,8 @@ Status: **approved design requirement; not yet integrated into a playable ROM**.
 - Every original top-screen Sim-information HUD is reachable on the bottom touchscreen in its original style and retains full behavior.
 - Switching pages never moves or interrupts the 3D scene on top.
 - No Sim information is permanently lost in the conversion.
-- Job opportunities, skill gains/level-ups and other gameplay alerts display **over the active bottom HUD page until cleared**; changing pages never dismisses the overlay, and notifications have no dedicated page.
+- Job opportunities initially overlay **Page 0**, the original gameplay HUD. Cleared job offers can be reopened from Page 0 until the original in-game expiry; no extra carousel page is created.
+- Other gameplay notifications overlay the selected bottom HUD until cleared. Navigation does not remove their overlays.
 - Test on both DS and DSi emulation; keep proprietary ROM/artwork in the private/local workspace.
 
 This specification supersedes earlier proposals to replace original HUDs wholesale or show permanent information overlays on the top screen.
