@@ -38,6 +38,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_shared_handoff -p 'test_*.py' -v
+      - name: Run ARM7 field-provenance decoder tests
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm7_field_provenance -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
