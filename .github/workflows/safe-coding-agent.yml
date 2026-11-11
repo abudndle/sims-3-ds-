@@ -1,0 +1,168 @@
+name: Sims 3 DS safe unattended coding agent
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/safe-coding-agent.yml']
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+concurrency:
+  group: sims3-safe-code-agent-${{ github.repository }}
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      SIMS3_DS_ROM: ''
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate current public code without game assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_public_repository.py
+          for dir in tools/*; do
+            if compgen -G "$dir/test_*.py" >/dev/null; then
+              python3 -m unittest discover -s "$dir" -p 'test_*.py' -v
+            fi
+          done
+      - name: Defer when a recent bot proposal is pending
+        id: preflight
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          pending="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 100 --json headRefName,createdAt --jq '[.[] | select((.headRefName | startswith("agent/sims3-")) and (now - (.createdAt | fromdateiso8601) < 7200))] | length')"
+          if (( pending > 0 )); then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo 'Recent bot PR exists; no overlapping proposal.'
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install isolated free coding model
+        if: steps.preflight.outputs.proceed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --user aider-chat==0.86.1
+          curl -fsSL https://ollama.com/install.sh | sh
+          OLLAMA_HOST=127.0.0.1:11434 ollama serve >/tmp/sims3-ollama.log 2>&1 &
+          for n in {1..60}; do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null 2>&1; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:11434/api/tags >/dev/null
+          timeout --signal=TERM --kill-after=30s 600s ollama pull qwen2.5-coder:3b
+      - name: Generate one original-asset-free code and regression fix
+        id: model
+        if: steps.preflight.outputs.proceed == 'true'
+        shell: bash
+        env:
+          OLLAMA_API_BASE: http://127.0.0.1:11434
+        run: |
+          set -euo pipefail
+          pairs=(
+            'tools/arm7_touch_aux/analyze.py tools/arm7_touch_aux/test_analyze.py'
+            'tools/arm7_handler_memory/analyze.py tools/arm7_handler_memory/test_analyze.py'
+            'tools/arm7_adc_candidates/audit.py tools/arm7_adc_candidates/test_audit.py'
+            'tools/arm7_field_provenance/analyze.py tools/arm7_field_provenance/test_analyze.py'
+            'tools/arm7_spi_device_classification/classify.py tools/arm7_spi_device_classification/test_classify.py'
+            'tools/arm7_gamecard_d8/analyze.py tools/arm7_gamecard_d8/test_analyze.py'
+            'tools/arm9_shared_handoff/analyze.py tools/arm9_shared_handoff/test_analyze.py'
+          )
+          pair="${pairs[$((GITHUB_RUN_NUMBER % 7))]}"
+          read -r source regression <<< "$pair"
+          test -f "$source" && test -f "$regression"
+          echo "source=$source" >> "$GITHUB_OUTPUT"
+          echo "regression=$regression" >> "$GITHUB_OUTPUT"
+          ca_file="$(python -c 'import certifi; print(certifi.where())')"
+          export SSL_CERT_FILE="$ca_file" REQUESTS_CA_BUNDLE="$ca_file"
+          task="Find a real testable public Python analysis defect in $source. Add a regression that fails before the fix in $regression and then repair it. Modify only these two files. Do not remove existing assertions, make cosmetic edits, use proprietary Nintendo/EA assets, access original ROMs, or claim executable ROM functionality. If no bug exists, edit nothing."
+          timeout --signal=TERM --kill-after=30s 900s \
+            "$HOME/.local/bin/aider" --model ollama_chat/qwen2.5-coder:3b \
+            --yes-always --no-auto-commits --no-gitignore \
+            --no-check-update --no-show-model-warnings --no-detect-urls \
+            --no-restore-chat-history --edit-format whole --map-tokens 0 \
+            --chat-history-file "$RUNNER_TEMP/sims3-aider-chat.md" \
+            --input-history-file "$RUNNER_TEMP/sims3-aider-input" \
+            --llm-history-file "$RUNNER_TEMP/sims3-aider-llm" \
+            --message "$task" "$source" "$regression"
+      - name: Independently reject cosmetic or unsafe proposals and run tests
+        if: steps.preflight.outputs.proceed == 'true'
+        env:
+          TARGET_SOURCE: ${{ steps.model.outputs.source }}
+          TARGET_TEST: ${{ steps.model.outputs.regression }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- "$TARGET_SOURCE" "$TARGET_TEST"
+          python3 - <<'PY'
+          import os, subprocess
+          source=os.environ["TARGET_SOURCE"]
+          test=os.environ["TARGET_TEST"]
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True)
+          changed=git("diff","--cached","--name-only").splitlines()
+          if sorted(changed)!=sorted([source,test]):
+              raise SystemExit("Expected exactly one approved source/test pair")
+          other=git("diff","--name-only").splitlines()
+          if any(x not in (source,test) for x in other):
+              raise SystemExit("Other tracked file edits detected")
+          if not git("diff","--cached","--ignore-all-space","--",source).strip():
+              raise SystemExit("No substantive source edit")
+          patch=git("diff","--cached","--unified=0","--",test).splitlines()
+          removed=[s[1:] for s in patch if s.startswith("-") and not s.startswith("---")]
+          added=[s[1:] for s in patch if s.startswith("+") and not s.startswith("+++")]
+          if any("self.assert" in s or "assert " in s for s in removed):
+              raise SystemExit("Existing regression assertion weakened")
+          if not any("self.assert" in s or "assert " in s for s in added):
+              raise SystemExit("Missing newly added regression assertion")
+          PY
+          python3 scripts/validate_public_repository.py
+          python3 -m compileall -q tools
+          for dir in tools/*; do
+            if compgen -G "$dir/test_*.py" >/dev/null; then
+              python3 -m unittest discover -s "$dir" -p 'test_*.py' -v
+            fi
+          done
+      - name: Publish review-only draft PR with source and test
+        if: steps.preflight.outputs.proceed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_SOURCE: ${{ steps.model.outputs.source }}
+          TARGET_TEST: ${{ steps.model.outputs.regression }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          base_sha="$(git rev-parse HEAD)"
+          current_sha="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq '.object.sha')"
+          if [[ "$base_sha" != "$current_sha" ]]; then
+            echo '::error::Main changed during AI inference; reject stale proposal.'
+            exit 1
+          fi
+          git add -- "$TARGET_SOURCE" "$TARGET_TEST"
+          test "$(git diff --cached --name-only | wc -l)" -eq 2
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          branch="agent/sims3-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          git switch -c "$branch"
+          git commit -m 'agent: propose bounded Sims 3 DS public analysis fix'
+          gh auth setup-git
+          git push origin "HEAD:refs/heads/$branch"
+          gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$branch" --draft \
+            --title 'AI proposal: Sims 3 DS independent analysis fix' \
+            --body "Independent public source/tests only: $TARGET_SOURCE and $TARGET_TEST. No private original ROM, game assets or tested gameplay patch. Review and pass source CI before any merge."
