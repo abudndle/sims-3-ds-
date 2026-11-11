@@ -122,6 +122,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_callback_store_candidates -p 'test_*.py' -v
+      - name: Test ARM9 touchscreen callback initialization and reader relationship
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_touch_callback_reset -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
