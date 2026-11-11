@@ -110,6 +110,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/hud_game_session -p 'test_*.py' -v
+      - name: Verify ARM9 touchscreen calibration caller
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_calibration_caller -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
