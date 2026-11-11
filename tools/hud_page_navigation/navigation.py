@@ -1,13 +1,13 @@
 """Dependency-free HUD page selection logic for the Sims 3 DS dual-screen rework.
 
 This is a portable reference/state model, not yet hooked into the game ROM.
-Page 0 is the original lower-screen 3D-control HUD; page 1 is notifications.
+Page 0 is the original gameplay-control HUD; informational HUD pages follow.
+Notifications overlay whichever page is selected until explicitly cleared.
 """
 from dataclasses import dataclass
 from typing import Sequence
 
 ORIGINAL_3D_HUD = "original_3d_control_hud"
-NOTIFICATIONS_HUD = "notifications"
 
 
 @dataclass(frozen=True)
@@ -16,8 +16,8 @@ class PageState:
     index: int = 0
 
     def __post_init__(self):
-        if len(self.pages) < 2 or self.pages[:2] != (ORIGINAL_3D_HUD, NOTIFICATIONS_HUD):
-            raise ValueError("pages zero and one must be gameplay controls and notifications")
+        if not self.pages or self.pages[0] != ORIGINAL_3D_HUD:
+            raise ValueError("page zero must be the original gameplay-control HUD")
         if any(not isinstance(p, str) or not p.strip() for p in self.pages):
             raise ValueError("pages must have nonblank identifiers")
         if len(self.pages) != len(set(self.pages)):
@@ -44,7 +44,7 @@ class PageState:
 
     def with_original_information_panels(self, panels: Sequence[str]) -> "PageState":
         """Reconcile inventory while retaining current page when it still exists."""
-        pages = (ORIGINAL_3D_HUD, NOTIFICATIONS_HUD, *tuple(panels))
+        pages = (ORIGINAL_3D_HUD, *tuple(panels))
         if not pages or len(pages) != len(set(pages)):
             raise ValueError("invalid page inventory")
         selected = self.current if self.current in pages else ORIGINAL_3D_HUD
@@ -53,7 +53,7 @@ class PageState:
 
 def create_hud_pages(information_panels: Sequence[str] = ()) -> PageState:
     """Load actual top-screen panel inventory only after asset audit."""
-    return PageState((ORIGINAL_3D_HUD, NOTIFICATIONS_HUD, *tuple(information_panels)))
+    return PageState((ORIGINAL_3D_HUD, *tuple(information_panels)))
 
 
 @dataclass(frozen=True)
