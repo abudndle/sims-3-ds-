@@ -92,6 +92,41 @@ ARM7_STATUS = {
 }
 
 
+ARM7_FILTER = {
+    0x0238dcd0: 0xe1a06001, 0x0238dd98: 0xe7981109, 0x0238dda4: 0xe7980102,
+    0x0238ddac: 0xe0510000, 0x0238ddb0: 0x42600000, 0x0238ddb4: 0xe1500003,
+    0x0238ddb8: 0xc1a03000, 0x0238ddd0: 0xe1c530b0, 0x0238dddc: 0xe7982105,
+    0x0238dde8: 0xe7981109, 0x0238ddec: 0xe0520001, 0x0238ddf0: 0x42600000,
+    0x0238ddf4: 0xe1500006, 0x0238ddf8: 0xca00000f, 0x0238de04: 0xe7983100,
+    0x0238de08: 0xe052c003, 0x0238de0c: 0x426cc000, 0x0238de10: 0xe15c0006,
+    0x0238de14: 0xd0810082, 0x0238de18: 0xd0830000, 0x0238de1c: 0xd1a00140,
+    0x0238de30: 0xe2800001, 0x0238de34: 0xe3500005, 0x0238de38: 0xbafffff1,
+    0x0238de3c: 0xe2899001, 0x0238de40: 0xe3590004, 0x0238de44: 0xbaffffe7,
+    0x0238de48: 0xe2855001, 0x0238de4c: 0xe3550003, 0x0238de50: 0xbaffffe1,
+    0x0238de54: 0xe59d2000, 0x0238de58: 0xe59d1010, 0x0238de60: 0xe0821001,
+    0x0238de64: 0xe1a010c1,
+}
+
+
+def filter_axis(samples, tolerance):
+    """Model the ARM7 filter for five unsigned 12-bit samples in acquisition order."""
+    if len(samples) != 5 or any(not isinstance(value, int) or not 0 <= value <= 4095
+                                for value in samples):
+        raise ValueError("five unsigned 12-bit samples required")
+    if not isinstance(tolerance, int) or not 0 <= tolerance <= 0x7fffffff:
+        raise ValueError("nonnegative signed 32-bit tolerance required")
+
+    spread = max(samples) - min(samples)
+    for index, first in enumerate(samples[:3]):
+        close = [value for value in samples[index + 1:] if abs(value - first) <= tolerance]
+        if len(close) >= 2:
+            filtered = (2 * first + close[0] + close[1]) >> 2
+            return {"value": filtered & ~7, "spread": spread, "fallback": False}
+
+    filtered = (samples[0] + samples[-1]) >> 1
+    return {"value": filtered & ~7, "spread": spread, "fallback": True}
+
+
 def verify_sites(reader, anchors, cpu):
     for address, opcode in anchors.items():
         if reader(address) != opcode:
@@ -101,6 +136,7 @@ def inspect_arm7(reader):
     verify_sites(reader, ARM7, "ARM7")
     verify_sites(reader, ARM7_PRODUCER, "ARM7")
     verify_sites(reader, ARM7_STATUS, "ARM7")
+    verify_sites(reader, ARM7_FILTER, "ARM7")
     return {
         "producer": "0x0238de90",
         "sampler": "0x0238dcac",
@@ -130,8 +166,18 @@ def inspect_arm7(reader):
             "final_pen_up": "Pen bit cleared; sampled coordinates retained",
             "bits_preserved_by_producer": [27, 28, 29, 30, 31],
         },
+        "filter": {
+            "spread_store": "0x0238ddd0",
+            "weighted_store": "0x0238de24",
+            "fallback_store": "0x0238de6c",
+            "sample_count": 5,
+            "output_step": 8,
+            "weighted_rule": "First acquisition-ordered triple with both later samples within tolerance of the first; weights 2:1:1",
+            "fallback_rule": "Mean of first and fifth samples",
+            "spread_rule": "Maximum absolute pairwise difference",
+        },
         "scope": "Filtered ADC samples on the sampling path",
-        "verified_sites": len(ARM7) + len(ARM7_PRODUCER) + len(ARM7_STATUS),
+        "verified_sites": len(ARM7) + len(ARM7_PRODUCER) + len(ARM7_STATUS) + len(ARM7_FILTER),
     }
 
 def fields(value):
@@ -163,7 +209,7 @@ def inspect(rom,strict=True):
  "arm9_readers":["0x020d7418","0x020d74ec"],"verified_sites":len(ARM9)+producer["verified_sites"],
  "arm7_producer":producer,
  "result":"ARM7 packs filtered touchscreen X/Y ADC samples for ARM9.",
- "unknown":["Runtime touchscreen X/Y correlation and origin of preserved bits 27–31","Runtime call path",
+ "unknown":["Runtime touchscreen X/Y correlation and origin of preserved bits 27â€“31","Runtime call path",
             "Screen coordinate calibration","ARM9 gameplay UI dispatcher"]}
 if __name__=="__main__":
  p=argparse.ArgumentParser();p.add_argument("rom",type=Path)
