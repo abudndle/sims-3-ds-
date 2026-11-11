@@ -13,12 +13,24 @@
 - **Navigation:** small left/right touchscreen arrows switch among existing HUD screens, returning to Page 0 when navigating around the ends. The arrows must occupy minimal screen space without covering original buttons or their touch targets. Do not move or reset the 3D world while changing pages.
 - **Page count/order:** derive from original game screens; do not invent separate pages for features that were not originally standalone screens.
 
+## Lot gameplay versus leaving the lot
+
+The user-supplied six-panel mockup is the **in-lot gameplay reference**, not a replacement for the neighborhood/map interface.
+
+- **While inside a lot:** use the same top/bottom screen pairings shown in the approved six-panel lot mockup. Page 0 is the original gameplay HUD, with the original 3D scene on top and original touchscreen gameplay controls below. Other lot HUD selections retain the corresponding original assets and screen placements shown in the reference; the added page arrows are small and do not cover existing controls.
+- **When leaving the lot for the neighborhood/map:** exit the in-lot HUD/page system and **restore the original normal touchscreen controls for that outside-lot mode**. Do not leave the in-lot HUD, compact carousel navigation, or in-lot camera/touch mapping active on the map.
+- **In the neighborhood/map:** preserve the original touch-to-select, navigation and contextual menu actions, including their exact original icon strip and positions; do not introduce a new touchscreen control scheme.
+- **When entering a lot again:** return to its correct in-lot default view (Page 0 gameplay HUD) and restore the in-lot 3D/top and HUD/bottom pairing. The original three-dot button reveals the contextual buttons appropriate to the current game mode.
+- **Entering or exiting Buy/Build or phone/Relationships:** use the original game's own transition, cancellation and touchscreen interaction rules. The normal lot HUD carousel must not hijack controls inside those modes.
+- Verify these transitions in the patched ROM and melonDS, especially pen targets, page reset, camera ownership, and return-from-map behavior. Source-only models are insufficient to claim compatibility.
+
 ## Original three-dot button bar and relationship view
 
 - Tapping the existing **three dots (`...`)** in the original gameplay HUD expands the **original blue icon/button bar**, matching the user-supplied screenshot: phone, home/build-related controls, and the game's other original buttons in their original order and artwork. The dots reveal the existing buttons; they do **not** open a newly redesigned tab system.
 - **Relationships has its own original view accessed through the phone button**, rather than appearing as a permanent HUD-carousel page. Selecting the relationship function opens that view in the original game's style and retains its existing interactions.
 - **While the Relationships view is open, the 3D camera/world view is temporarily displayed on the bottom screen** as requested, with the original relationship UI on the other screen as appropriate to that view. Keep this temporary screen configuration until the player explicitly cancels/exits Relationships, then restore the previous normal gameplay screen/page and the original bottom HUD/button-bar state.
-- **After leaving the neighborhood/map view:** return to the normal gameplay HUD rather than a special map-only tab page. Tapping the original `...` control must expand the **exact original bottom-screen blue button strip shown in the user's map-exit screenshot**. This is the existing contextual row of game controls, including the phone, home and other original icons; retain the exact artwork, order, placement and touch actions. Do not construct an extra screen or duplicate those buttons as page-navigation icons. The map-exit state and button bar should follow the original game flow, not a newly invented menu.\n- The separate HUD-page arrows are intentionally compact and must not replace or interfere with the original three-dot menu, phone controls or cancellation behavior.
+- **After leaving the neighborhood/map and re-entering a lot:** return to the original in-lot gameplay HUD rather than a special map-only tab page. Tapping the original `...` control must expand the **exact original bottom-screen blue button strip shown in the user's map-exit screenshot**. This is the existing contextual row of game controls, including the phone, home and other original icons; retain the exact artwork, order, placement and touch actions. Do not construct an extra screen or duplicate those buttons as page-navigation icons. The map-exit state and button bar should follow the original game flow, not a newly invented menu.
+- The separate HUD-page arrows are intentionally compact and must not replace or interfere with the original three-dot menu, phone controls or cancellation behavior.
 
 ## Original Buy and Build Mode (not carousel pages)
 
@@ -46,6 +58,9 @@ Existing source-only modules under `tools/hud_notifications`, `tools/hud_overlay
 3. All original top HUD panels can be reached on the bottom touchscreen using left/right arrows, while preserving their appearance and functionality.
 4. Navigation only changes the active HUD screen, without interrupting the top-screen world.
 5. All notifications appear and behave in their **original bottom-screen locations**, without an added overlay system.
-6. Tapping the original three dots reveals the existing original blue button bar; the phone opens the distinct Relationships view with the requested temporary bottom-screen camera, and cancelling restores normal gameplay.\n7. Buy/Build activate via original buttons only, retaining their original two-screen 3D touchscreen controls; neither is a HUD carousel page.\n8. Verify all active touch targets, notifications, gameplay transitions, save behavior and DS/DSi compatibility in a patched ROM running in melonDS.
+6. Tapping the original three dots reveals the existing original blue button bar; the phone opens the distinct Relationships view with the requested temporary bottom-screen camera, and cancelling restores normal gameplay.
+7. Buy/Build activate via original buttons only, retaining their original two-screen 3D touchscreen controls; neither is a HUD carousel page.
+8. Leaving a lot restores the original neighborhood/map touchscreen input and HUD; returning to a lot restores the correct in-lot Page 0 without stale controls.
+9. Verify all active touch targets, notifications, gameplay transitions, save behavior and DS/DSi compatibility in a patched ROM running in melonDS.
 
 No source-only layout/state model is evidence that the full ROM conversion works. Keep the executable integration milestone open until emulator verification succeeds.
