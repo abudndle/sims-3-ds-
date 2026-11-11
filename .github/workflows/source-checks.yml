@@ -74,6 +74,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_event_boundary -p 'test_*.py' -v
+      - name: Check ARM9 Timer3 interrupt handler registration
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_irq_registration -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
