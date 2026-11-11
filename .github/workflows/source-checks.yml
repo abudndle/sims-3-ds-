@@ -54,6 +54,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm7_spi_device_classification -p 'test_*.py' -v
+      - name: Verify game-card-bus D8 exclusion tests
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm7_gamecard_d8 -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
