@@ -62,6 +62,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm7_d0_call_path -p 'test_*.py' -v
+      - name: Test ARM7/ARM9 packed 12-bit shared fields
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_packed_shared_fields -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
