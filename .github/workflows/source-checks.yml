@@ -42,6 +42,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm7_field_provenance -p 'test_*.py' -v
+      - name: Verify touchscreen ADC command classification
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm7_touch_aux -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
