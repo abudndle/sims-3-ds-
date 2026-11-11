@@ -1,0 +1,67 @@
+name: Extract uploaded public source archive
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sims3-ds-PUBLIC-source.zip'
+      - '.github/workflows/extract-public-archive.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: unpack-public-main
+  cancel-in-progress: false
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate and extract source-only archive
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path, PurePosixPath
+          from zipfile import ZipFile
+          src=Path('sims3-ds-PUBLIC-source.zip')
+          if not src.is_file(): raise SystemExit('Uploaded ZIP not found')
+          allowed={'.py','.c','.h','.md','.csv','.json','.sh'}
+          target=Path('research')
+          size=0; count=0
+          with ZipFile(src) as z:
+              for info in z.infolist():
+                  if info.is_dir(): continue
+                  p=PurePosixPath(info.filename)
+                  if p.is_absolute() or '..' in p.parts or '\\' in info.filename:
+                      raise SystemExit('Unsafe archive path: '+info.filename)
+                  if info.file_size>2_000_000: raise SystemExit('Unexpected large source file')
+                  size+=info.file_size
+                  if size>16_000_000: raise SystemExit('Archive exceeded size limit')
+                  if p.parts[0]=='project':
+                      rel=PurePosixPath(*p.parts[1:])
+                      if not rel.parts: continue
+                      dst=target.joinpath(*rel.parts)
+                  elif p.name=='README_UPLOAD_FIRST.md':
+                      dst=target/'README_UPLOAD_FIRST.md'
+                  else: raise SystemExit('Unknown archive layout: '+info.filename)
+                  if dst.suffix.lower() not in allowed: raise SystemExit('Unexpected file type: '+info.filename)
+                  if info.external_attr>>16 & 0o170000 == 0o120000: raise SystemExit('Symlink refused')
+                  dst.parent.mkdir(parents=True,exist_ok=True)
+                  with z.open(info) as input_file, dst.open('wb') as output:
+                      output.write(input_file.read())
+                  count+=1
+          print(f'Extracted {count} safe source/report files ({size} bytes) into research/')
+          PY
+      - name: Commit extracted source files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/
+          if git diff --cached --quiet; then
+            echo "No new extracted files"
+          else
+            git commit -m "Extract uploaded public research archive [skip ci]"
+            git push origin HEAD:main
+          fi
