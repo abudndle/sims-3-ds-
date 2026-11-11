@@ -46,6 +46,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm7_touch_aux -p 'test_*.py' -v
+      - name: Run ARM7 ADC immediate-candidate audit tests
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm7_adc_candidates -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
