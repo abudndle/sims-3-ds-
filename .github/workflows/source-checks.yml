@@ -114,6 +114,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_calibration_caller -p 'test_*.py' -v
+      - name: Verify ARM9 touchscreen synchronization gate
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_touch_sync_gate -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
