@@ -102,6 +102,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/hud_overlay_controller -p 'test_*.py' -v
+      - name: Verify Page-0 reopenable job opportunities
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/hud_job_offers -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
