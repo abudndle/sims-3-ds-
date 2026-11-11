@@ -57,6 +57,41 @@ ARM7_PRODUCER = {
     0x0238e04c: 0xff000fff, 0x0238e050: 0x00000fff,
 }
 
+ARM7_STATUS = {
+    # Pen probe reads EXTKEYIN bit 6 and may retry.
+    0x0238dba8: 0xe59f40c0, 0x0238dbf8: 0xe59f0084, 0x0238dbfc: 0xe1d000b0,
+    0x0238dc00: 0xe3500000, 0x0238dc04: 0x1a000004, 0x0238dc08: 0xe1d400b0,
+    0x0238dc0c: 0xe3100040, 0x0238dc10: 0x03a00001, 0x0238dc14: 0x13a00000,
+    0x0238dc18: 0xea000012, 0x0238dc1c: 0xe1d400b0, 0x0238dc20: 0xe3100040,
+    0x0238dc24: 0x03a00001, 0x0238dc28: 0x0a00000e, 0x0238dc58: 0xe1d400b0,
+    0x0238dc5c: 0xe3100040, 0x0238dc60: 0x13a00000, 0x0238dc64: 0x03a00002,
+    0x0238dc70: 0x04000136,
+    # Initial pen-up clears coordinates and sets both status bits.
+    0x0238deb4: 0xe1b07000, 0x0238debc: 0xe59a2000, 0x0238dec0: 0xe3a00a01,
+    0x0238dec4: 0xe2600000, 0x0238dec8: 0xe59f117c, 0x0238decc: 0xe0020000,
+    0x0238ded0: 0xe0000001, 0x0238ded4: 0xe3c00401, 0x0238ded8: 0xe3c00406,
+    0x0238dedc: 0xe3800406, 0x0238dee8: 0xea000054,
+    # Sampler fallback codes are X=1 and Y=2.
+    0x0238dcc4: 0x03a04001, 0x0238dcdc: 0x13a04002, 0x0238de28: 0xd3a00000,
+    0x0238de5c: 0xe1a00004,
+    # Insert X result, merge Y fallback and override on initial retry.
+    0x0238df04: 0xe59a1000, 0x0238df08: 0xe1a00f00, 0x0238df0c: 0xe3c11406,
+    0x0238df10: 0xe18112a0, 0x0238df14: 0xe58a1000, 0x0238df48: 0xe3500002,
+    0x0238df4c: 0x059a1000, 0x0238df54: 0x01a00281, 0x0238df58: 0x01a00f20,
+    0x0238df5c: 0x03800002, 0x0238df60: 0x03c11406, 0x0238df64: 0x01a00f00,
+    0x0238df68: 0x018102a0, 0x0238df6c: 0x058a0000, 0x0238dfb8: 0xe3570002,
+    0x0238dfbc: 0x059a0000, 0x0238dfc0: 0x03c00406, 0x0238dfc4: 0x03800406,
+    0x0238dfc8: 0x058a0000,
+    # Final probe sets or clears the pen bit and overrides status on retry.
+    0x0238dfcc: 0xebfffef4, 0x0238dfd0: 0xe3500000, 0x0238dfd4: 0x0a000015,
+    0x0238dfd8: 0xe3500001, 0x0238dfdc: 0x0a000008, 0x0238dfe0: 0xe3500002,
+    0x0238dfe4: 0x059a0000, 0x0238dfe8: 0x03800401, 0x0238dfec: 0x03c00406,
+    0x0238dff0: 0x03800406, 0x0238dff4: 0x058a0000, 0x0238e004: 0xe59a0000,
+    0x0238e008: 0xe3800401, 0x0238e00c: 0xe58a0000, 0x0238e030: 0xe59a0000,
+    0x0238e034: 0xe3c00401, 0x0238e038: 0xeaffffa8,
+}
+
+
 def verify_sites(reader, anchors, cpu):
     for address, opcode in anchors.items():
         if reader(address) != opcode:
@@ -65,6 +100,7 @@ def verify_sites(reader, anchors, cpu):
 def inspect_arm7(reader):
     verify_sites(reader, ARM7, "ARM7")
     verify_sites(reader, ARM7_PRODUCER, "ARM7")
+    verify_sites(reader, ARM7_STATUS, "ARM7")
     return {
         "producer": "0x0238de90",
         "sampler": "0x0238dcac",
@@ -77,8 +113,25 @@ def inspect_arm7(reader):
             "x": {"command": "0xd1", "call": "0x0238df00", "bits": [0, 11]},
             "y": {"command": "0x91", "call": "0x0238df44", "bits": [12, 23]},
         },
+        "status": {
+            "pen_probe": "0x0238dba4",
+            "pen_register": "0x04000136",
+            "pen_register_bit": 6,
+            "pen_register_active_low": True,
+            "pen_present_bit": 24,
+            "sample_status_bits": [25, 26],
+            "sample_status_codes": {
+                "0": "Neither axis used fallback",
+                "1": "X used fallback",
+                "2": "Y used fallback",
+                "3": "Both axes used fallback, a pen probe needed a retry to detect contact, or the initial probe found pen up",
+            },
+            "initial_pen_up": "Coordinates cleared and sample status set to 3",
+            "final_pen_up": "Pen bit cleared; sampled coordinates retained",
+            "bits_preserved_by_producer": [27, 28, 29, 30, 31],
+        },
         "scope": "Filtered ADC samples on the sampling path",
-        "verified_sites": len(ARM7) + len(ARM7_PRODUCER),
+        "verified_sites": len(ARM7) + len(ARM7_PRODUCER) + len(ARM7_STATUS),
     }
 
 def fields(value):
@@ -110,7 +163,7 @@ def inspect(rom,strict=True):
  "arm9_readers":["0x020d7418","0x020d74ec"],"verified_sites":len(ARM9)+producer["verified_sites"],
  "arm7_producer":producer,
  "result":"ARM7 packs filtered touchscreen X/Y ADC samples for ARM9.",
- "unknown":["Runtime touchscreen X/Y correlation and full upper-byte semantics","Runtime call path",
+ "unknown":["Runtime touchscreen X/Y correlation and origin of preserved bits 27–31","Runtime call path",
             "Screen coordinate calibration","ARM9 gameplay UI dispatcher"]}
 if __name__=="__main__":
  p=argparse.ArgumentParser();p.add_argument("rom",type=Path)
