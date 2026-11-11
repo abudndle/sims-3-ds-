@@ -78,6 +78,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_irq_registration -p 'test_*.py' -v
+      - name: Verify ARM9 callback slot initialization and reference inventory
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_callback_inventory -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
