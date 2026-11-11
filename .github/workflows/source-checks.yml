@@ -106,6 +106,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/hud_job_offers -p 'test_*.py' -v
+      - name: Test combined HUD job-offer game session
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/hud_game_session -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
