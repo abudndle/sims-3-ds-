@@ -4,14 +4,27 @@
 
 ## Screen arrangement
 
-**Top screen:** display the original live 3D world. Keep the actual game rendering, Sims, objects, animations and world interactions. Do not place HUD panels, notifications or newly invented overlays on the top screen.
+**Top screen during normal gameplay:** display the original live 3D world. Keep the actual game rendering, Sims, objects, animations and world interactions. Do not place HUD panels, notifications or newly invented overlays on the top screen.
 
-**Bottom touchscreen:** display the original game's HUD with all its original artwork, sizes, positions, touch controls, behaviors and information. Nothing is redesigned, scaled, or repositioned merely because it is accessed by page navigation.
+**Bottom touchscreen during normal gameplay:** display the original game's HUD with all its original artwork, sizes, positions, touch controls, behaviors and information. Nothing is redesigned, scaled, or repositioned merely because it is accessed by page navigation.
 
 - **Page 0 (default):** the same original bottom-screen HUD in exactly the position it occupied alongside the 3D gameplay.
 - **Pages 1 onward:** the original HUD/information panels formerly displayed on the top screen, shown on the bottom touchscreen one at a time. Preserve their original assets, layout, content and functions.
-- **Navigation:** left/right touchscreen arrows switch among the existing HUD screens, returning to Page 0 when navigating around the ends. These are the only new navigation affordances. Keep them out of the existing HUD touch targets. Do not move or reset the 3D world while changing pages.
+- **Navigation:** small left/right touchscreen arrows switch among existing HUD screens, returning to Page 0 when navigating around the ends. The arrows must occupy minimal screen space without covering original buttons or their touch targets. Do not move or reset the 3D world while changing pages.
 - **Page count/order:** derive from original game screens; do not invent separate pages for features that were not originally standalone screens.
+
+## Original three-dot button bar and relationship view
+
+- Tapping the existing **three dots (`...`)** in the original gameplay HUD expands the **original blue icon/button bar**, matching the user-supplied screenshot: phone, home/build-related controls, and the game's other original buttons in their original order and artwork. The dots reveal the existing buttons; they do **not** open a newly redesigned tab system.
+- **Relationships has its own original view accessed through the phone button**, rather than appearing as a permanent HUD-carousel page. Selecting the relationship function opens that view in the original game's style and retains its existing interactions.
+- **While the Relationships view is open, the 3D camera/world view is temporarily displayed on the bottom screen** as requested, with the original relationship UI on the other screen as appropriate to that view. Keep this temporary screen configuration until the player explicitly cancels/exits Relationships, then restore the previous normal gameplay screen/page and the original bottom HUD/button-bar state.
+- The separate HUD-page arrows are intentionally compact and must not replace or interfere with the original three-dot menu, phone controls or cancellation behavior.
+
+## Original Buy and Build Mode (not carousel pages)
+
+- The original Buy Mode and Build Mode are entered **only through their original buttons and game conditions**, including the controls revealed by the three-dot button bar. They are **not** added as pages in the HUD carousel and should not appear merely by tapping the left/right page arrows.
+- Once entered, preserve the **entire original two-screen configuration**. Keep the original Household Funds, instructions and related top-screen panels on top; keep the **original interactive 3D scene, placement grid, category buttons, furniture picker, item details, confirm/cancel and other touch controls on the bottom touchscreen**.
+- Preserve the original mode's original asset positions, touch behavior, gameplay state and exit/return behavior. Do not redesign the Buy or Build UI or transfer their touchscreen interactions to the top screen.
 
 ## Notifications: same original bottom-screen presentation
 
@@ -28,11 +41,11 @@ Existing source-only modules under `tools/hud_notifications`, `tools/hud_overlay
 
 ## Acceptance criteria
 
-1. Real gameplay shows the original 3D world on the top screen without any HUD panels or notifications there.
+1. Normal gameplay shows the original 3D world on the top screen without new HUD panels or notification overlays there; the original Buy/Build and Relationships views retain the temporary screen arrangements described above.
 2. The original bottom HUD appears on Page 0 at the same positions, scale and functionality as in the game.
 3. All original top HUD panels can be reached on the bottom touchscreen using left/right arrows, while preserving their appearance and functionality.
 4. Navigation only changes the active HUD screen, without interrupting the top-screen world.
 5. All notifications appear and behave in their **original bottom-screen locations**, without an added overlay system.
-6. Verify all active touch targets, notifications, gameplay transitions, save behavior and DS/DSi compatibility in a patched ROM running in melonDS.
+6. Tapping the original three dots reveals the existing original blue button bar; the phone opens the distinct Relationships view with the requested temporary bottom-screen camera, and cancelling restores normal gameplay.\n7. Buy/Build activate via original buttons only, retaining their original two-screen 3D touchscreen controls; neither is a HUD carousel page.\n8. Verify all active touch targets, notifications, gameplay transitions, save behavior and DS/DSi compatibility in a patched ROM running in melonDS.
 
 No source-only layout/state model is evidence that the full ROM conversion works. Keep the executable integration milestone open until emulator verification succeeds.
