@@ -21,16 +21,18 @@ The user-supplied six-panel mockup is the **in-lot gameplay reference**, not a r
 - **When leaving the lot for the neighborhood/map:** exit the in-lot HUD/page system and **restore the original normal touchscreen controls for that outside-lot mode**. Do not leave the in-lot HUD, compact carousel navigation, or in-lot camera/touch mapping active on the map.
 - **In the neighborhood/map:** preserve the original touch-to-select, navigation and contextual menu actions, including their exact original icon strip and positions; do not introduce a new touchscreen control scheme.
 - **When entering a lot again:** return to its correct in-lot default view (Page 0 gameplay HUD) and restore the in-lot 3D/top and HUD/bottom pairing. The original three-dot button reveals the contextual buttons appropriate to the current game mode.
-- **Entering or exiting Buy/Build or phone/Relationships:** use the original game's own transition, cancellation and touchscreen interaction rules. The normal lot HUD carousel must not hijack controls inside those modes.
+- **Entering or exiting Buy/Build, original phone features or a social interaction:** use the original game's own transition, cancellation and touchscreen interaction rules. The normal lot HUD carousel must not hijack controls inside those modes.
 - Verify these transitions in the patched ROM and melonDS, especially pen targets, page reset, camera ownership, and return-from-map behavior. Source-only models are insufficient to claim compatibility.
 
-## Original three-dot button bar and relationship view
+## Original three-dot HUD menu and social interaction
 
-- Tapping the existing **three dots (`...`)** in the original gameplay HUD expands the **original blue icon/button bar**, matching the user-supplied screenshot: phone, home/build-related controls, and the game's other original buttons in their original order and artwork. The dots reveal the existing buttons; they do **not** open a newly redesigned tab system.
-- **Relationships has its own original view accessed through the phone button**, rather than appearing as a permanent HUD-carousel page. Selecting the relationship function opens that view in the original game's style and retains its existing interactions.
-- **While the Relationships view is open, the 3D camera/world view is temporarily displayed on the bottom screen** as requested, with the original relationship UI on the other screen as appropriate to that view. Keep this temporary screen configuration until the player explicitly cancels/exits Relationships, then restore the previous normal gameplay screen/page and the original bottom HUD/button-bar state.
-- **After leaving the neighborhood/map and re-entering a lot:** return to the original in-lot gameplay HUD rather than a special map-only tab page. Tapping the original `...` control must expand the **exact original bottom-screen blue button strip shown in the user's map-exit screenshot**. This is the existing contextual row of game controls, including the phone, home and other original icons; retain the exact artwork, order, placement and touch actions. Do not construct an extra screen or duplicate those buttons as page-navigation icons. The map-exit state and button bar should follow the original game flow, not a newly invented menu.
-- The separate HUD-page arrows are intentionally compact and must not replace or interfere with the original three-dot menu, phone controls or cancellation behavior.
+- The existing **three dots (`...`)** on the bottom gameplay HUD open the game's **original blue button strip**, using the original icons, order, artwork, positions and touch behavior. This is a temporary HUD-menu expansion, **not an additional page**.
+- **There is no Relationships HUD page.** Do not create a Relationships carousel screen, a dedicated phone-accessed Relationships page, or extra page-navigation dots for Relationships. Any original phone features remain accessible through the original phone button without inventing a separate carousel page.
+- **While talking to or socially interacting with another Sim inside a lot:** keep the original live **3D social interaction on the top screen**. Display that particular Sim's **original relationship information on the bottom touchscreen**, using its original assets and appropriate existing controls. This is a contextual display for the active interaction, not a persistent HUD page.
+- **When the Sim-to-Sim interaction ends, is interrupted, or is cancelled:** remove the contextual relationship display and restore the previous bottom gameplay HUD, including the prior HUD-page selection and three-dot menu state where appropriate. Keep the 3D camera/world on the top screen throughout.
+- Changing the Sim being interacted with must update the context to the new Sim; avoid stale relationship information after the interaction ends.
+- **After leaving the neighborhood/map and re-entering a lot:** restore the original in-lot gameplay HUD. Tapping `...` expands the original contextual icon strip shown in the supplied map-exit screenshot—not a new screen.
+- Small HUD page arrows must not interfere with the original three-dot menu or existing touch controls. Neither the three-dot menu nor contextual relationship information creates a new HUD page.
 
 ## Original Buy and Build Mode (not carousel pages)
 
@@ -53,14 +55,14 @@ Existing source-only modules under `tools/hud_notifications`, `tools/hud_overlay
 
 ## Acceptance criteria
 
-1. Normal gameplay shows the original 3D world on the top screen without new HUD panels or notification overlays there; the original Buy/Build and Relationships views retain the temporary screen arrangements described above.
+1. Normal gameplay shows the original 3D world on the top screen without new HUD panels or notification overlays there; the original Buy/Build modes retain their original two-screen arrangements and social interactions keep 3D on top.
 2. The original bottom HUD appears on Page 0 at the same positions, scale and functionality as in the game.
 3. All original top HUD panels can be reached on the bottom touchscreen using left/right arrows, while preserving their appearance and functionality.
 4. Navigation only changes the active HUD screen, without interrupting the top-screen world.
 5. All notifications appear and behave in their **original bottom-screen locations**, without an added overlay system.
-6. Tapping the original three dots reveals the existing original blue button bar; the phone opens the distinct Relationships view with the requested temporary bottom-screen camera, and cancelling restores normal gameplay.
+6. Tapping the original three dots reveals the existing original blue button bar; it does not create a page. While interacting socially with another Sim, relationship information appears only on the bottom screen, with 3D conversation on top, and disappears when the interaction ends.
 7. Buy/Build activate via original buttons only, retaining their original two-screen 3D touchscreen controls; neither is a HUD carousel page.
 8. Leaving a lot restores the original neighborhood/map touchscreen input and HUD; returning to a lot restores the correct in-lot Page 0 without stale controls.
-9. Verify all active touch targets, notifications, gameplay transitions, save behavior and DS/DSi compatibility in a patched ROM running in melonDS.
+9. Confirm that Relationships is not a HUD carousel page, that the three-dot menu only expands the original button bar, and that temporary social-interaction relationship information restores the prior HUD on exit.\n10. Verify all active touch targets, notifications, gameplay transitions, save behavior and DS/DSi compatibility in a patched ROM running in melonDS.
 
 No source-only layout/state model is evidence that the full ROM conversion works. Keep the executable integration milestone open until emulator verification succeeds.
