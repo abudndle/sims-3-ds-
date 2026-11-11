@@ -94,6 +94,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/hud_page_navigation -p 'test_*.py' -v
+      - name: Test bottom-screen HUD notification queue
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/hud_notifications -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
