@@ -82,6 +82,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_callback_inventory -p 'test_*.py' -v
+      - name: Verify ARM9 third callback call site
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_callback_paths -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
