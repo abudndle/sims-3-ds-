@@ -70,6 +70,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/touch_sample_contract -p 'test_*.py' -v
+      - name: Verify ARM9 packed-input callback boundary
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm9_event_boundary -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
