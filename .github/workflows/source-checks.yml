@@ -90,6 +90,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_touch_calibration -p 'test_*.py' -v
+      - name: Test original-HUD page navigation contract
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/hud_page_navigation -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
