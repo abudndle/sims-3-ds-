@@ -32,7 +32,7 @@ class LayoutNavigationTests(unittest.TestCase):
         self.assertEqual(self.state.next().next().next().next().next(), self.state)
         self.assertEqual(self.state.previous().next(), self.state)
 
-    def test_single_page_has_no_active_arrows(self):
+    def test_base_pages_include_notifications(self):
         one = create_hud_pages()
         self.assertTrue(one.has_navigation)
         self.assertEqual(navigate_tap(one, 240, 12).current, NOTIFICATIONS_HUD)
@@ -68,7 +68,7 @@ class LayoutNavigationTests(unittest.TestCase):
         self.assertEqual(self.state.next().next().reset().current, ORIGINAL_3D_HUD)
 
     def test_preserve_page_when_inventory_changes(self):
-        on_needs = self.state.next().next()
+        on_needs = self.state.next().next().next()
         updated = on_needs.with_original_information_panels(["needs", "skills"])
         self.assertEqual(updated.current, "needs")
         self.assertEqual(updated.index, 2)
