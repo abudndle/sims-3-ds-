@@ -58,6 +58,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm7_gamecard_d8 -p 'test_*.py' -v
+      - name: Test indirect D0 ARM7 command candidate
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/arm7_d0_call_path -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
