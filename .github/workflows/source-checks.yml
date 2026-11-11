@@ -66,6 +66,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_packed_shared_fields -p 'test_*.py' -v
+      - name: Verify lossless touchscreen sample contract
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tools/touch_sample_contract -p 'test_*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
