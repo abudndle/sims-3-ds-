@@ -150,6 +150,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tests -p 'test_pets_package_probe.py' -v
+      - name: Check Pets ROM manifest provenance (synthetic tests)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_pets_manifest_provenance.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
