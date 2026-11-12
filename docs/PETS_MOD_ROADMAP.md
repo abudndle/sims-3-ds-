@@ -10,8 +10,8 @@ Add pet gameplay to the *existing The Sims 3 DS* project while retaining the ori
 - Host tests: `python -m unittest discover -s tests -p 'test_pets.py' -v`.
 - **Not wired to the game's saves or ROM**. Never overwrite retail save data with this prototype format.
 
-## Milestone P2: ROM research and safe hooks (blocked pending verification)
-- Document actual input, object tables, save layout, animation budgets and pet actor slots from a legally acquired personal DS dump.
+## Milestone P2: host-mode integration contract (source-only boundary added; ROM hook unverified)
+- **Implemented in source:** `tools/pets/session.py` gates adoption, selection, interactions and time progression to active in-lot gameplay, clears selection on map/Build/Buy/social/paused transitions, and returns data snapshots without touching the original game's UI or save data.\n- **Tests added:** `tests/test_pets_session.py` checks gating, safe transitions, and re-selection after menus.\n- Still required: document actual input, object tables, save layout, animation budgets and pet actor slots from a legally acquired personal DS dump.
 - Confirm whether the DS world can allocate/render/animate extra animal actors without disrupting Sim gameplay.
 - Locate a safe runtime hook for pet actions; preserve original map and Buy/Build behavior.
 - Keep any recovered original assets in the private repository or local workspace; do not commit them publicly.
@@ -34,4 +34,4 @@ Add pet gameplay to the *existing The Sims 3 DS* project while retaining the ori
 - Publish source and patch instructions rather than redistributing the original ROM.
 
 ## Honest status
-P1 is independent gameplay code only. The project does **not** yet have an integrated, playable Pets ROM, pet models, or verified original-game hooks. P2 is the next milestone.
+P1 is independent gameplay code only. P2 now includes a source-only host-mode safety contract, but **no native ROM hooks**. The project does **not** yet have an integrated, playable Pets ROM, pet models, or verified original-game hooks. Actual memory/asset research is the next blocking work.
