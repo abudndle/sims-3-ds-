@@ -129,7 +129,7 @@ jobs:
       - name: Test Pets gameplay prototype (no ROM needed)
         shell: bash
         run: |
-          python3 -m unittest discover -s tests -p 'test_pets.py' -v
+          python3 -m unittest discover -s tests -p 'test_pets*.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
