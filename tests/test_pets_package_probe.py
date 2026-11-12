@@ -9,8 +9,8 @@ class PackageProbeTests(unittest.TestCase):
     def fixture(self, magic=b"DBPF"):
         # Minimal two-directory NitroFS: root -> DATA, with one package file.
         name = b"Animations.package"
-        listing0 = bytes([0x84]) + b"DATA" + struct.pack("<H", 0xF001) + b"\\0"
-        listing1 = bytes([len(name)]) + name + b"\\0"
+        listing0 = bytes([0x84]) + b"DATA" + struct.pack("<H", 0xF001) + bytes([0])
+        listing1 = bytes([len(name)]) + name + bytes([0])
         fnt = struct.pack("<IHH", 16, 0, 2)
         fnt += struct.pack("<IHH", 16 + len(listing0), 0, 0xF000)
         fnt += listing0 + listing1
