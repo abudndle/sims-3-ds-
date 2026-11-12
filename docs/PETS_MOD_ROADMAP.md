@@ -24,10 +24,12 @@ Add pet gameplay to the *existing The Sims 3 DS* project while retaining the ori
 - UI that follows original HUD transitions without adding a fabricated relationships carousel page.
 - Map and home-only Buy/Build transitions remain identical to the DS game.
 
-## Milestone P4: assets and persistence (not started)
+## Milestone P4: assets and persistence (isolated host-side persistence implemented; ROM persistence not started)
 - Use independently created animal art or appropriately authorized locally held assets.
 - Determine native animation and texture constraints before import.
-- Reverse-engineer and test a save extension or sidecar that cannot corrupt existing saves.
+- **Implemented in source:** versioned JSON sidecar in `tools/pets/storage.py`, SHA-256 integrity validation, strict `.pets.json` destination restriction, size limit, and atomic replacement; it never reads or edits the original `.sav` file.
+- **Tested in host environment:** roundtrip, tampering, malformed/version failures, atomic replacement, `.sav` isolation, symlink rejection, size limit. Run `python3 -m unittest discover -s tests -p 'test_pets_storage.py' -v`.
+- **Not yet integrated:** DS/DSi runtime persistence, automatic saving, retail save compatibility, in-game save hooks, and emulator verification.
 - No private ROMs or copyrighted assets in public CI.
 
 ## Milestone P5: patched ROM and melonDS verification (not started)
@@ -36,4 +38,4 @@ Add pet gameplay to the *existing The Sims 3 DS* project while retaining the ori
 - Publish source and patch instructions rather than redistributing the original ROM.
 
 ## Honest status
-P1 is independent gameplay code only. P2 now includes a source-only host-mode safety contract, but **no native ROM hooks**. The project does **not** yet have an integrated, playable Pets ROM, pet models, or verified original-game hooks. Actual memory/asset research is the next blocking work.
+P1 is independent gameplay code only. P2 includes a source-only host-mode safety contract; P4 includes host-only sidecar persistence. Neither is a native ROM hook. The project does **not** yet have an integrated, playable Pets ROM, pet models, or verified original-game hooks. Actual memory/asset research is the next blocking work.
