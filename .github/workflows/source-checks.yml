@@ -154,6 +154,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tests -p 'test_pets_manifest_provenance.py' -v
+      - name: Verify standalone Pets package evidence with synthetic data
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_pets_local_package_verification.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
