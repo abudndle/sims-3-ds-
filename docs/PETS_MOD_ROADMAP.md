@@ -13,6 +13,7 @@ Add pet gameplay to the *existing The Sims 3 DS* project while retaining the ori
 ## Milestone P2: host-mode integration contract (source-only boundary added; ROM hook unverified)
 - **Implemented in source:** `tools/pets/session.py` gates adoption, selection, interactions and time progression to active in-lot gameplay, clears selection on map/Build/Buy/social/paused transitions, and returns data snapshots without touching the original game's UI or save data.
 - **Tests added:** `tests/test_pets_session.py` checks gating, safe transitions, and re-selection after menus.
+- **Host dispatch contract added:** `tools/pets/bridge.py` validates a limited event vocabulary (`enter_mode`, `adopt`, `select`, `interact`, `advance_time`, `snapshot`), rejects unknown fields/types and supplies detached state snapshots. `tests/test_pets_bridge.py` verifies mode boundaries, rejection without mutation and allowed actions. This does not install an ARM9 hook or intercept game controls.
 - Still required: document actual input, object tables, save layout, animation budgets and pet actor slots from a legally acquired personal DS dump.
 - Confirm whether the DS world can allocate/render/animate extra animal actors without disrupting Sim gameplay.
 - Locate a safe runtime hook for pet actions; preserve original map and Buy/Build behavior.
