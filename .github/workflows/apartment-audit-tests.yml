@@ -1,0 +1,32 @@
+name: Apartment asset-audit tests
+
+on:
+  pull_request:
+    paths:
+      - 'tools/audit_ds_apartments.py'
+      - 'tests/test_audit_ds_apartments.py'
+      - '.github/workflows/apartment-audit-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/audit_ds_apartments.py'
+      - 'tests/test_audit_ds_apartments.py'
+      - '.github/workflows/apartment-audit-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: apartment-audit-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test offline scanner without any proprietary assets
+        run: |
+          python3 -m py_compile tools/audit_ds_apartments.py
+          python3 -m unittest discover -s tests -p 'test_audit_ds_apartments.py' -v
