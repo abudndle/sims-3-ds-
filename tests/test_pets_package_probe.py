@@ -3,19 +3,31 @@ import struct
 import unittest
 
 from tools.pets.package_probe import inspect
-from tests.test_pets_asset_candidates import NitroFSTests
 
 
 class PackageProbeTests(unittest.TestCase):
     def fixture(self, magic=b"DBPF"):
-        rom = bytearray(NitroFSTests.fixture()[0])
+        # Minimal two-directory NitroFS: root -> DATA, with one package file.
+        name = b"Animations.package"
+        listing0 = bytes([0x84]) + b"DATA" + struct.pack("<H", 0xF001) + b"\\0"
+        listing1 = bytes([len(name)]) + name + b"\\0"
+        fnt = struct.pack("<IHH", 16, 0, 2)
+        fnt += struct.pack("<IHH", 16 + len(listing0), 0, 0xF000)
+        fnt += listing0 + listing1
+        fat = struct.pack("<II", 0x400, 0x480)
+        rom = bytearray(0x600)
+        rom[0x200:0x200 + len(fnt)] = fnt
+        fat_off = (0x200 + len(fnt) + 3) & ~3
+        rom[fat_off:fat_off + len(fat)] = fat
+        for pos, value in ((0x40, 0x200), (0x44, len(fnt)),
+                           (0x48, fat_off), (0x4c, len(fat))):
+            struct.pack_into("<I", rom, pos, value)
         rom[0x400:0x404] = magic
-        rom[0x480:0x484] = b"ABCD"
         return bytes(rom)
 
     def test_reports_known_signature_only_as_candidate(self):
         result = inspect(self.fixture(), verify_sha=False)
-        self.assertEqual(result["packages_examined"], 2)
+        self.assertEqual(result["packages_examined"], 1)
         package = next(p for p in result["packages"] if p["path"].endswith("Animations.package"))
         self.assertEqual(package["header_signature_hex"], "44425046")
         self.assertIn("UNVERIFIED", package["signature_classification"])
