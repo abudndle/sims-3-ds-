@@ -12,6 +12,7 @@ from pathlib import Path
 
 from tools.arm9_event_boundary.analyze import SHA
 from tools.pets.asset_candidates import parse_tables, u32
+from tools.pets.dbpf_index_candidate import IndexFormatError, probe_dbpf_v1
 
 MAX_REPORT_PACKAGES = 256
 SIGNATURES = {
@@ -47,6 +48,14 @@ def inspect(rom, verify_sha=True):
         # The NitroFS parser has already checked these bounds.
         header = rom[start:min(start + 4, end)]
         classification = SIGNATURES.get(header, "unknown or proprietary package format")
+        # Any profile match is structural only; it is NOT proof of the DS
+        # engine's package/resource format or pet model support.
+        index_candidate = None
+        if header == b"DBPF":
+            try:
+                index_candidate = probe_dbpf_v1(rom[start:end])
+            except IndexFormatError:
+                pass
         # No resource bytes, arbitrary strings, or original graphics are emitted.
         report.append({
             "path": name,
@@ -55,6 +64,7 @@ def inspect(rom, verify_sha=True):
             "header_signature_hex": header.hex(),
             "signature_classification": classification,
             "resource_index_verified": False,
+            "index_profile_candidate": index_candidate,
             "pet_assets_confirmed": False,
         })
     return {
