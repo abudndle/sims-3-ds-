@@ -138,6 +138,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tests -p 'test_pets_bridge.py' -v
+      - name: Test Pets native-readiness audit with synthetic ROM (no assets)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_pets_native_readiness.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
