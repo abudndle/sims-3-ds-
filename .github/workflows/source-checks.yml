@@ -130,6 +130,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tests -p 'test_pets*.py' -v
+      - name: Test isolated Pets persistence (no ROM needed)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_pets_storage.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
