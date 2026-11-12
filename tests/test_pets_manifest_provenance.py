@@ -7,12 +7,12 @@ from tools.pets.manifest_provenance import ManifestError, audit, parse_manifest
 
 def fixture():
     rom = b"HEAD" + b"FIRST" + b"SECOND" + b"TRAILER"
-    header = "file_id,path,offset,size,sha256\\n"
+    header = "file_id,path,offset,size,sha256\n"
     lines = [
         "0,DATA/BACKEND/Animations.package,4,5," + hashlib.sha256(b"FIRST").hexdigest(),
         "1,DATA/BACKEND/Sims.package,9,6," + hashlib.sha256(b"SECOND").hexdigest(),
     ]
-    return rom, header + "\\n".join(lines) + "\\n"
+    return rom, header + "\n".join(lines) + "\n"
 
 
 class ManifestProvenanceTests(unittest.TestCase):
@@ -58,7 +58,7 @@ class ManifestProvenanceTests(unittest.TestCase):
 
     def test_missing_header_rejected(self):
         with self.assertRaisesRegex(ManifestError, "column"):
-            parse_manifest("path,offset\\nfile,1\\n")
+            parse_manifest("path,offset\nfile,1\n")
 
 
 if __name__ == "__main__":
