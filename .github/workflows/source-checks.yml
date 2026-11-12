@@ -134,6 +134,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tests -p 'test_pets_storage.py' -v
+      - name: Test validated Pets event bridge (no ROM needed)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_pets_bridge.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
