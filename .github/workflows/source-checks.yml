@@ -126,6 +126,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tools/arm9_touch_callback_reset -p 'test_*.py' -v
+      - name: Test Pets gameplay prototype (no ROM needed)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_pets.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
