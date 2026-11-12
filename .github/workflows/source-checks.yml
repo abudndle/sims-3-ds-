@@ -146,6 +146,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tests -p 'test_pets_asset_candidates.py' -v
+      - name: Test Pets package signature probe (no ROM needed)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_pets_package_probe.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
