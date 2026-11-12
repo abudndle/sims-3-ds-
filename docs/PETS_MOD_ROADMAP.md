@@ -7,11 +7,13 @@ Add pet gameplay to the *existing The Sims 3 DS* project while retaining the ori
 - Cats and dogs, names and household ownership (maximum 3 pets in the prototype; provisional balance decision).
 - Hunger, energy, hygiene, fun and bond; feed, play, groom, rest, and dog-only walk.
 - Deterministic need decay and a versioned, separate serialization shape.
-- Host tests: `python -m unittest discover -s tests -p 'test_pets.py' -v`.
+- Host tests: `python -m unittest discover -s tests -p 'test_pets*.py' -v`.
 - **Not wired to the game's saves or ROM**. Never overwrite retail save data with this prototype format.
 
 ## Milestone P2: host-mode integration contract (source-only boundary added; ROM hook unverified)
-- **Implemented in source:** `tools/pets/session.py` gates adoption, selection, interactions and time progression to active in-lot gameplay, clears selection on map/Build/Buy/social/paused transitions, and returns data snapshots without touching the original game's UI or save data.\n- **Tests added:** `tests/test_pets_session.py` checks gating, safe transitions, and re-selection after menus.\n- Still required: document actual input, object tables, save layout, animation budgets and pet actor slots from a legally acquired personal DS dump.
+- **Implemented in source:** `tools/pets/session.py` gates adoption, selection, interactions and time progression to active in-lot gameplay, clears selection on map/Build/Buy/social/paused transitions, and returns data snapshots without touching the original game's UI or save data.
+- **Tests added:** `tests/test_pets_session.py` checks gating, safe transitions, and re-selection after menus.
+- Still required: document actual input, object tables, save layout, animation budgets and pet actor slots from a legally acquired personal DS dump.
 - Confirm whether the DS world can allocate/render/animate extra animal actors without disrupting Sim gameplay.
 - Locate a safe runtime hook for pet actions; preserve original map and Buy/Build behavior.
 - Keep any recovered original assets in the private repository or local workspace; do not commit them publicly.
