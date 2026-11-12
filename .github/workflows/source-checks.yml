@@ -142,6 +142,10 @@ jobs:
         shell: bash
         run: |
           python3 -m unittest discover -s tests -p 'test_pets_native_readiness.py' -v
+      - name: Test Pets NitroFS asset candidate audit (synthetic fixtures)
+        shell: bash
+        run: |
+          python3 -m unittest discover -s tests -p 'test_pets_asset_candidates.py' -v
       - name: Explain current ROM-build status
         shell: bash
         run: |
