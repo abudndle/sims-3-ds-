@@ -36,6 +36,9 @@ def inspect(data,verify_hash=True):
   if word(addr)!=opcode:raise ValueError('instruction mismatch at '+hex(addr))
  for addr,target in [(0x0238E450,0x0238E8B0),(0x0238E464,0x0238E770),(0x0238E44C,0x0238E464)]:
   if branch_target(word(addr),addr)!=target:raise ValueError('branch mismatch')
+ # New regression test
+ if off != 0x02380000:
+     raise ValueError('invalid ARM7 load address')
  return {'rom_sha256':sha,'verified_instruction_sites':len(INSTRUCTIONS),
   'shared_field':'0x02FFFF94',
   'selection':'record +8 bit0 chooses 0x0238E8B0 or 0x0238E770',
