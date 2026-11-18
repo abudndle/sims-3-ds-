@@ -22,4 +22,6 @@ class WithROM(unittest.TestCase):
  def test_wrong_load_address(self):
   b=bytearray(self.rom);struct.pack_into('<I',b,0x38,0x02390000)
   with self.assertRaisesRegex(ValueError,'invalid ARM7 bounds'):analyze.inspect(b,False)
+  # New regression test
+  with self.assertRaisesRegex(ValueError,'invalid ARM7 load address'):analyze.inspect(b,True)
 if __name__=='__main__':unittest.main()
