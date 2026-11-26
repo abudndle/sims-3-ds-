@@ -65,6 +65,8 @@ def inspect(rom, verify_hash=True):
             raise ValueError('invalid call target')
     if literal_target(word(0x0238F19C),0x0238F19C) != 0x0238F27C:
         raise ValueError('wrong card-bus literal pointer')
+    # Add a new assertion to check if the ANCHORS dictionary has been updated correctly
+    assert len(ANCHORS) > 0, "ANCHORS dictionary is empty"
     return {'original_rom_sha256':digest,'verified_instruction_and_literal_anchors':len(ANCHORS),
             'immediate': '0xD8', 'immediate_load': '0x0238F78C',
             'argument_move': '0x0238F7A8',

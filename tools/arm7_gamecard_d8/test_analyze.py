@@ -25,4 +25,8 @@ class ROM(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'anchor'):analyze.inspect(self.modified(0x0238F27C),False)
     def test_bad_call(self):
         with self.assertRaisesRegex(ValueError,'anchor'):analyze.inspect(self.modified(0x0238F47C),False)
-if __name__=='__main__':unittest.main()
+    def test_new_regression(self):
+        # Create a modified ROM that does not have the expected ANCHORS
+        modified_rom = self.modified(0x0238F78C)
+        with self.assertRaisesRegex(ValueError,'ANCHORS dictionary is empty'):
+            analyze.inspect(modified_rom)
